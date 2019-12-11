@@ -1,88 +1,158 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import '../components/fonts.css'
+function Home () {
+  const brands = [
+    {label: 'ford',img: 'BITT_01',},
+    {label: 'volkswagen', img: "BITT_02"},
+    {label: 'coca-cola', img: "BITT_03"},
+    {label: 'nescafe', img: "BITT_04"},
+    {label: 'manzanada', img: "BITT_05"},
+    {label: 'axion', img: "BITT_06"},
+    {label: 'catsup', img: "BITT_07"},
+    {label: 'banco de bosques', img: "BITT_08"},
+    {label: 'dralion', img: "BITT_09"},
+    {label: 'elite', img: "BITT_10"},
+    {label: 'fritos', img: "BITT_01"},
+    {label: 'gcba', img: "BITT_02"},
+    {label: 'got milk', img: "BITT_03"},
+    {label: 'nivea', img: "BITT_04"},
+    {label: 'powerade', img: "BITT_05"},
+    {label: 'villavicencio', img: "BITT_06"},
+  ]
+  const [items, setItems] = useState(brands);
+  const [active, setActive] = useState(0);
+  const [timer, setTimer] = useState(false)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log(active)
+      console.log(items)
+      if (active == 15) return setActive(0)
+      const increment = active + 1;
+      setActive(increment);
+    }, 10000)
+    setTimer(timer)
+  }, [active])
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+  const handleHover = i => {
+    window.clearTimeout(timer)
+    setActive(i)
+  } 
+  console.log(items[active])
+  return (
+    <div className="Home">
+      <Head>
+        <title>Home</title>
+        <style>
+          {
+            `
+              @font-face {
+                font-family: "Drunk";
+                src: url("/DrukWide-Bold.otf")
+                    format("otf");
+                font-weight: bold;
+                font-style: normal;
+              }
+              @font-face {
+                font-family: "Drunk";
+                src: url("/DrukWide-Medium.otf")
+                    format("otf");
+                font-weight: normal;
+                font-style: normal;
+              }
+              @font-face {
+                font-family: "TT";
+                src: url("/TT-Hoves-ExtraLight.otf")
+                    format("otf");
+                font-weight: lighter;
+                font-style: normal;
+              }
+              @font-face {
+                font-family: "TT";
+                src: url("/TT-Hoves-Medium.otf")
+                    format("normal");
+                font-weight: normal;
+                font-style: normal;
+              }
+            `
+          }
+        </style>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-    <Nav />
-
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
+      <div className="Hero">
+        <div className="video-container">
+          <div className="water-mark">
+            <img src="/water-mark.svg" />
+          </div>
+        </div>
+        <div className="menu">
+          {
+            brands.map((item, i) => (
+              <div
+                className={`item ${active == i ? 'active': ''}`}
+                onMouseEnter={() => handleHover(i)}
+              >
+                {item.label.toUpperCase()}
+              </div>
+            ))
+          }
+        </div>
       </div>
+
+
+      <style jsx>
+        {`
+          :global(body) {
+            margin: 0;
+          }
+          .Hero {
+            background: #ECE6DE;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+          }
+          .video-container {
+            justify-self: flex-end;
+            background: url(${`/${items[active].img}.jpg`});
+            background-position: center;
+            background-size: cover;
+            margin: 50px;
+            height: 880px;
+            width: 880px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 28px;
+          }
+          .menu {
+            height: 880px;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-end;
+          }
+          .menu .item {
+            height: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #A7A19A;
+          }
+          .menu .item.active {
+            color: #141313;
+          }
+        `}
+      </style>
     </div>
+  )
+}
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
+export default Home;
 
-export default Home
+{/* <div className="Detalle"></div>
+<div className="Listado">
+  <div className="item">Item</div>
+  <div className="pie">Pie</div>
+</div> */}
