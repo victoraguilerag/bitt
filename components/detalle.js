@@ -8,6 +8,7 @@ function Detalle ({
         const Hero = document.getElementById('Hero')
         Hero.scrollIntoView({ behavior: 'smooth' })
     }
+
     return (
         <div id="detalle" className={`Detalle ${active ? 'active':''}`}>
             <img className="video" src={`/${selected.img}.jpg`} />
