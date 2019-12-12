@@ -327,7 +327,7 @@ function Home () {
             background: url(${`/${items[active].img}.jpg`});
             background-position: center;
             background-size: cover;
-            margin: 50px;
+            margin: 30px;
             height: 880px;
             width: 880px;
             display: flex;
