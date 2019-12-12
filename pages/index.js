@@ -321,6 +321,7 @@ function Home () {
           :global(body) {
             margin: 0;
             overflow-y: hidden;
+            background: #ECE6DE;
           }
           .Hero {
             background: #ECE6DE;
