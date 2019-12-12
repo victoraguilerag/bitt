@@ -194,8 +194,7 @@ function Home () {
       path: '/burger-animation-lottie.json' // the path to the animation json
     });
     console.log(animation.current)
-    const Hero = document.getElementById('Hero')
-    Hero.scrollIntoView()
+
     setTimeout(() => {
       animation.current.addEventListener('enterFrame', e => {
         debugger
@@ -208,6 +207,15 @@ function Home () {
         }
       })
     }, 2000)
+    setTimeout(() => {
+      const Hero = document.getElementById('Hero')
+      Hero.scrollIntoView()
+      const images = []
+      for (let i = 0; i < items.length; i++) {
+        images[i] = new Image()
+        images[i].src = items[i]
+      }
+    }, 1000)
   }, [])
   useEffect(() => {
     // const timer = setTimeout(() => {
