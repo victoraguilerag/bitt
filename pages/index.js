@@ -252,7 +252,7 @@ function Home () {
   return (
     <div className="Home">
       <Head>
-        <title>Home</title>
+        <title>Bitt</title>
         <style>
           {
             `
