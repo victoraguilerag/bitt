@@ -14,7 +14,7 @@ module.exports = withCSS({
         })
         return config
     },
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/bitt' : '/',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '/',
     exportTrailingSlash: true,
     exportPathMap: function() {
       return {
