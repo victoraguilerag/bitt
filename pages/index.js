@@ -3,7 +3,7 @@ import Head from 'next/head';
 import '../components/fonts.css'
 import lottie from 'lottie-web'
 import * as animationData from '../public/burger-animation-lottie.json'
-import Detalle from '../components/Detalle'
+import Detalle from '../components/detalle'
 function Home () {
   const brands = [
     {label: 'ford',img: 'BITT_01',},
