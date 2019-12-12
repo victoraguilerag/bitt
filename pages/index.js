@@ -6,22 +6,174 @@ import * as animationData from '../public/burger-animation-lottie.json'
 import Detalle from '../components/detalle'
 function Home () {
   const brands = [
-    {label: 'ford',img: 'BITT_01',},
-    {label: 'volkswagen', img: "BITT_02"},
-    {label: 'coca-cola', img: "BITT_03"},
-    {label: 'nescafe', img: "BITT_04"},
-    {label: 'manzanada', img: "BITT_05"},
-    {label: 'axion', img: "BITT_06"},
-    {label: 'catsup', img: "BITT_07"},
-    {label: 'banco de bosques', img: "BITT_08"},
-    {label: 'dralion', img: "BITT_09"},
-    {label: 'elite', img: "BITT_10"},
-    {label: 'fritos', img: "BITT_01"},
-    {label: 'gcba', img: "BITT_02"},
-    {label: 'got milk', img: "BITT_03"},
-    {label: 'nivea', img: "BITT_04"},
-    {label: 'powerade', img: "BITT_05"},
-    {label: 'villavicencio', img: "BITT_06"},
+    {
+      label: 'ford',
+      img: 'FORD_T-REX',
+      nombre: 'FORD KA T-REX',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Nicolás Kasakoff' },        
+        { label: 'CLIENT', value: 'FORD ARGENTINA' },
+        { label: 'AGENCY', value: 'GTB ARGENTINA'},
+        { label: 'PROD. COMPANY', value: 'LANDIA'},
+        { label: 'YEAR', value: '2018'}
+      ]
+    },
+    {
+      label: 'Coca Cola',
+      img: "COCA-COLA_TERMINATOR",
+      nombre: 'M.A.R.T.A TERMINATOR',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Felipe Gomez Aparicio' },        
+        { label: 'CLIENT', value: 'Coca Cola' },
+        { label: 'AGENCY', value: 'Grey Argentina'},
+        { label: 'PROD. COMPANY', value: 'Primo'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'NIVEA MEN',
+      img: "NIVEA_PIONEERSOFSENSIBILITY",
+      nombre: 'PIONEERS OF SENSIBILITY',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Nico Perez Veiga' },        
+        { label: 'CLIENT', value: 'BEIERSDORF' },
+        { label: 'AGENCY', value: 'FCB Mexico'},
+        { label: 'PROD. COMPANY', value: 'Primo'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'POWERADE MANIFIESTO',
+      img: "POWERADE_MANIFESTO",
+      nombre: 'MONITO',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Santi Elías' },        
+        { label: 'CLIENT', value: 'Volkswagen Argentina' },
+        { label: 'AGENCY', value: 'Kepel y Mata'},
+        { label: 'PROD. COMPANY', value: 'Primo'},
+        { label: 'YEAR', value: '2016'}
+      ]
+    },
+    {
+      label: 'NESCAFÉ',
+      img: "NESCAFE_CUERDAS",
+      nombre: 'CUERDAS',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Andy Fogwill' },        
+        { label: 'CLIENT', value: 'Nestle' },
+        { label: 'AGENCY', value: 'Marcel'},
+        { label: 'PROD. COMPANY', value: 'LANDIA'},
+        { label: 'YEAR', value: '2017'}
+      ]
+    },
+    {
+      label: 'TOYOTA',
+      img: "TOYOTA_CHOOSETHETOUGHESTFIELD",
+      nombre: 'CHOOSE THE TOUGHEST FIELD',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Jonnny Mass' },        
+        { label: 'CLIENT', value: 'Toyota' },
+        { label: 'AGENCY', value: 'Conil'},
+        { label: 'PROD. COMPANY', value: 'Mssngpeces'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'Palacio de Hierro',
+      img: "PALACIODEHIERRO_CHRISTMAS",
+      nombre: 'CHRISTMAS',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Jonathan Gurvit' },        
+        { label: 'CLIENT', value: 'El Palacio de Hierro' },
+        { label: 'AGENCY', value: 'Teran TBWA'},
+        { label: 'PROD. COMPANY', value: 'MadreFoca'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'La Campagnola',
+      img: "CAMPAGNOLA_GALLO",
+      nombre: 'Gallo',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Pablo Fusco' },        
+        { label: 'CLIENT', value: 'Arcor' },
+        { label: 'AGENCY', value: 'Kepel & Mata'},
+        { label: 'PROD. COMPANY', value: 'Pank!'},
+        { label: 'YEAR', value: '2015'}
+      ]
+    },
+    {
+      label: 'GCBA',
+      img: "GCBA_SAPO",
+      nombre: 'SAPO',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Diego Kaplan' },        
+        { label: 'CLIENT', value: 'GCBA' },
+        { label: 'AGENCY', value: 'Savaglio'},
+        { label: 'PROD. COMPANY', value: 'Oruga Films'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'Manzanada',
+      img: "MANZANADA_SENTIDOS",
+      nombre: 'Sentidos',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Bitt Animation' },        
+        { label: 'CLIENT', value: 'Pepsico' },
+        { label: 'AGENCY', value: 'BBDO Mexico'},
+        { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+        { label: 'YEAR', value: '2017'}
+      ]
+    },
+    {
+      label: 'Fritos',
+      img: "FRITOS_HERO",
+      nombre: 'Hero',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Bitt Animation - Can Can Club'},        
+        { label: 'CLIENT', value: 'Pepsico' },
+        { label: 'AGENCY', value: 'BBDO Mexico'},
+        { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'Domestos',
+      img: "DOMESTOS_BATHROOMBLITZ",
+      nombre: 'Bathroom Blitz',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Russell Appleford' },        
+        { label: 'CLIENT', value: '' },
+        { label: 'AGENCY', value: 'DLKW Lowe'},
+        { label: 'PROD. COMPANY', value: 'Mill+ London'},
+        { label: 'YEAR', value: '2015'}
+      ]
+    },
+    {
+      label: 'Orbit',
+      img: "ORBIT_EATDRINKANDCHEW",
+      nombre: 'EAT, DRINK AND CHEW',
+      miembros: [
+        { label: 'DIRECTOR', value: 'The Mill+' },        
+        { label: 'CLIENT', value: 'Wrigleys India' },
+        { label: 'AGENCY', value: 'DDB Mudra Group'},
+        { label: 'PROD. COMPANY', value: 'The mill+'},
+        { label: 'YEAR', value: '2018'}
+      ]
+    },
+    {
+      label: 'CATSUP Del Monte',
+      img: "BITT_06",
+      nombre: 'Catapulta',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Bitt Animation' },        
+        { label: 'CLIENT', value: 'Con Agra' },
+        { label: 'AGENCY', value: 'BBDO MEX'},
+        { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
   ]
   const animationContainer = useRef(null)
   const animationDirection = useRef('forward');
@@ -42,6 +194,8 @@ function Home () {
       path: '/burger-animation-lottie.json' // the path to the animation json
     });
     console.log(animation.current)
+    const Hero = document.getElementById('Hero')
+    Hero.scrollIntoView()
     setTimeout(() => {
       animation.current.addEventListener('enterFrame', e => {
         debugger
@@ -66,9 +220,9 @@ function Home () {
 
   const handleItem = i => {
     setSeleccted(items[i]);
-    const detalle = document.getElementById('detalle');
-    detalle.scrollIntoView({
-      behavior: 'smooth'
+    const video = document.getElementById('video');
+    video.scrollIntoView({
+      behavior: 'smooth',
     })
   }
 
@@ -213,7 +367,7 @@ function Home () {
           }
           @media screen and (max-width: 1600px) {
             .menu {
-              height: 40vw;
+              height: 42vw;
             }
             .menu .item {
               height: 20px;
