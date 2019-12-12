@@ -38,7 +38,7 @@ function Detalle ({
             {
                 selected && selected.miembros && (
                     <div className="information">
-                        <h2 className="title">FORD KA T-REX</h2>
+                    <h2 className="title">{selected.nombre}</h2>
                         <div className="list">
                                 {
                                     selected && selected.miembros && selected.miembros.map(miembro => (
