@@ -216,8 +216,8 @@ function Home () {
               height: 40vw;
             }
             .menu .item {
-              height: 16px;
-              font-size: 16px;
+              height: 20px;
+              font-size: 20px;
             }
           }
           .animation {
