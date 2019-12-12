@@ -1,5 +1,6 @@
 // next.config.js
 const withCSS = require('@zeit/next-css')
+const debug = process.env.NODE_ENV !== "production";
 module.exports = withCSS({
     webpack: function (config) {
         config.module.rules.push({
@@ -14,6 +15,7 @@ module.exports = withCSS({
         })
         return config
     },
+    assetPrefix: !debug ? '/bitt/' : '',
     exportTrailingSlash: true,
     exportPathMap: function() {
       return {
