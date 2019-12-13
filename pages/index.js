@@ -197,7 +197,6 @@ function Home () {
 
     setTimeout(() => {
       animation.current.addEventListener('enterFrame', e => {
-        debugger
         if (e.currentTime >= 27 && animationDirection.current !== 'back') {
           animationDirection.current = 'back'
           animation.current.pause();
@@ -228,10 +227,12 @@ function Home () {
 
   const handleItem = i => {
     setSeleccted(items[i]);
-    const video = document.getElementById('video');
-    video.scrollIntoView({
-      behavior: 'smooth',
-    })
+    if (document) {
+      const video = document.getElementById('video');
+      video.scrollIntoView({
+        behavior: 'smooth',
+      })      
+    }
   }
 
   const handleHover = i => {
@@ -285,7 +286,7 @@ function Home () {
           }
         </div>
       </div>
-      <Detalle selected={selected} />
+      <Detalle selected={selected} items={items} selectProject={handleItem} />
 
       <style jsx global>
         {`
