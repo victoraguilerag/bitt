@@ -53,7 +53,7 @@ function Grilla ({
             <About />
             <Members />
             <Awards handleIcon={handleIcon} />
-            <Contact />
+            <Contact handleIcon={handleIcon} />
             <style jsx>
                 {`
                     .arrow-white {

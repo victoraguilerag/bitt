@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Contact () {
+function Contact ({ handleIcon }) {
     return (
         <div className="Contact">
             <h3 className="title">Contact</h3>
@@ -43,7 +43,7 @@ function Contact () {
                         <img src="/behance.svg" className="red-icon" />
                     </a>
                 </div>
-                <img src="/white-arrow.svg" className="arrow" />
+                <img onClick={handleIcon} src="/white-arrow.svg" className="arrow" />
             </div>
             <style jsx>
                 {`
