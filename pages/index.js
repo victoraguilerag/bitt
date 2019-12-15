@@ -379,8 +379,8 @@ function Home () {
         {`
           :global(body) {
             margin: 0;
+            overflow-x: hidden;
             background: #ECE6DE;
-            overflow-x: 'hidden';
           }
           .Hero {
             background: #ECE6DE;
