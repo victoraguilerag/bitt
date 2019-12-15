@@ -1,5 +1,3 @@
-import React from "React"
-
 function Sections ({ active }) {
     return (
         <div className={`sections ${active ? 'active' : ''}`}>
