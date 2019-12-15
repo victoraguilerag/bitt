@@ -4,6 +4,8 @@ import '../components/fonts.css'
 import lottie from 'lottie-web'
 import * as animationData from '../public/burger-animation-lottie.json'
 import Detalle from '../components/detalle'
+import Grilla from '../components/grilla'
+import Sections from '../components/sections'
 function Home () {
   const brands = [
     {
@@ -178,14 +180,17 @@ function Home () {
   const animationContainer = useRef(null)
   const animationDirection = useRef('forward');
   const animation = useRef(null)
-  const [animationState, setAnimationState] = useState(false) 
+  const [animationState, setAnimationState] = useState(false);
+  const [activeSections, setActiveSections] = useState(false);
   const [items, setItems] = useState(brands);
-  const [selected, setSeleccted] = useState(items[0])
+  const [selected, setSelected] = useState(false)
   const [active, setActive] = useState(0);
   const [timer, setTimer] = useState(false)
+
   useEffect(() => {
     console.log(animationContainer)
     console.log('animationContainer')
+
     animation.current = lottie.loadAnimation({
       container: animationContainer.current, // the dom element that will contain the animation
       renderer: 'svg',
@@ -193,6 +198,7 @@ function Home () {
       autoplay: false,
       path: '/burger-animation-lottie.json' // the path to the animation json
     });
+
     console.log(animation.current)
 
     setTimeout(() => {
@@ -206,9 +212,14 @@ function Home () {
         }
       })
     }, 2000)
+
     setTimeout(() => {
       const Hero = document.getElementById('Hero')
-      Hero.scrollIntoView()
+      document.body.style.overflowY = 'scroll';
+      Hero.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
       const images = []
       for (let i = 0; i < items.length; i++) {
         images[i] = new Image()
@@ -216,6 +227,7 @@ function Home () {
       }
     }, 1000)
   }, [])
+
   useEffect(() => {
     // const timer = setTimeout(() => {
     //   if (active == 15) return setActive(0)
@@ -226,22 +238,60 @@ function Home () {
   }, [active])
 
   const handleItem = i => {
-    setSeleccted(items[i]);
-    if (document) {
-      const video = document.getElementById('video');
-      video.scrollIntoView({
-        behavior: 'smooth',
-      })      
+    if (items) {
+      if (items[i] == selected) {
+        const video = document.getElementById('video');
+        if (!video) return false
+        video.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })  
+      }
+      setSelected(items[i]);
     }
   }
+  
+  useEffect(() => {
+    if (selected) {
+      const video = document.getElementById('video');
+      if (!video) return false
+      document.body.style.overflowY = 'hidden';
+      video.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })  
+    }
+  }, [selected])
 
   const handleHover = i => {
     window.clearTimeout(timer)
     setActive(i)
   }
+
   const handleAnimation = () => {
-    animation.current.play()
+    animation.current.play();
+    setActiveSections(!activeSections);
   }
+
+  const handleIcon = () => {
+    console.log('epa')
+    // const video = document.getElementById('video')
+    // console.log(video)
+    // video.scrollIntoView({ behavior: 'smooth'})
+    const Hero = document.getElementById('Hero')
+    document.body.style.overflowY = 'scroll';
+    Hero.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+
+    setTimeout(() => {
+        const detalle = document.getElementById('detalle')
+        console.log(detalle.scrollTop)
+        detalle.scrollTop = 0
+    }, 1000)
+  }
+
   const defaultOptions = {
     loop: true,
     autoplay: true, 
@@ -250,6 +300,7 @@ function Home () {
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
+
   return (
     <div className="Home">
       <Head>
@@ -264,55 +315,62 @@ function Home () {
       </Head>
 
       <div id="Hero" className="Hero">
-        <div ref={animationContainer} onClick={handleAnimation} className="animation">
 
+        <div ref={animationContainer} onClick={handleAnimation} className="animation">
         </div>
-        <div className="video-container">
-          <div className="water-mark">
-            <img src="/water-mark.svg" />
+        <Sections active={activeSections} />
+        <div className="Hero-content">
+          <div className="video-container">
+            <div className="water-mark">
+              <img src="/bitt-logo.svg" />
+            </div>
           </div>
-        </div>
-        <div className="menu">
-          {
-            brands.map((item, i) => (
-              <div
-                className={`item ${active == i ? 'active': ''}`}
-                onMouseEnter={() => handleHover(i)}
-                onClick={() => handleItem(i)}
-              >
-                {item.label.toUpperCase()}
-              </div>
-            ))
-          }
+          <div className="menu">
+            {
+              brands.map((item, i) => (
+                <div
+                  className={`item ${active == i ? 'active': ''}`}
+                  onMouseEnter={() => handleHover(i)}
+                  onClick={() => handleItem(i)}
+                >
+                  {item.label.toUpperCase()}
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
       <Detalle selected={selected} items={items} selectProject={handleItem} />
-
+      {
+        !selected && (
+          <Grilla items={items} handleIcon={handleIcon} selectProject={handleItem} />
+        )
+      }
       <style jsx global>
         {`
 
           @font-face {
             font-family: "Drunk";
             src: url("/DrukWide-Medium.otf");
-            font-weight: normal;
+            font-weight: 400;
             font-style: normal;
           }
           @font-face {
             font-family: "Drunk";
             src: url("/DrukWide-Bold.otf");
-            font-weight: bold;
+            font-weight: 500;
             font-style: normal;
           }
           @font-face {
             font-family: "TT";
             src: url("/TT-Hoves-ExtraLight.otf");
             font-weight: lighter;
-            font-style: normal;
+            font-style: 400;
           }
           @font-face {
             font-family: "TT";
             src: url("/TT-Hoves-Medium.otf");
-            font-weight: normal;
+            font-weight: 500;
             font-style: normal;
           }
         `}
@@ -321,16 +379,17 @@ function Home () {
         {`
           :global(body) {
             margin: 0;
-            overflow-y: hidden;
             background: #ECE6DE;
+            overflow-x: 'hidden';
           }
           .Hero {
             background: #ECE6DE;
             height: 100vh;
-            display: grid;
-            grid-template-columns: 50% 50%;
-            justify-content: center;
-            align-items: center;
+            overflow-x: 'hidden';
+          }
+          .Hero-content {
+            display: flex;
+            justify-content: flex-start;
           }
           .video-container {
             justify-self: flex-end;
@@ -338,28 +397,22 @@ function Home () {
             background-position: center;
             background-size: cover;
             margin: 30px;
-            height: 880px;
-            width: 880px;
+            height: calc(100vh - 60px);
+            width: calc(100vh - 60px);
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            padding-bottom: 28px;
+          }
+          .water-mark {
+            width: 94%;
+            height: auto;
+            margin-bottom: 5%;
           }
           @media screen and (max-width: 1600px) {
-            .video-container {
-              width: 40vw;
-              height: 40vw;
-              
-            }
 
-            .video-container .water-mark img {
-              display: flex;
-              width: 80%;
-              margin: 0 auto;
-            }
           }
           .menu {
-            height: 880px;
+            height: calc(100vh - 40px);
             display: flex;
             flex-flow: column;
             justify-content: flex-end;
@@ -377,19 +430,20 @@ function Home () {
           }
           @media screen and (max-width: 1600px) {
             .menu {
-              height: 42vw;
             }
             .menu .item {
-              height: 20px;
-              font-size: 20px;
+              height: auto;
+              font-size: 24px;
+              line-height: 24px;
+              margin-top: 8px;
             }
           }
           .animation {
             display: flex;
             position: absolute;
             background: white;
-            top: 50px;
-            right: 5vw;
+            top: 30px;
+            right: 30px;
             width: 50px;
             height: 50px;
             cursor: pointer;

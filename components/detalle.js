@@ -1,5 +1,6 @@
 import React from 'react'
 import Thumbnail from './thumbnail'
+import Grilla from './grilla'
 
 function Detalle ({
     active,
@@ -8,23 +9,22 @@ function Detalle ({
     handleItem,
     selectProject
 }) {
-    console.log(items)
     const handleIcon = () => {
+        console.log('epa')
         // const video = document.getElementById('video')
         // console.log(video)
         // video.scrollIntoView({ behavior: 'smooth'})
-        const Hero = document.getElementById('Hero')
-        Hero.scrollIntoView({ behavior: 'smooth' })
-
         setTimeout(() => {
+            const Hero = document.getElementById('Hero')
+            Hero.scrollIntoView({ behavior: 'smooth', block: 'start' })    
+        }, 0);
+        setTimeout(() => {
+            selectProject(false)
+            document.body.style.overflowY = 'scroll';
             const detalle = document.getElementById('detalle')
-            console.log(detalle.scrollTop)
             detalle.scrollTop = 0
-        }, 1000)
-
-
+        }, 700);
         // detalle.scrollTop = 0
-
     }
 
     return (
@@ -47,8 +47,8 @@ function Detalle ({
                                 {
                                     selected && selected.miembros && selected.miembros.map(miembro => (
                                         <div className="item">
-                                            <div className="label">{miembro.label}</div>
-                                            <div className="value">{miembro.value}</div>
+                                            <div className="label">{miembro.label.toUpperCase()}</div>
+                                            <div className="value">{miembro.value.toUpperCase()}</div>
                                         </div>
                                     ))
                                 }
@@ -57,57 +57,11 @@ function Detalle ({
                     </div>
                 )
             }
-            <div className="items-container">
-                {
-                    items && items.map((item, i) => {
-                        return (
-                            <Thumbnail
-                                item={item}
-                                onClick={() => selectProject(i)}
-                            />
-                        )
-                    })
-                }
-                <div className="redes">
-                    <h3 className="redes-title">FOR MORE PROJECTS / DEVELOPMENT MAKE SURE TO CHECK OUR <br />SOCIAL ACCOUNTS:</h3>
-                    <div className="redes-container">
-                        <a
-                          className="red"
-                          href="https://www.facebook.com"
-                          target="_blank"
-                        >
-                            <img src="/instagram.svg" className="red-icon" />
-                        </a>
-                        <a
-                          className="red"
-                          href="https://www.vimeo.com"
-                          target="_blank"
-                        >
-                            <img src="/vimeo.svg" className="red-icon" />
-                        </a>
-                        <a
-                          className="red"
-                          href="https://www.facebook.com"
-                          target="_blank"
-                        >
-                            <img src="/facebook.svg" className="red-icon" />
-                        </a>
-                        <a
-                          className="red"
-                          href="https://www.behance.com"
-                          target="_blank"
-                        >
-                            <img src="/behance.svg" className="red-icon" />
-                        </a>
-                    </div>
-                    <img
-                        src="/white-arrow.svg"
-                        className="arrow-white"
-                        onClick={handleIcon}
-                    />
-                </div>
-            </div>
-
+            {
+                selected && (
+                    <Grilla selected={selected} items={items} selectProject={selectProject} handleIcon={handleIcon} />
+                )
+            }
             <style jsx>
                 {`
                     .arrow-white {
@@ -181,6 +135,9 @@ function Detalle ({
                         width: 100vw;
                         max-height: 100vh;
                         overflow-y: scroll;
+                        display: flex;
+                        flex-flow: column;
+                        background: #ECE6DE;
                     }
                     .Detalle .video {
                         width: 100%;
@@ -195,6 +152,7 @@ function Detalle ({
                     }
                 `}
             </style>
+        
         </div>
     )
 }
