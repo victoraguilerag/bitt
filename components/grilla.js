@@ -15,24 +15,25 @@ function Grilla ({
     pie = pie - parseInt(pie);
     pie = parseInt(pie * 100);
     pie = pie == 66 ? '3/4': pie == 33 ? '2/4' : '1/4';
-
+    console.log(items)
 
     return (
-        <div className="items-container">
+        <div id="Work" className="items-container">
             {
                 items && items.map((item, i) => {
                     // if (i == 0) return false
                     // if (i == 1) return false
                     return (
-                        <Thumbnail
-                            item={item}
-                            onClick={() => {
-                                selectProject(i)
-                            }}
-                        />
+                            <Thumbnail
+                                item={item}
+                                onClick={() => {
+                                    selectProject(i)
+                                }}
+                            />
                     )
                 })
             }
+            {/* FORD KA. T-REX */}
             <div className="redes">
                 <h3 className="redes-title">FOR MORE PROJECTS MAKE SURE TO CHECK OUR <br/>VIMEO ACCOUNT.</h3>
                 <div className="redes-container">
@@ -40,6 +41,7 @@ function Grilla ({
                         className="red"
                         href="https://www.vimeo.com"
                         target="_blank"
+                        tabIndex="0"
                     >
                         <img src="/vimeo.svg" className="red-icon" />
                     </a>
@@ -47,7 +49,8 @@ function Grilla ({
                         src="/white-arrow.svg"
                         className="arrow-white"
                         onClick={handleIcon}
-                    />
+                        tabIndex="0"
+                    />  
                 </div>
             </div>
             <About />
@@ -66,7 +69,7 @@ function Grilla ({
                         position: relative;
                         max-width: 80%;
                     }
-                    @media screen and (min-width: 1024px) {
+                    @media screen and (min-width: 1100px) {
                     }
                     .redes .red {
                         margin-right: 10px;
@@ -81,6 +84,13 @@ function Grilla ({
                         padding-left: 10%;
                         grid-column: ${pie};
                     }
+                    @media screen and (max-width: 1100px) {
+                        .redes {
+                            grid-column: 1;
+                            height: 300px;
+                            padding-left: 30px;
+                        }
+                    }
                     .redes .redes-title {
                         width: 400px;
                         max-width: 80%;
@@ -93,6 +103,13 @@ function Grilla ({
                         display: grid;
                         grid-template-columns: repeat(auto-fit, minmax(33vw, 1fr));
                         grid-gap: 0;
+                    }
+                    @media screen and (max-width: 1100px) {
+                        .items-container {
+                            grid-template-columns: 1fr;
+                            max-width: 570px;
+                            width: 570px;
+                        }
                     }
                 `}
             </style>

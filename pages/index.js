@@ -386,6 +386,7 @@ function Home () {
             background: #ECE6DE;
             height: 100vh;
             overflow-x: 'hidden';
+            max-width: 100vw;
           }
           .Hero-content {
             display: flex;
@@ -403,13 +404,11 @@ function Home () {
             justify-content: center;
             align-items: flex-end;
           }
+
           .water-mark {
             width: 94%;
             height: auto;
             margin-bottom: 5%;
-          }
-          @media screen and (max-width: 1600px) {
-
           }
           .menu {
             height: calc(100vh - 40px);
@@ -447,6 +446,25 @@ function Home () {
             width: 50px;
             height: 50px;
             cursor: pointer;
+          }
+          @media screen and (max-width: 800px) {
+          }
+          @media screen and (max-width: 1100px) {
+            .Hero {
+              height: auto;
+            }
+            .video-container {
+              width: 570px;
+              height: 570px;
+              margin-top: 5vh;
+            }
+            .menu {
+              display: none;
+            }
+            .animation {
+              width: 85px;
+              height: 85px;
+            }
           }
         `}
       </style>

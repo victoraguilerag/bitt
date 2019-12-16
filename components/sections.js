@@ -1,9 +1,17 @@
 function Sections ({ active }) {
+    const scrollTo = (target) => {
+        const tag = document.getElementById(target)
+        tag.scrollIntoView({
+            behavior: 'smooth',
+        })
+    }
     return (
         <div className={`sections ${active ? 'active' : ''}`}>
-            <h3 className="section first">WORK</h3>
-            <h3 className="section">ABOUT</h3>
-            <h3 className="section">CONTACT</h3>
+            <h3 className="section first" onClick={() => scrollTo('Work')}>
+                WORK
+            </h3>
+            <h3 className="section" onClick={() => scrollTo('About')}>ABOUT</h3>
+            <h3 className="section" onClick={() => scrollTo('Contact')}>CONTACT</h3>
 
             <style jsx>
                 {`
@@ -25,6 +33,18 @@ function Sections ({ active }) {
                     }
                     .sections h3.first {
                         margin-top: 20px;
+                    }
+                    .section a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                    .section {
+                        cursor: pointer;
+                    }
+                    @media screen and (max-width: 1100px) {
+                        .sections {
+                            top: 105px;
+                        }
                     }
                 `}
             </style>

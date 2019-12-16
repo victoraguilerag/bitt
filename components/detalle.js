@@ -42,7 +42,7 @@ function Detalle ({
             {
                 selected && selected.miembros && (
                     <div className="information">
-                    <h2 className="title">{selected.nombre}</h2>
+                    <h2 className="title">{selected.nombre.toUpperCase()}</h2>
                         <div className="list">
                                 {
                                     selected && selected.miembros && selected.miembros.map(miembro => (
@@ -70,7 +70,7 @@ function Detalle ({
                         right: 32px;
                         cursor: pointer;
                     }
-                    @media screen and (min-width: 1024px) {
+                    @media screen and (min-width: 1100px) {
                         .arrow-white {
                             bottom: 64px;
                         }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Awards ({ handleIcon }) {
     const [items, setItems] = useState([
@@ -128,15 +128,33 @@ function Awards ({ handleIcon }) {
             ]
         }
     ])
-    const columnFirst = items.slice(0, 6)
-    const columnSecond = items.slice(7,13)
-    const columnThird = items.slice(14, 18);
-    const columns = [
-        columnFirst,
-        columnSecond,
-        columnThird
-    ]
-    console.log(columns)
+    const [columns, setColumns] = useState(false);
+
+    useEffect(() => {
+    let columns, columnFirst, columnSecond, columnThird
+
+        if (window && window.matchMedia("(max-width: 1100px").matches) {
+            columnFirst = items.slice(0,9);
+            columnSecond = items.slice(10, 18);
+            setColumns([
+                columnFirst,
+                columnSecond,
+            ])
+        } else {
+            columnFirst = items.slice(0, 6)
+            columnSecond = items.slice(7,13)
+            columnThird = items.slice(14, 18);
+        
+            setColumns([
+                columnFirst,
+                columnSecond,
+                columnThird
+            ])
+            console.log(columns)
+        }
+    }, [])
+
+
     return (
         <div className="Awards">
             <h3>AWARDS</h3>
@@ -177,8 +195,9 @@ function Awards ({ handleIcon }) {
                         padding: 50px 100px 100px;
                         grid-column: 1/4;
                         width: 100vw;
-                        background: #ECE6DE;
+                        background: #1A1918;
                         font-family: 'Drunk';
+                        color: #EDE9E3;
                     }
                     .Awards h3 {
                         margin-top: 15px;
@@ -194,13 +213,29 @@ function Awards ({ handleIcon }) {
                     .item .award {
                         font-family: 'TT';
                         font-weight: 400;
-                        margin-top: 0;
+                        margin-top: 0;  
                         margin-bottom: 0;
                     }
                     .items {
                         display: grid;
                         grid-template-columns: 1fr 1fr 1fr;
                         max-height: 85vh;
+                    }
+                    @media screen and (max-width: 1100px) {
+                        .Awards {
+                            height: auto;
+                            padding: 50px;
+                        }
+                        .items {
+                            height: auto;
+                            max-height: none;
+                        }
+                        .column:last-child {
+                            margin-left: 22px;
+                        }
+                        .column {
+                            width: 326px;
+                        }
                     }
                 `}
             </style>

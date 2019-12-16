@@ -15,7 +15,7 @@ function About () {
         });
     }, [])
     return (
-        <div className="About">
+        <div id="About" className="About">
             <div className="information">
                 <div className="logo-container">
                     <div ref={animationContainer} className="animation"></div>
@@ -86,6 +86,31 @@ function About () {
                     }
                     .bold {
                         font-weight: 500;
+                    }
+                    @media screen and (max-width: 1100px) {
+                        .About {
+                            flex-flow: column;
+                            width: 570px;
+                            margin-left: 30px;
+                            padding-bottom: 72px;
+                        }
+                        .image {
+                            width: 570px;
+                            height: 570px;
+                            margin-top: 40px;
+                        }
+                        .animation {
+                            height: 200px;
+                            width: 200px;
+                        }
+                        .trademark {
+                            left: 205px;
+                            font-size: 16px;
+                        }
+                        .information {
+                            max-width: 570px;
+                            width: 100%;
+                        }
                     }
                 `}
             </style>

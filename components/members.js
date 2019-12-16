@@ -106,10 +106,12 @@ function Members () {
                     .arrow {
                         position: absolute;
                         right: -150px;
+                        cursor: pointer;
                     }
                     .member {
                         position: relative;
                         display: flex;
+                        align-items: flex-start;
                         font-family: 'TT';
                         max-width: 90%;
                         font-weight: lighter;
@@ -117,6 +119,25 @@ function Members () {
                     }
                     .bold {
                         font-weight: 500;
+                    }
+                    @media screen and (max-width: 1100px) {
+                        .Members {
+                            padding-left: 50px;
+                            padding-bottom: 50px;
+                        }
+                        .member {
+                            flex-flow: column;
+                            align-items: flex-start;
+                        }
+                        .information {
+                            margin-left: 0;
+                        }
+                        .resume {
+                            width: 570px;
+                        }
+                        .member .name {
+                            margin-top: 18px;
+                        }
                     }
                 `}
             </style>

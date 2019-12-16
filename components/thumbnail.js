@@ -32,9 +32,28 @@ function Thumbnail (props) {
 
     return (
         <div className="thumbnail" onClick={onClick}>
-           <img src={`/${item.img}.jpg`} className="img" />
+            <img src={`/${item.img}.jpg`} className="img" />
+            <div className="information">
+                <div className="title">{item.nombre.toUpperCase()}.</div>
+                <div className="label">{item.label.toUpperCase()}</div>
+            </div>
+
             <style jsx>
                 {`
+                    .information {
+                        display: flex;
+                    }
+                    .title {
+                        font-family: 'Drunk';
+                        font-weight: 400;
+                        font-size: 17px;
+                    }
+                    .label {
+                        font-family: 'Drunk';
+                        color: #B3AFA8;
+                        margin-bottom: 20px;
+                        margin-left: 8px;
+                    }
                     .thumbnail {
                         cursor: pointer;
                         width: auto;
@@ -52,6 +71,14 @@ function Thumbnail (props) {
                         width: 100%;
                         height: auto;
 
+                    }
+                    @media screen and (max-width: 1100px) {
+                        .thumbnail {
+                            width: 570px;
+                            height: auto;
+                            padding-left: 30px;
+                            box-shadow: none;
+                        }
                     }
                 `}
             </style>
