@@ -112,6 +112,11 @@ function Detalle ({
                         padding-top: 48px;
                         padding-bottom: 48px;
                     }
+                    @media screen and (max-width: 1024px) {
+                        .information {
+                            padding-left: 30px;
+                        }
+                    }
                     .information h2 {
                         font-size: 20px;
                         width: 140px;
