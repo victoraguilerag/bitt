@@ -181,7 +181,7 @@ function Awards ({ handleIcon }) {
                 }
             </div>
             <img
-                src="/arrow.svg"
+                src="/white-arrow.svg"
                 className="arrow"
                 onClick={handleIcon}
             />
