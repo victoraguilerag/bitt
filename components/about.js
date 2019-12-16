@@ -58,16 +58,17 @@ function About () {
                         margin-right: 38px;
                     }
                     .animation {
-                        width: 350px;
-                        height: 350px;
+                        width: 10vw;
+                        height: auto;
                     }
                     .text {
                         font-family: 'TT';
                         width: 90%;
-                        line-height: 26px;
-                        font-size: 24px;
+                        line-height: 1.4em;
+                        font-size: 1.2em;
                         margin-top: 16px;
                         margin-bottom: 0;
+                        text-align: justify;
                     }
                     .trademark {
                         font-size: 32px;
@@ -81,8 +82,8 @@ function About () {
                     }
                     .image {
                         background: lightgray;
-                        width: 880px;
-                        height: 880px;
+                        max-width: 880px;
+                        height: auto;
                     }
                     .bold {
                         font-weight: 500;

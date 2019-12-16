@@ -3,7 +3,7 @@ import React from 'react'
 function Contact ({ handleIcon }) {
     return (
         <div id="Contact" className="Contact">
-            <h3 className="title">Contact</h3>
+            <h3 className="title">CONTACT</h3>
             <h4 className="label">For Jobs or General Inquiries please use this form.</h4>
             <form className="form">
                 <input type="text" className="input" placeholder="Name" name="Name" id="Name" />
@@ -17,21 +17,21 @@ function Contact ({ handleIcon }) {
                 <div className="redes">
                     <a
                         className="red"
-                        href="https://www.instagram.com"
+                        href="https://www.instagram.com/bittanimation/"
                         target="_blank"
                     >
                         <img src="/instagram.svg" className="red-icon" />
                     </a>
                     <a
                         className="red"
-                        href="https://www.vimeo.com"
+                        href="https://vimeo.com/bittanimation"
                         target="_blank"
                     >
                         <img src="/vimeo.svg" className="red-icon" />
                     </a>
                     <a
                         className="red"
-                        href="https://www.facebook.com"
+                        href="https://www.facebook.com/bittanimation"
                         target="_blank"
                     >
                         <img src="/facebook.svg" className="red-icon" />
@@ -52,11 +52,10 @@ function Contact ({ handleIcon }) {
                         width: 100vw;
                         background: #EDE9E3;
                         color: #141313;
-
                         padding-left: 100px;
                     }
                     .Contact .title {
-                        font-size: 40px;
+                        font-size: 2.2em;
                         font-family: 'Drunk';
                         font-weight: 500px;
                         margin-bottom: 0;
@@ -71,7 +70,7 @@ function Contact ({ handleIcon }) {
                         border: none;
                         box-shadow: none;
                         margin-bottom: 10px;
-                        font-size: 24px;
+                        font-size: 1em;
                         font-family: 'TT';
                         padding-left: 18px;
                         background: #B3AFA8;
@@ -98,10 +97,14 @@ function Contact ({ handleIcon }) {
                         font-size: 20px;
                         font-family: 'Drunk';
                         max-width: 155px;
-                        font-size: 20px;
                         display: flex;
                         padding-left: 18px;
                         font-weight: 400;
+                    }
+                    form .submit:hover {
+                        color: #EDE9E3;
+                        background: #141313;
+                        border: #141313 solid 1.5px;
                     }
                     .brand-footer {
                         max-width: 90%;
@@ -123,13 +126,18 @@ function Contact ({ handleIcon }) {
                     .brand-footer .red {
                         margin-right: 10px;
                     }
+                    .brand-footer .red-icon {
+                        max-height: 6vh;
+                    }
                     .label {
-                        font-size: 18px;
+                        font-size: 1em;
                         margin-bottom: 20px;
                         margin-top: 0;
                         font-family: 'TT';
-                        font-size: 18px;
                         color: #B3AFA8;
+                    }
+                    .brand-footer .logo {
+                        max-height: 6vh;
                     }
                     @media screen and (max-width:1100px) {
                         .Contact {
