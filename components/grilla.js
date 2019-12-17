@@ -70,6 +70,10 @@ function Grilla ({
                         position: relative;
                         max-width: 80%;
                     }
+                    .red-icon:hover {
+                        filter: invert(1);
+                        background: #1A1918;
+                    }
                     @media screen and (min-width: 1100px) {
                     }
                     .redes .red {
@@ -78,7 +82,7 @@ function Grilla ({
                     .redes {
                         min-height: calc(33vw / 1.8);
                         position: relative;
-                        background: black;
+                        background: #1A1918;
                         display: flex;
                         flex-flow: column;
                         justify-content: center;
@@ -95,7 +99,7 @@ function Grilla ({
                     .redes .redes-title {
                         width: 400px;
                         max-width: 80%;
-                        color: white;
+                        color: #EDE9E3;
                         font-family: 'Drunk';
                         font-size: 14px;
                         font-weight: normal;

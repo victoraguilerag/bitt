@@ -128,6 +128,11 @@ function Contact ({ handleIcon }) {
                     }
                     .brand-footer .red-icon {
                         max-height: 6vh;
+                        max-width: 6vh;
+                    }
+                    .red-icon:hover {
+                        filter: invert(1);
+                        background: #1A1918;
                     }
                     .label {
                         font-size: 1em;
