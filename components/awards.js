@@ -283,7 +283,7 @@ function Awards ({ handleIcon }) {
                     .items {
                         display: grid;
                         grid-template-columns: 1fr 1fr 1fr;
-                        max-height: 85vh;
+                        max-height: none;
                     }
                     .awards-logos {
                         margin-top: 50px;
