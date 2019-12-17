@@ -79,8 +79,6 @@ function Thumbnail (props) {
                 allow="autoplay"
                 onLoad={handleLoad}
             />
-
-
             <div className="information">
                 <div className="title">{item.nombre.toUpperCase()}.</div>
                 <div className="label">{item.label.toUpperCase()}</div>

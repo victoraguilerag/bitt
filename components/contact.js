@@ -113,7 +113,7 @@ function Contact ({ handleIcon }) {
                         filter: invert(1);
                     }
                     .brand-footer .logo {
-                        margin-right: 85px;
+                        margin-right: 265px;
                     }
                     .brand-footer .arrow {
                         position: absolute;
@@ -157,6 +157,9 @@ function Contact ({ handleIcon }) {
                         }
                         .input {
                             width: calc(100vw - 90px);
+                        }
+                        .brand-footer .logo {
+                            margin-right: 95px;
                         }
                     }
                 `}
