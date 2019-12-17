@@ -7,6 +7,7 @@ import 'video.js/dist/video-js.css'
     Your browser does not support the video tag.
 </video> */}
 function Thumbnail (props) {
+    const [active, setActive] = useState(false)
     const [player, setPlayer] = useState(false);
     const videoPlayer = useRef()
     const {
@@ -25,18 +26,36 @@ function Thumbnail (props) {
         //     }
         // }
     }, [])
-
-    // <video ref={videoPlayer} className="video-js">
-    //     <source src={`/${item.img}.mp4`} type="video/mp4" />
-    // </video>
-
+    const handleIn = () => {
+        if (!active) setActive(true);
+    }
+    const handleOut = () => {
+        if (active) setActive(false);
+    }
     return (
-        <div className="thumbnail" onClick={onClick}>
+        <div className="thumbnail" onClick={onClick} onMouseEnter={handleIn} onMouseLeave={handleOut}>
             <img src={`/${item.img}.jpg`} className="img" />
+            {
+                item.label == "TOYOTA" && (
+                    <iframe
+                    id={item.label}
+                    src={`https://player.vimeo.com/video/${item.video}?autoplay=1&loop=1&autopause=0`}
+                    width="640"
+                    height="360"
+                    frameborder="0"
+                    autoplay
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                />
+                )
+            }
+
+
             <div className="information">
                 <div className="title">{item.nombre.toUpperCase()}.</div>
                 <div className="label">{item.label.toUpperCase()}</div>
             </div>
+
 
             <style jsx>
                 {`
