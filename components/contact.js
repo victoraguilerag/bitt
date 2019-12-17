@@ -113,7 +113,7 @@ function Contact ({ handleIcon }) {
                         filter: invert(1);
                     }
                     .brand-footer .logo {
-                        margin-right: 265px;
+                        margin-right: 262px;
                     }
                     .brand-footer .arrow {
                         position: absolute;
@@ -122,7 +122,7 @@ function Contact ({ handleIcon }) {
                         cursor: pointer;
                     }
                     .brand-footer .red {
-                        margin-right: 10px;
+                        margin-left: 10px;
                     }
                     .brand-footer .red-icon {
                         max-height: 6vh;
