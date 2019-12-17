@@ -385,7 +385,7 @@ function Home () {
                 <iframe
                   id={items[active].label}
                   className="home"
-                  src={`https://player.vimeo.com/video/${items[active].video}?autoplay=1&loop=1&autopause=0`}
+                  src={`https://player.vimeo.com/video/${items[active].video}?autoplay=1&loop=1&autopause=0&background=1`}
                   width="640"
                   height="360"
                   frameborder="0"
@@ -404,6 +404,7 @@ function Home () {
             {
               brands.map((item, i) => (
                 <div
+                  key={item.label}
                   className={`item ${active == i ? 'active': ''}`}
                   onMouseEnter={() => handleHover(i)}
                   onClick={() => handleItem(i)}

@@ -84,6 +84,7 @@ function Members () {
                     }
                     .img {
                         width:25vw;
+                        max-width: 150px;
                         min-width: 150px;
                     }
                     .name {

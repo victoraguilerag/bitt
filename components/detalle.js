@@ -23,6 +23,7 @@ function Detalle ({
             document.body.style.overflowY = 'scroll';
             const detalle = document.getElementById('detalle')
             detalle.scrollTop = 0
+
         }, 700);
         // detalle.scrollTop = 0
     }
@@ -64,6 +65,18 @@ function Detalle ({
             }
             <style jsx>
                 {`
+                    :global(iframe.big) {
+                        position: absolute;
+                        width: 100%;
+                        max-width: none;
+                        top: -9px;
+                        height: 100%;
+                        z-index: 2;
+                    }
+                    :global(#player) {
+                        max-width: none;
+                        height: 100%;
+                    }
                     .arrow-white {
                         position: absolute;
                         bottom: 24px;

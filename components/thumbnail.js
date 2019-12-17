@@ -39,7 +39,7 @@ function Thumbnail (props) {
         if (!active) {
             setActive(true);
             const player = new Vimeo(iframe.current)
-            // player.play()
+            player.play()
         }
     }
     const handleOut = () => {
@@ -71,7 +71,7 @@ function Thumbnail (props) {
                 ref={iframe}
                 id={item.label}
                 className="thumbnail-video"
-                src={`https://player.vimeo.com/video/${item.video}?autoplay=1&loop=1&autopause=0`}
+                src={`https://player.vimeo.com/video/${item.video}?autoplay=1&loop=1&autopause=1&background=1`}
                 width="640"
                 height="360"
                 frameborder="0"
@@ -92,19 +92,29 @@ function Thumbnail (props) {
                     :global(iframe.thumbnail-video) {
                         position: absolute;
                         left: -25%;
-                        top: -20%;
+                        top: -30%;
                         width: 181%;
                         top: inherit;
                         height: 140%;
-                        cursor: pointer;
+                        cursor: pointer !important;
+                    }
+                    @media screen and (max-width: 1024px) {
+                        :global(iframe.thumbnail-video) {
+                            width: 100%;
+                            top: 0;
+                            height: 88%;
+                            left: 0;
+                        }
                     }
                     :global(#player) {
                         position: absolute;
                         left: -20%;
+                        top: -10%;
                         cursor: pointer;
                         width: 130%;
                         height: 100%;
                         max-width: none;
+                        cursor: pointer;
                     }
                     .thumbnail {
                         cursor: pointer;
@@ -134,9 +144,7 @@ function Thumbnail (props) {
                         /* width: auto; */
                         overflow: hidden;
                     }
-                    .thumbnail:hover {
-                        box-shadow: 0 0 6px rgba(0,0,0,.4);
-                    }
+
                     .img {
                         width: 100%;
                         height: auto;

@@ -220,8 +220,8 @@ function Awards ({ handleIcon }) {
             <h3>AWARDS</h3>
             <div className="items">
                 {
-                    columns && columns.map((items) => (
-                        <div className="column">
+                    columns && columns.map((items, i) => (
+                        <div className="column" key={i}>
                             {
                                 items && items.map((item) => (
                                     <div className="item" key={item.label}>
