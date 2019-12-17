@@ -37,7 +37,7 @@ function About ({}) {
                 </p>
             </div>
             <div className="image">
-                SLIDER
+                <img src="/slide-1.png" className="image"></img>
             </div>
             <style jsx>
                 {`
@@ -51,7 +51,7 @@ function About ({}) {
                        margin: 0 auto;
                     }
                     .information, .image {
-                        width: 50%;
+                        width: 100%;
                     }
                     .information {
                         margin-right: 38px;
