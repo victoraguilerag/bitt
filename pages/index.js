@@ -217,19 +217,20 @@ function Home () {
       ],
       video: "191811253"
     },
-    {
-      label: 'REEL',
-      img: "BITT_REEL",
-      nombre: 'BITT REEL',
-      miembros: [
-        { label: 'DIRECTOR', value: 'Bitt Animation' },        
-        { label: 'CLIENT', value: 'Bitt Animation' },
-        { label: 'AGENCY', value: 'Bitt Animation'},
-        { label: 'PROD. COMPANY', value: 'Bitt Animation'},
-        { label: 'YEAR', value: '2019'}
-      ]
-    },
+
   ]
+  // {
+  //   label: 'REEL',
+  //   img: "BITT_REEL",
+  //   nombre: 'BITT REEL',
+  //   miembros: [
+  //     { label: 'DIRECTOR', value: 'Bitt Animation' },        
+  //     { label: 'CLIENT', value: 'Bitt Animation' },
+  //     { label: 'AGENCY', value: 'Bitt Animation'},
+  //     { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+  //     { label: 'YEAR', value: '2019'}
+  //   ]
+  // },
   const animationContainer = useRef(null)
   const animationDirection = useRef('forward');
   const animation = useRef(null)
@@ -239,6 +240,7 @@ function Home () {
   const [selected, setSelected] = useState(false)
   const [active, setActive] = useState(0);
   const [timer, setTimer] = useState(false)
+  const [iframes, setIframes] = useState(false)
 
   useEffect(() => {
     console.log(animationContainer)
@@ -279,6 +281,10 @@ function Home () {
         images[i].src = items[i]
       }
     }, 1000)
+
+    setTimeout(() => {
+      setIframes(true)
+    }, 2000)
   }, [])
 
   useEffect(() => {
@@ -381,7 +387,7 @@ function Home () {
         <div className="Hero-content">
           <div className="video-container">
             {
-              items && items[active] && items[active].video && (
+              iframes && items && items[active] && items[active].video && (
                 <iframe
                   id={items[active].label}
                   className="home"
