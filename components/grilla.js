@@ -35,11 +35,11 @@ function Grilla ({
             }
             {/* FORD KA. T-REX */}
             <div className="redes">
-                <h3 className="redes-title">FOR MORE PROJECTS MAKE SURE TO CHECK OUR <br/>VIMEO ACCOUNT.</h3>
+                <h3 className="redes-title">FOR MORE PROJECTS MAKE<br/> SURE TO CHECK OUR <br/>VIMEO ACCOUNT.</h3>
                 <div className="redes-container">
                     <a
                         className="red"
-                        href="https://www.vimeo.com"
+                        href="https://www.vimeo.com/bittanimation"
                         target="_blank"
                         tabIndex="0"
                     >

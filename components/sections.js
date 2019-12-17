@@ -28,7 +28,8 @@ function Sections ({ active }) {
                         transition: right 1s ease;
                     }
                     .sections h3 {
-                        margin-top: 8px;
+                        line-height: 1em;
+                        margin-top: 5px;
                         margin-bottom: 0;
                     }
                     .sections h3.first {
@@ -36,7 +37,7 @@ function Sections ({ active }) {
                     }
                     .section a {
                         text-decoration: none;
-                        color: black;
+                        color: #1A1918;
                     }
                     .section {
                         cursor: pointer;
@@ -44,6 +45,11 @@ function Sections ({ active }) {
                     @media screen and (max-width: 1100px) {
                         .sections {
                             top: 105px;
+                        }
+                    }
+                    @media screen and (max-width: 600px) {
+                        .sections {
+                            top: 70px;
                         }
                     }
                 `}

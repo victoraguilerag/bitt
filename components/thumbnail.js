@@ -80,6 +80,12 @@ function Thumbnail (props) {
                             box-shadow: none;
                         }
                     }
+                    @media screen and (max-width: 600px) {
+                        .thumbnail {
+                            width: calc(100vw - 60px);
+                            padding-left: 30px;
+                        }
+                    }
                 `}
             </style>
         </div>

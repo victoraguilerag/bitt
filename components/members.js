@@ -26,7 +26,7 @@ function Members () {
             img: '/francobittolo.svg',
             resume: [
                 'Majored in Fine Arts, Animator for Disney, Hanna & Barbera and Don Bluth from Jaime Diaz Studios, Animation Director for the most important animated feature films in Argentina. ',
-                'In 2001 Franco created Bitt Animation, a production company considered one of the most important in Latin America regarding animation and vfx. Strategy consultant for Foosball, largest CG feature film producer in South America.'
+                'In 2001 Franco created Bitt Animation, a production company considered one of the most important in Latin America regarding animation and vfx. Strategy consultant for Foosball, largest CG feature film produced in South America.'
             ],
         },
         {
@@ -34,12 +34,12 @@ function Members () {
             title: 'COO. DIRECTOR',
             img: '/cristianmorales.svg',
             resume: [
-                'He took his first steps as 3D artists in Patagonik Film Group in 1999 working for several features films and animated series . He work as vfx supervisor for the most importante postproduction house in Argentina such asDynamo Post, Cinery, Mediabite among others and have done more than 1000 TV commercials, music videos and features films. In 2004 he joined Bitt as vfx supervisor. In 2007 he become COO of Bitt guiding and increasin the growth of the company together wit Franco Bittolo.'
+                'He took his first steps as 3D artists in Patagonik Film Group in 1999 working for several features films and animated series . He work as a vfx supervisor for the most important postproduction house in Argentina such as Dynamo Post, Cinery, Mediabite among others and has done more than 1000 TV commercials, music videos and features films. In 2004 he joined Bitt as vfx supervisor. In 2007 he become COO of Bitt guiding and increasing the growth of the company together wit Franco Bittolo.'
             ],
         },
         {
             name: 'MARIANA MOTTA',
-            title: 'COO. DIRECTOR',
+            title: 'EXECUTIVE PRODUCER',
             img: '/marianamotta.svg',
             resume: [
                 'While she was studying Marketing in UCES, she came across one of the most recognized director of the advertising market and decided to worked with him while she continues her career. Mariana started working in Mania in 1995 as production coordinator Then she decided to joined the Argentinian team of Salado Films and helped to settle up their offices in the country. Also she worked in Rasti Films as Executive Producer. She joined Bitt in2004, collaborating to consolidate the company not only in the argentinian market but also in Mexico and Brasil.'
@@ -77,26 +77,34 @@ function Members () {
             <style jsx>
                 {`
                     .Members {
-                        background: #141313;
-                        color: white;
+                        background: #1A1918;
+                        color: #EDE9E3;
                         grid-column: 1/4;
                         padding: 100px;
                     }
+                    .img {
+                        width:25vw;
+                        min-width: 150px;
+                    }
                     .name {
-                        color: white;
-                        font-size: 24px;
+                        color: #EDE9E3;
+                        font-size: 0.7em;
+                        font-family: 'Drunk';
                     }
                     .title {
-                        color: white;
-                        font-size: 24px;
+                        color: #EDE9E3;
+                        font-size: 0.7em;
+                        font-family: 'Drunk';
                     }
                     .resume {
-                        color: white;
-                        font-size: 24px;
+                        color: #EDE9E3;
+                        font-size: 0.8em;
+                        text-align: justify;
                     }
                     .information {
-                        color: white;
-                        font-size: 24px;
+                        color: #EDE9E3;
+                        font-size: 1.4em;
+                        line-height: 1.1em;
                         margin-left: 22px;
                     }
                     .resume-text {
@@ -134,6 +142,24 @@ function Members () {
                         }
                         .resume {
                             width: 570px;
+                        }
+                        .member .name {
+                            margin-top: 18px;
+                        }
+                    }
+                    @media screen and (max-width: 600px) {
+                        .Members {
+                            padding: 30px;
+                        }
+                        .member {
+                            flex-flow: column;
+                            align-items: flex-start;
+                        }
+                        .information {
+                            margin-left: 0;
+                        }
+                        .resume {
+                            width: calc(100vw - 60px);
                         }
                         .member .name {
                             margin-top: 18px;

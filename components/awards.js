@@ -3,6 +3,12 @@ import { useState, useEffect } from 'react'
 function Awards ({ handleIcon }) {
     const [items, setItems] = useState([
         {
+            title: 'MILLIONAIRE PLASTILINA MOSH',
+            awards: [
+                'Winner: UD International Film & Video Festival Award to Creative Excellence'
+            ]
+        },
+        {
             title: 'FORD ROASTER',
             awards: [
                 'Winner: Lapiz de Oro',
@@ -12,13 +18,7 @@ function Awards ({ handleIcon }) {
             ]
         },
         {
-            title: 'MILLONAIRE PLASTILINA MOSH',
-            awards: [
-                'Winner: UD International Film & Video Festival'
-            ]
-        },
-        {
-            title: 'FORDWIND',
+            title: 'FORD WIND',
             awards: [
                 'Finalist: NY Festival',
             ]
@@ -60,7 +60,14 @@ function Awards ({ handleIcon }) {
             ]
         },
         {
-            title: 'BGH',
+            title: 'AYUDIN SAUSAGEFLAN',
+            awards: [
+                'Finalist: Cannes Advertising Festival',
+                'Mention: Círculo de Creativos',
+            ]
+        },
+        {
+            title: 'BGH SUMMER HATERS',
             awards: [
                 'Winner: Sol de Oro Festival Iberoamericano',
                 'Silver: Cannes Advertising Festival',
@@ -74,7 +81,7 @@ function Awards ({ handleIcon }) {
             ]
         },
         {
-            title: 'Quilmes',
+            title: 'QUILMES HISTORY OF FRIENDSHIP',
             awards: [
                 'Winner: Sol de Oro Festival Iberoamericano',
                 'Bronze: Circulo de Creativos'
@@ -116,7 +123,7 @@ function Awards ({ handleIcon }) {
             ]
         },
         {
-            title: 'FORD KA LITTER',
+            title: 'FORD KA LITTERS',
             awards: [
                 'Silver Lapiz de Plata'
             ]
@@ -125,6 +132,59 @@ function Awards ({ handleIcon }) {
             title: 'VW VOYAGE MONKEY',
             awards: [
                 'Winner: FIAP - Silver in Animation & VFX Category'
+            ]
+        },
+        {
+            title: 'NIVEA MEN PIONEERS',
+            awards: [
+                'Winner: Grand Prix Diente 2019',
+                'Winner: Diente - Gold in VFX Category'
+            ]
+        },
+        {
+            title: 'NAJWA NIMRI LENTO',
+            awards: [
+                'Winner: Sol de Oro Festival Iberoamericano in VFX',
+                'Mención: Diente'
+            ]
+        },
+        {
+            title: 'FORD KA T REX',
+            awards: [
+                'Winner: Diente - Gold in VFX Category',
+                'Silver: Ciclope Latino Festival  - VFX'
+            ]
+        },
+        {
+            title: 'BURGER KING COLORADOS',
+            awards: [
+                'Winner: Diente - Gold in TV 45”',
+            ]
+        },
+        {
+            title: 'COCA-COLA MARTA TERMINATOR',
+            awards: [
+                'Silver: Diente - Silver in VFX Category',
+                'Mencion: Campaña hasta 45”'
+            ]
+        },
+        {
+            title: 'COCA-COLA ACCEPTING SANTA',
+            awards: [
+                'Silver: Diente - Silver in TV 60”',
+                'Silver: Diente - Silver  in Campaña mas de 45”'
+            ]
+        },
+        {
+            title: 'COCA-COLA FRASES',
+            awards: [
+                'Bronze: Diente - Bronze in TV 60”',
+            ]
+        },
+        {
+            title: 'POWERADE <br/> MANIFIESTO',
+            awards: [
+                'Mencion: Diente - Mencion en VFX Category',
             ]
         }
     ])
@@ -201,13 +261,13 @@ function Awards ({ handleIcon }) {
                     }
                     .Awards h3 {
                         margin-top: 15px;
-                        font-size: 40px;
+                        font-size: 2.2em;
                     }
                     .item .title {
                         font-family: 'Drunk';
                         font-weight: 400;
                         margin-bottom: 0;
-                        margin-top: 17px;
+                        margin-top: 20px;
                         max-width: 300px;
                     }
                     .item .award {
@@ -227,6 +287,7 @@ function Awards ({ handleIcon }) {
                             padding: 50px;
                         }
                         .items {
+                            grid-template-columns: 1fr 1fr;
                             height: auto;
                             max-height: none;
                         }
@@ -235,6 +296,22 @@ function Awards ({ handleIcon }) {
                         }
                         .column {
                             width: 326px;
+                        }
+                    }
+                    @media screen and (max-width: 600px) {
+                    .Awards {
+                        padding: 30px;
+                    }
+                    .items {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            max-height: auto;
+                        }
+                    .column:last-child {
+                            margin-left: 0px;
+                        }
+                    .arrow {
+                            right: 30px;
                         }
                     }
                 `}

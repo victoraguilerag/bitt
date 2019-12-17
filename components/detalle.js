@@ -1,6 +1,6 @@
 import React from 'react'
-import Thumbnail from './thumbnail'
-import Grilla from './grilla'
+import Thumbnail from '../components/thumbnail'
+import Grilla from '../components/grilla'
 
 function Detalle ({
     active,

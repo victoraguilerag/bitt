@@ -21,7 +21,7 @@ function Home () {
       ]
     },
     {
-      label: 'Coca Cola',
+      label: 'Coca-Cola',
       img: "COCA-COLA_TERMINATOR",
       nombre: 'M.A.R.T.A TERMINATOR',
       miembros: [
@@ -33,7 +33,7 @@ function Home () {
       ]
     },
     {
-      label: 'NIVEA MEN',
+      label: 'NIVEA',
       img: "NIVEA_PIONEERSOFSENSIBILITY",
       nombre: 'PIONEERS OF SENSIBILITY',
       miembros: [
@@ -45,8 +45,20 @@ function Home () {
       ]
     },
     {
-      label: 'POWERADE MANIFIESTO',
+      label: 'POWERADE',
       img: "POWERADE_MANIFESTO",
+      nombre: 'MONITO',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Santi Elías' },        
+        { label: 'CLIENT', value: 'Volkswagen Argentina' },
+        { label: 'AGENCY', value: 'Kepel y Mata'},
+        { label: 'PROD. COMPANY', value: 'Primo'},
+        { label: 'YEAR', value: '2016'}
+      ]
+    },
+    {
+      label: 'VOLKSWAGEN',
+      img: "VOLKSWAGEN_MONITO",
       nombre: 'MONITO',
       miembros: [
         { label: 'DIRECTOR', value: 'Santi Elías' },        
@@ -141,7 +153,7 @@ function Home () {
       ]
     },
     {
-      label: 'Domestos',
+      label: 'DOMESTOS',
       img: "DOMESTOS_BATHROOMBLITZ",
       nombre: 'Bathroom Blitz',
       miembros: [
@@ -153,7 +165,19 @@ function Home () {
       ]
     },
     {
-      label: 'Orbit',
+      label: 'GOT MILK',
+      img: "GOTMILK_BATTLE",
+      nombre: 'BATTLE OF POSITIVISM',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Armando Bo' },        
+        { label: 'CLIENT', value: 'Got Milk' },
+        { label: 'AGENCY', value: 'Grupo Gallegos'},
+        { label: 'PROD. COMPANY', value: 'Rebolución'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'ORBIT',
       img: "ORBIT_EATDRINKANDCHEW",
       nombre: 'EAT, DRINK AND CHEW',
       miembros: [
@@ -165,13 +189,25 @@ function Home () {
       ]
     },
     {
-      label: 'CATSUP Del Monte',
+      label: 'CATSUP',
       img: "BITT_06",
-      nombre: 'Catapulta',
+      nombre: 'CATAPULTA',
       miembros: [
         { label: 'DIRECTOR', value: 'Bitt Animation' },        
         { label: 'CLIENT', value: 'Con Agra' },
         { label: 'AGENCY', value: 'BBDO MEX'},
+        { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+        { label: 'YEAR', value: '2019'}
+      ]
+    },
+    {
+      label: 'REEL',
+      img: "BITT_REEL",
+      nombre: 'BITT REEL',
+      miembros: [
+        { label: 'DIRECTOR', value: 'Bitt Animation' },        
+        { label: 'CLIENT', value: 'Bitt Animation' },
+        { label: 'AGENCY', value: 'Bitt Animation'},
         { label: 'PROD. COMPANY', value: 'Bitt Animation'},
         { label: 'YEAR', value: '2019'}
       ]
@@ -415,14 +451,17 @@ function Home () {
             display: flex;
             flex-flow: column;
             justify-content: flex-end;
+            align-self: flex-end;
+            margin-bottom: 26px;
           }
           .menu .item {
             height: 40px;
             font-size: 40px;
             font-weight: bold;
-            font-family: Drunk;
+            font-family: 'Drunk';
             cursor: pointer;
             color: #A7A19A;
+            margin-top: 0px;
           }
           .menu .item.active {
             color: #141313;
@@ -431,10 +470,10 @@ function Home () {
             .menu {
             }
             .menu .item {
-              height: auto;
+              height: 24px;
               font-size: 24px;
               line-height: 24px;
-              margin-top: 8px;
+              margin-top: 0px;
             }
           }
           .animation {
@@ -446,8 +485,7 @@ function Home () {
             width: 50px;
             height: 50px;
             cursor: pointer;
-          }
-          @media screen and (max-width: 800px) {
+            background: #EDE9E3;
           }
           @media screen and (max-width: 1100px) {
             .Hero {
@@ -462,8 +500,15 @@ function Home () {
               display: none;
             }
             .animation {
-              width: 85px;
-              height: 85px;
+              width: 50px;
+              height: 50px;
+            }
+          }
+          @media screen and (max-width: 600px) {
+            .video-container {
+              margin: 30px;
+              height: calc(100vw - 60px);
+              width: calc(100vw - 60px);
             }
           }
         `}
