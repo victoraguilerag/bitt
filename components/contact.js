@@ -57,7 +57,7 @@ function Contact ({ handleIcon }) {
                     .Contact .title {
                         font-size: 2.2em;
                         font-family: 'Drunk';
-                        font-weight: 500px;
+                        font-weight: 500;
                         margin-bottom: 0;
                     }
                     form {
@@ -135,6 +135,7 @@ function Contact ({ handleIcon }) {
                         margin-top: 0;
                         font-family: 'TT';
                         color: #B3AFA8;
+                        font-weight: 400;
                     }
                     .brand-footer .logo {
                         max-height: 6vh;
@@ -145,6 +146,14 @@ function Contact ({ handleIcon }) {
                         }
                         .Contact .title {
                             margin-top: 0;
+                        }
+                    }
+                    @media screen and (max-width: 600px) {
+                        .Contact {
+                            padding: 30px;
+                        }
+                        .input {
+                            width: calc(100vw - 90px);
                         }
                     }
                 `}

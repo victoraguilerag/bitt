@@ -77,6 +77,7 @@ function Members () {
             <style jsx>
                 {`
                     .Members {
+                        display: none;
                         background: #1A1918;
                         color: #EDE9E3;
                         grid-column: 1/4;
@@ -84,6 +85,7 @@ function Members () {
                     }
                     .img {
                         width:25vw;
+                        max-width: 150px;
                         min-width: 150px;
                     }
                     .name {
@@ -149,8 +151,7 @@ function Members () {
                     }
                     @media screen and (max-width: 600px) {
                         .Members {
-                            padding-left: 50px;
-                            padding-bottom: 50px;
+                            padding: 30px;
                         }
                         .member {
                             flex-flow: column;
@@ -160,7 +161,7 @@ function Members () {
                             margin-left: 0;
                         }
                         .resume {
-                            max-width: 90%;
+                            width: calc(100vw - 60px);
                         }
                         .member .name {
                             margin-top: 18px;

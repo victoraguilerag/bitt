@@ -182,7 +182,7 @@ function Awards ({ handleIcon }) {
             ]
         },
         {
-            title: 'POWERADE <br/> MANIFIESTO',
+            title: 'POWERADE MANIFIESTO',
             awards: [
                 'Mencion: Diente - Mencion en VFX Category',
             ]
@@ -201,9 +201,9 @@ function Awards ({ handleIcon }) {
                 columnSecond,
             ])
         } else {
-            columnFirst = items.slice(0, 6)
-            columnSecond = items.slice(7,13)
-            columnThird = items.slice(14, 18);
+            columnFirst = items.slice(0, 9)
+            columnSecond = items.slice(10,18)
+            columnThird = items.slice(19, 27);
         
             setColumns([
                 columnFirst,
@@ -220,15 +220,15 @@ function Awards ({ handleIcon }) {
             <h3>AWARDS</h3>
             <div className="items">
                 {
-                    columns && columns.map((items) => (
-                        <div className="column">
+                    columns && columns.map((items, i) => (
+                        <div className="column" key={i}>
                             {
                                 items && items.map((item) => (
-                                    <div className="item">
+                                    <div className="item" key={item.label}>
                                         <p className="title">{item.title}</p>
                                         {
                                             item && item.awards && item.awards.map((award) => (
-                                                <p className="award">
+                                                <p key={award} className="award">
                                                     {award}
                                                 </p>
                                             ))
@@ -240,6 +240,10 @@ function Awards ({ handleIcon }) {
                     ))
                 }
             </div>
+            <img
+                src="/awards-full.svg"
+                className="awards-logos"
+            />
             <img
                 src="/white-arrow.svg"
                 className="arrow"
@@ -267,7 +271,7 @@ function Awards ({ handleIcon }) {
                         font-family: 'Drunk';
                         font-weight: 400;
                         margin-bottom: 0;
-                        margin-top: 17px;
+                        margin-top: 20px;
                         max-width: 300px;
                     }
                     .item .award {
@@ -281,12 +285,18 @@ function Awards ({ handleIcon }) {
                         grid-template-columns: 1fr 1fr 1fr;
                         max-height: 85vh;
                     }
+                    .awards-logos {
+                        margin-top: 50px;
+                        width: 80vw;
+                        max-width: 900px;
+                    }
                     @media screen and (max-width: 1100px) {
                         .Awards {
                             height: auto;
                             padding: 50px;
                         }
                         .items {
+                            grid-template-columns: 1fr 1fr;
                             height: auto;
                             max-height: none;
                         }
@@ -297,7 +307,10 @@ function Awards ({ handleIcon }) {
                             width: 326px;
                         }
                     }
-                    @media screen and (max-width: 1100px) {
+                    @media screen and (max-width: 600px) {
+                    .Awards {
+                        padding: 30px;
+                    }
                     .items {
                             display: grid;
                             grid-template-columns: 1fr;
@@ -305,6 +318,9 @@ function Awards ({ handleIcon }) {
                         }
                     .column:last-child {
                             margin-left: 0px;
+                        }
+                    .arrow {
+                            right: 30px;
                         }
                     }
                 `}

@@ -19,7 +19,6 @@ function About () {
             <div className="information">
                 <div className="logo-container">
                     <div ref={animationContainer} className="animation"></div>
-                    <span className="trademark">®</span>
                 </div>
                 <p className="text">
                     First established in 2001, Bitt is one of the most renowned post-production companies both locally and internationally with a focus on 3D and 2D animation, as well as on visual FX for commercials, series, feature films and all contents.
@@ -38,7 +37,7 @@ function About () {
                 </p>
             </div>
             <div className="image">
-                Image
+                SLIDER
             </div>
             <style jsx>
                 {`
@@ -58,7 +57,7 @@ function About () {
                         margin-right: 38px;
                     }
                     .animation {
-                        width: 10vw;
+                        width: 15vw;
                         height: auto;
                     }
                     .text {
@@ -71,11 +70,11 @@ function About () {
                         text-align: justify;
                     }
                     .trademark {
-                        font-size: 32px;
+                        font-size: 24px;
                         font-family: 'TT';
                         position: absolute;
                         bottom: 0;
-                        left: 360px;
+                        left: 290px;
                     }
                     .logo-container {
                         position: relative;
@@ -112,6 +111,20 @@ function About () {
                             max-width: 570px;
                             width: 100%;
                         }
+                    }
+                    @media screen and (max-width: 600px) {
+                        .About {
+                            width: calc(100vw - 60px);
+                            margin: 0;
+                            padding: 30px;
+                        }
+                        .image {
+                            width: calc(100vw - 60px);
+                        }
+                        .information {
+                            margin-right: 0px;
+                        }
+                        .text {width: 100%;}
                     }
                 `}
             </style>

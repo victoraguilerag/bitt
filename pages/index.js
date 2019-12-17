@@ -6,8 +6,25 @@ import * as animationData from '../public/burger-animation-lottie.json'
 import Detalle from '../components/detalle'
 import Grilla from '../components/grilla'
 import Sections from '../components/sections'
+import Vimeo from '@vimeo/player'
 function Home () {
   const brands = [
+    {
+      label: 'REEL',
+       img: "BITT_REEL",
+       nombre: 'BITT REEL',
+       miembros: [
+       { label: 'DIRECTOR', value: 'Bitt Animation' },        
+       { label: 'CLIENT', value: 'Bitt Animation' },
+       { label: 'AGENCY', value: 'Bitt Animation'},
+       { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+       { label: 'YEAR', value: '2019'}
+       ],
+         video: "191811253",
+         videothumb: "380006083",
+         videosquare: "380039446",
+
+   },
     {
       label: 'ford',
       img: 'FORD_T-REX',
@@ -18,7 +35,11 @@ function Home () {
         { label: 'AGENCY', value: 'GTB ARGENTINA'},
         { label: 'PROD. COMPANY', value: 'LANDIA'},
         { label: 'YEAR', value: '2018'}
-      ]
+      ],
+      video: "296648062",
+      videothumb: "380006311",
+      videosquare: "380039695",
+
     },
     {
       label: 'Coca-Cola',
@@ -30,7 +51,10 @@ function Home () {
         { label: 'AGENCY', value: 'Grey Argentina'},
         { label: 'PROD. COMPANY', value: 'Primo'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "377153093",
+      videothumb: "380006228",
+      videosquare: "380039597",
     },
     {
       label: 'NIVEA',
@@ -42,7 +66,10 @@ function Home () {
         { label: 'AGENCY', value: 'FCB Mexico'},
         { label: 'PROD. COMPANY', value: 'Primo'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "377153466",
+      videothumb: "380006573",
+      videosquare: "380039948",
     },
     {
       label: 'POWERADE',
@@ -54,7 +81,10 @@ function Home () {
         { label: 'AGENCY', value: 'Kepel y Mata'},
         { label: 'PROD. COMPANY', value: 'Primo'},
         { label: 'YEAR', value: '2016'}
-      ]
+      ],
+      video: "377153977",
+      videothumb: "380006703",
+      videosquare: "380000559",
     },
     {
       label: 'VOLKSWAGEN',
@@ -66,7 +96,10 @@ function Home () {
         { label: 'AGENCY', value: 'Kepel y Mata'},
         { label: 'PROD. COMPANY', value: 'Primo'},
         { label: 'YEAR', value: '2016'}
-      ]
+      ],
+      video: "196440067",
+      videothumb: "380006779",
+      videosquare: "380040141",
     },
     {
       label: 'NESCAFÉ',
@@ -78,7 +111,10 @@ function Home () {
         { label: 'AGENCY', value: 'Marcel'},
         { label: 'PROD. COMPANY', value: 'LANDIA'},
         { label: 'YEAR', value: '2017'}
-      ]
+      ],
+      video: "280999698",
+      videothumb: "380006519",
+      videosquare: "380039909",
     },
     {
       label: 'TOYOTA',
@@ -90,7 +126,10 @@ function Home () {
         { label: 'AGENCY', value: 'Conil'},
         { label: 'PROD. COMPANY', value: 'Mssngpeces'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "377154373",
+      videothumb: "380006749",
+      videosquare: "380040100",
     },
     {
       label: 'Palacio de Hierro',
@@ -102,7 +141,10 @@ function Home () {
         { label: 'AGENCY', value: 'Teran TBWA'},
         { label: 'PROD. COMPANY', value: 'MadreFoca'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "377642328",
+      videothumb: "380006634",
+      videosquare: "380040036",
     },
     {
       label: 'La Campagnola',
@@ -114,7 +156,10 @@ function Home () {
         { label: 'AGENCY', value: 'Kepel & Mata'},
         { label: 'PROD. COMPANY', value: 'Pank!'},
         { label: 'YEAR', value: '2015'}
-      ]
+      ],
+      video: "192136233",
+      videothumb: "380006137",
+      videosquare: "380039515",
     },
     {
       label: 'GCBA',
@@ -126,7 +171,10 @@ function Home () {
         { label: 'AGENCY', value: 'Savaglio'},
         { label: 'PROD. COMPANY', value: 'Oruga Films'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "191811252",
+      videothumb: "380038557",
+      videosquare: "380039789",
     },
     {
       label: 'Manzanada',
@@ -138,7 +186,10 @@ function Home () {
         { label: 'AGENCY', value: 'BBDO Mexico'},
         { label: 'PROD. COMPANY', value: 'Bitt Animation'},
         { label: 'YEAR', value: '2017'}
-      ]
+      ],
+      video: "377153242",
+      videothumb: "380006482",
+      videosquare: "380039860",
     },
     {
       label: 'Fritos',
@@ -150,7 +201,10 @@ function Home () {
         { label: 'AGENCY', value: 'BBDO Mexico'},
         { label: 'PROD. COMPANY', value: 'Bitt Animation'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "267843690",
+      videothumb: "380006365",
+      videosquare: "380039747",
     },
     {
       label: 'DOMESTOS',
@@ -162,7 +216,10 @@ function Home () {
         { label: 'AGENCY', value: 'DLKW Lowe'},
         { label: 'PROD. COMPANY', value: 'Mill+ London'},
         { label: 'YEAR', value: '2015'}
-      ]
+      ],
+      video: "152621594",
+      videothumb: "380006267",
+      videosquare: "380039631",
     },
     {
       label: 'GOT MILK',
@@ -174,7 +231,10 @@ function Home () {
         { label: 'AGENCY', value: 'Grupo Gallegos'},
         { label: 'PROD. COMPANY', value: 'Rebolución'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "191811264",
+      videothumb: "380006450",
+      videosquare: "380039818",
     },
     {
       label: 'ORBIT',
@@ -186,11 +246,14 @@ function Home () {
         { label: 'AGENCY', value: 'DDB Mudra Group'},
         { label: 'PROD. COMPANY', value: 'The mill+'},
         { label: 'YEAR', value: '2018'}
-      ]
+      ],
+      video: "377161041",
+      videothumb: "380006599",
+      videosquare: "380039984",
     },
     {
       label: 'CATSUP',
-      img: "BITT_06",
+      img: "CATSUP_CATAPULTA",
       nombre: 'CATAPULTA',
       miembros: [
         { label: 'DIRECTOR', value: 'Bitt Animation' },        
@@ -198,21 +261,12 @@ function Home () {
         { label: 'AGENCY', value: 'BBDO MEX'},
         { label: 'PROD. COMPANY', value: 'Bitt Animation'},
         { label: 'YEAR', value: '2019'}
-      ]
+      ],
+      video: "191811253",
+      videothumb: "380038525",
+      videosquare: "380039556",
     },
-    {
-      label: 'REEL',
-      img: "BITT_REEL",
-      nombre: 'BITT REEL',
-      miembros: [
-        { label: 'DIRECTOR', value: 'Bitt Animation' },        
-        { label: 'CLIENT', value: 'Bitt Animation' },
-        { label: 'AGENCY', value: 'Bitt Animation'},
-        { label: 'PROD. COMPANY', value: 'Bitt Animation'},
-        { label: 'YEAR', value: '2019'}
-      ]
-    },
-  ]
+]
   const animationContainer = useRef(null)
   const animationDirection = useRef('forward');
   const animation = useRef(null)
@@ -222,6 +276,7 @@ function Home () {
   const [selected, setSelected] = useState(false)
   const [active, setActive] = useState(0);
   const [timer, setTimer] = useState(false)
+  const [iframes, setIframes] = useState(false)
 
   useEffect(() => {
     console.log(animationContainer)
@@ -262,6 +317,10 @@ function Home () {
         images[i].src = items[i]
       }
     }, 1000)
+
+    setTimeout(() => {
+      setIframes(true)
+    }, 5000)
   }, [])
 
   useEffect(() => {
@@ -337,6 +396,12 @@ function Home () {
     }
   };
 
+  const handleLoad = (e) => {
+    console.log(e.target.play)
+    const player = new Vimeo(e.target)
+    player.play()
+  }
+
   return (
     <div className="Home">
       <Head>
@@ -357,6 +422,22 @@ function Home () {
         <Sections active={activeSections} />
         <div className="Hero-content">
           <div className="video-container">
+            {
+              iframes && items && items[active] && items[active].video && (
+                <iframe
+                  id={items[active].label}
+                  className="home"
+                  src={`https://player.vimeo.com/video/${items[active].videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
+                  width="880"
+                  height="880"
+                  frameborder="0"
+                  autoplay
+                  allow="autoplay; fullscreen"
+                  allowfullscreen
+                  onLoad={e => handleLoad(e)}
+                />
+              )
+            }
             <div className="water-mark">
               <img src="/bitt-logo.svg" />
             </div>
@@ -365,6 +446,7 @@ function Home () {
             {
               brands.map((item, i) => (
                 <div
+                  key={item.label}
                   className={`item ${active == i ? 'active': ''}`}
                   onMouseEnter={() => handleHover(i)}
                   onClick={() => handleItem(i)}
@@ -413,6 +495,16 @@ function Home () {
       </style>
       <style jsx>
         {`
+          :global(iframe.home) {
+            width: 181%;
+            height: 100%;
+            position: absolute;
+            max-width: none;
+          }
+          :global(iframe.home#POWERADE) {
+            width: 200%;
+          }
+          
           :global(body) {
             margin: 0;
             overflow-x: hidden;
@@ -439,12 +531,15 @@ function Home () {
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            overflow: hidden;
+            position: relative;
           }
 
           .water-mark {
             width: 94%;
             height: auto;
             margin-bottom: 5%;
+            z-index: 10;
           }
           .menu {
             height: calc(100vh - 40px);
@@ -487,8 +582,6 @@ function Home () {
             cursor: pointer;
             background: #EDE9E3;
           }
-          @media screen and (max-width: 800px) {
-          }
           @media screen and (max-width: 1100px) {
             .Hero {
               height: auto;
@@ -504,6 +597,13 @@ function Home () {
             .animation {
               width: 50px;
               height: 50px;
+            }
+          }
+          @media screen and (max-width: 600px) {
+            .video-container {
+              margin: 30px;
+              height: calc(100vw - 60px);
+              width: calc(100vw - 60px);
             }
           }
         `}

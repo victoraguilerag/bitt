@@ -47,6 +47,11 @@ function Sections ({ active }) {
                             top: 105px;
                         }
                     }
+                    @media screen and (max-width: 600px) {
+                        .sections {
+                            top: 70px;
+                        }
+                    }
                 `}
             </style>
         </div>
