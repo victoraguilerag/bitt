@@ -284,7 +284,7 @@ function Home () {
 
     setTimeout(() => {
       setIframes(true)
-    }, 2000)
+    }, 5000)
   }, [])
 
   useEffect(() => {
