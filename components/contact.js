@@ -36,15 +36,13 @@ function Contact ({ handleIcon }) {
                     >
                         <img src="/facebook.svg" className="red-icon" />
                     </a>
-                    <a
-                        className="red"
-                        href="https://www.behance.com"
-                        target="_blank"
-                    >
-                        <img src="/behance.svg" className="red-icon" />
-                    </a>
                 </div>
-                <img onClick={handleIcon} src="/white-arrow.svg" className="arrow" />
+                <img
+                        src="/white-arrow.svg"
+                        className="arrow"
+                        onClick={handleIcon}
+                        tabIndex="0"
+                    />
             </div>
             <style jsx>
                 {`

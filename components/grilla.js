@@ -51,7 +51,7 @@ function Grilla ({
                         className="arrow-white"
                         onClick={handleIcon}
                         tabIndex="0"
-                    />  
+                    />
                 </div>
             </div>
             <About />

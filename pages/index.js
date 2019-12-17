@@ -10,22 +10,6 @@ import Vimeo from '@vimeo/player'
 function Home () {
   const brands = [
     {
-      label: 'REEL',
-       img: "BITT_REEL",
-       nombre: 'BITT REEL',
-       miembros: [
-       { label: 'DIRECTOR', value: 'Bitt Animation' },        
-       { label: 'CLIENT', value: 'Bitt Animation' },
-       { label: 'AGENCY', value: 'Bitt Animation'},
-       { label: 'PROD. COMPANY', value: 'Bitt Animation'},
-       { label: 'YEAR', value: '2019'}
-       ],
-         video: "191811253",
-         videothumb: "380006083",
-         videosquare: "380039446",
-
-   },
-    {
       label: 'ford',
       img: 'FORD_T-REX',
       nombre: 'FORD KA T-REX',
@@ -266,6 +250,22 @@ function Home () {
       videothumb: "380038525",
       videosquare: "380039556",
     },
+    {
+      label: 'REEL',
+       img: "BITT_REEL",
+       nombre: 'BITT REEL',
+       miembros: [
+       { label: 'DIRECTOR', value: 'Bitt Animation' },        
+       { label: 'CLIENT', value: 'Bitt Animation' },
+       { label: 'AGENCY', value: 'Bitt Animation'},
+       { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+       { label: 'YEAR', value: '2019'}
+       ],
+         video: "191811253",
+         videothumb: "380006083",
+         videosquare: "380039446",
+
+   },
 ]
   const animationContainer = useRef(null)
   const animationDirection = useRef('forward');

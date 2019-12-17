@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import lottie from 'lottie-web'
 import * as animationData from '../public/burger-animation-lottie.json'
 
-function About () {
+function About ({}) {
     const animationContainer = useRef();
     const animation = useRef(null);
     useEffect(() => {
@@ -18,7 +18,7 @@ function About () {
         <div id="About" className="About">
             <div className="information">
                 <div className="logo-container">
-                    <div ref={animationContainer} className="animation"></div>
+                <img src="/iso-con-r.svg" className="bittlogoR" />
                 </div>
                 <p className="text">
                     First established in 2001, Bitt is one of the most renowned post-production companies both locally and internationally with a focus on 3D and 2D animation, as well as on visual FX for commercials, series, feature films and all contents.
@@ -48,7 +48,7 @@ function About () {
                         padding-top: 100px;
                         padding-bottom: 100px;
                         width: calc(100% - 200px);
-                        margin: 0 auto;
+                       margin: 0 auto;
                     }
                     .information, .image {
                         width: 50%;
@@ -56,25 +56,17 @@ function About () {
                     .information {
                         margin-right: 38px;
                     }
-                    .animation {
+                    .bittlogoR {
                         width: 15vw;
                         height: auto;
                     }
                     .text {
                         font-family: 'TT';
-                        width: 90%;
-                        line-height: 1.4em;
-                        font-size: 1.2em;
+                        line-height: 1.2em;
+                        font-size: 1.1em;
                         margin-top: 16px;
                         margin-bottom: 0;
                         text-align: justify;
-                    }
-                    .trademark {
-                        font-size: 24px;
-                        font-family: 'TT';
-                        position: absolute;
-                        bottom: 0;
-                        left: 290px;
                     }
                     .logo-container {
                         position: relative;
@@ -99,13 +91,9 @@ function About () {
                             height: 570px;
                             margin-top: 40px;
                         }
-                        .animation {
+                        .bittlogoR {
                             height: 200px;
                             width: 200px;
-                        }
-                        .trademark {
-                            left: 205px;
-                            font-size: 16px;
                         }
                         .information {
                             max-width: 570px;
