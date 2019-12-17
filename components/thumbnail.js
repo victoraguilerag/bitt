@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import videojs from 'video.js'
 import 'videojs-youtube'
 import 'video.js/dist/video-js.css'
+import Vimeo from '@vimeo/player'
 {/* <video width="320" height="240" controls>
     <source src={`/${item.img}.mp4`} type="video/mp4" />
     Your browser does not support the video tag.
@@ -14,6 +15,8 @@ function Thumbnail (props) {
         item,
         onClick
     } = props;
+
+    const iframe = useRef()
     
     useEffect(() => {
         // setPlayer(
@@ -25,30 +28,57 @@ function Thumbnail (props) {
         //         player.dispose();
         //     }
         // }
+        setTimeout(() => {
+            var event = new Event('click');
+
+            videoPlayer.current.dispatchEvent(event)
+        },100)
     }, [])
     const handleIn = () => {
-        if (!active) setActive(true);
+        console.log('hey')
+        if (!active) {
+            setActive(true);
+            const player = new Vimeo(iframe.current)
+            // player.play()
+        }
     }
     const handleOut = () => {
-        if (active) setActive(false);
+        console.log('out')
+        if (active) {
+            setActive(false);
+            const player = new Vimeo(iframe.current)
+            player.pause()
+        }
+    }
+    const handleLoad = () => {
+        console.log('loaded')
+        const player = new Vimeo(iframe.current)
+        setTimeout(() => {
+            player.pause()
+        }, 1000)
     }
     return (
-        <div className="thumbnail" onClick={onClick} onMouseEnter={handleIn} onMouseLeave={handleOut}>
+        <div
+            ref={videoPlayer}
+            id={`thumbnail-${item.label}`}
+            className="thumbnail"
+            onClick={onClick}
+            onMouseEnter={handleIn}
+            onMouseLeave={handleOut}
+        >
             <img src={`/${item.img}.jpg`} className="img" />
-            {
-                item.label == "TOYOTA" && (
-                    <iframe
-                    id={item.label}
-                    src={`https://player.vimeo.com/video/${item.video}?autoplay=1&loop=1&autopause=0`}
-                    width="640"
-                    height="360"
-                    frameborder="0"
-                    autoplay
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                />
-                )
-            }
+            <iframe
+                ref={iframe}
+                id={item.label}
+                className="thumbnail-video"
+                src={`https://player.vimeo.com/video/${item.video}?autoplay=1&loop=1&autopause=0`}
+                width="640"
+                height="360"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay"
+                onLoad={handleLoad}
+            />
 
 
             <div className="information">
@@ -59,6 +89,26 @@ function Thumbnail (props) {
 
             <style jsx>
                 {`
+                    :global(iframe.thumbnail-video) {
+                        position: absolute;
+                        left: -25%;
+                        top: -20%;
+                        width: 181%;
+                        top: inherit;
+                        height: 140%;
+                        cursor: pointer;
+                    }
+                    :global(#player) {
+                        position: absolute;
+                        left: -20%;
+                        cursor: pointer;
+                        width: 130%;
+                        height: 100%;
+                        max-width: none;
+                    }
+                    .thumbnail {
+                        cursor: pointer;
+                    }
                     .information {
                         display: flex;
                     }
@@ -74,6 +124,7 @@ function Thumbnail (props) {
                         margin-left: 8px;
                     }
                     .thumbnail {
+                        position: relative;
                         cursor: pointer;
                         width: auto;
                         height: calc(33vw / 1.8);
@@ -95,14 +146,15 @@ function Thumbnail (props) {
                         .thumbnail {
                             width: 570px;
                             height: auto;
-                            padding-left: 30px;
                             box-shadow: none;
+                            margin-left: 30px;
+                            padding: 0;
                         }
                     }
                     @media screen and (max-width: 600px) {
                         .thumbnail {
-                            width: calc(100vw - 60px);
-                            padding-left: 30px;
+                            width: calc(100vw - 75px);
+                            margin-left: 30px;
                         }
                     }
                 `}

@@ -224,11 +224,11 @@ function Awards ({ handleIcon }) {
                         <div className="column">
                             {
                                 items && items.map((item) => (
-                                    <div className="item">
+                                    <div className="item" key={item.label}>
                                         <p className="title">{item.title}</p>
                                         {
                                             item && item.awards && item.awards.map((award) => (
-                                                <p className="award">
+                                                <p key={award} className="award">
                                                     {award}
                                                 </p>
                                             ))

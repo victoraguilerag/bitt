@@ -25,6 +25,7 @@ function Grilla ({
                     // if (i == 1) return false
                     return (
                             <Thumbnail
+                                key={item.label}
                                 item={item}
                                 onClick={() => {
                                     selectProject(i)

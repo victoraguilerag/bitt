@@ -6,6 +6,7 @@ import * as animationData from '../public/burger-animation-lottie.json'
 import Detalle from '../components/detalle'
 import Grilla from '../components/grilla'
 import Sections from '../components/sections'
+import Vimeo from '@vimeo/player'
 function Home () {
   const brands = [
     {
@@ -353,6 +354,12 @@ function Home () {
     }
   };
 
+  const handleLoad = (e) => {
+    console.log(e.target.play)
+    const player = new Vimeo(e.target)
+    player.play()
+  }
+
   return (
     <div className="Home">
       <Head>
@@ -385,6 +392,7 @@ function Home () {
                   autoplay
                   allow="autoplay; fullscreen"
                   allowfullscreen
+                  onLoad={e => handleLoad(e)}
                 />
               )
             }

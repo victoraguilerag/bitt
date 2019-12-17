@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@vimeo/player": "^2.10.0",
     "@zeit/next-css": "^1.0.1",
     "gh-pages": "^2.1.1",
     "lottie-web": "^5.5.10",
