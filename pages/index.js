@@ -443,6 +443,7 @@ function Home () {
           <div className="menu">
             {
               brands.map((item, i) => {
+                if (item.label == "REEL") return (<div />)
                 return (
                   <div
                     key={item.label}
