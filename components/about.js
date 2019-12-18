@@ -72,7 +72,7 @@ function About ({}) {
                         position: relative;
                     }
                     .image {
-                        background: lightgray;
+                        background: transparent;
                         max-width: 880px;
                         height: auto;
                     }

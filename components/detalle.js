@@ -10,7 +10,6 @@ function Detalle ({
     selectProject
 }) {
     const handleIcon = () => {
-        console.log('epa')
         // const video = document.getElementById('video')
         // console.log(video)
         // video.scrollIntoView({ behavior: 'smooth'})

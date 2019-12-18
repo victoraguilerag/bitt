@@ -254,6 +254,7 @@ function Awards ({ handleIcon }) {
                     .arrow {
                         position: absolute;
                         right: 100px;
+                        cursor: pointer;
                     }
                     .Awards {
                         padding: 50px 100px 100px;

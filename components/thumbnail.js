@@ -10,6 +10,7 @@ import Vimeo from '@vimeo/player'
 function Thumbnail (props) {
     const [active, setActive] = useState(false)
     const [player, setPlayer] = useState(false);
+    const [loaded, setLoaded] = useState(false);
     const videoPlayer = useRef()
     const {
         item,
@@ -35,15 +36,19 @@ function Thumbnail (props) {
         },100)
     }, [])
     const handleIn = () => {
-        console.log('hey')
         if (!active) {
+            const reel  = document.getElementById("REEL") 
+            if (reel.classList.contains("active")) {
+                console.log("staph")
+                const REELPlayer = new Vimeo(reel)
+                REELPlayer.pause()
+            }
             setActive(true);
             const player = new Vimeo(iframe.current)
             player.play()
         }
     }
     const handleOut = () => {
-        console.log('out')
         if (active) {
             setActive(false);
             const player = new Vimeo(iframe.current)
@@ -51,9 +56,14 @@ function Thumbnail (props) {
         }
     }
     const handleLoad = () => {
-        console.log('loaded')
         const player = new Vimeo(iframe.current)
         setTimeout(() => {
+            if (iframe.current.id == "REEL") {
+                console.log("REEL")
+                setLoaded(true)
+                setActive(true);
+                return player.play();
+            }
             player.pause()
         }, 1000)
     }
@@ -66,11 +76,11 @@ function Thumbnail (props) {
             onMouseEnter={handleIn}
             onMouseLeave={handleOut}
         >
-            <img src={`/${item.img}.jpg`} className="img" />
+            <img src={`/${item.img}.jpg`} className={`img ${loaded ? "active":""}`} />
             <iframe
                 ref={iframe}
                 id={item.label}
-                className="thumbnail-video"
+                className={`thumbnail-video ${active ? "active":""}`}
                 src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1`}
                 width="360"
                 height="180"
@@ -89,17 +99,17 @@ function Thumbnail (props) {
                 {`
                     :global(iframe.thumbnail-video) {
                         position: absolute;
-                        left: 0;
+                        left: -2%;
                         top: 0;
-                        width: 100%;
+                        width: 103%;
                         top: inherit;
-                        height: 100%;
+                        height: 104%;
                         cursor: pointer !important;
                     }
                     @media screen and (max-width: 1024px) {
                         :global(iframe.thumbnail-video) {
                             width: 100%;
-                            top: 0;
+                            top: 20px;
                             height: 88%;
                             left: 0;
                         }
@@ -147,6 +157,9 @@ function Thumbnail (props) {
                         width: 100%;
                         height: auto;
 
+                    }
+                    .img.active {
+                        visibility: hidden;
                     }
                     @media screen and (max-width: 1100px) {
                         .thumbnail {

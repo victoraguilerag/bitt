@@ -98,6 +98,7 @@ function Contact ({ handleIcon }) {
                         display: flex;
                         padding-left: 18px;
                         font-weight: 400;
+                        cursor: pointer;
                     }
                     form .submit:hover {
                         color: #EDE9E3;
@@ -117,7 +118,7 @@ function Contact ({ handleIcon }) {
                     }
                     .brand-footer .arrow {
                         position: absolute;
-                        right: 0;
+                        right: 5%;
                         bottom: 0;
                         cursor: pointer;
                     }

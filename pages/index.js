@@ -10,6 +10,21 @@ import Vimeo from '@vimeo/player'
 function Home () {
   const brands = [
     {
+      label: 'REEL',
+       img: "BITT-REEL",
+       nombre: 'BITT REEL',
+       miembros: [
+       { label: 'DIRECTOR', value: 'Bitt Animation' },        
+       { label: 'CLIENT', value: 'Bitt Animation' },
+       { label: 'AGENCY', value: 'Bitt Animation'},
+       { label: 'PROD. COMPANY', value: 'Bitt Animation'},
+       { label: 'YEAR', value: '2019'}
+       ],
+         video: "191811253",
+         videothumb: "380006083",
+         videosquare: "380039446",
+    },
+    {
       label: 'ford',
       img: 'FORD_T-REX',
       nombre: 'FORD KA T-REX',
@@ -250,23 +265,7 @@ function Home () {
       videothumb: "380038525",
       videosquare: "380039556",
     },
-    {
-      label: 'REEL',
-       img: "BITT_REEL",
-       nombre: 'BITT REEL',
-       miembros: [
-       { label: 'DIRECTOR', value: 'Bitt Animation' },        
-       { label: 'CLIENT', value: 'Bitt Animation' },
-       { label: 'AGENCY', value: 'Bitt Animation'},
-       { label: 'PROD. COMPANY', value: 'Bitt Animation'},
-       { label: 'YEAR', value: '2019'}
-       ],
-         video: "191811253",
-         videothumb: "380006083",
-         videosquare: "380039446",
-
-   },
-]
+  ]
   const animationContainer = useRef(null)
   const animationDirection = useRef('forward');
   const animation = useRef(null)
@@ -397,7 +396,6 @@ function Home () {
   };
 
   const handleLoad = (e) => {
-    console.log(e.target.play)
     const player = new Vimeo(e.target)
     player.play()
   }
@@ -444,16 +442,19 @@ function Home () {
           </div>
           <div className="menu">
             {
-              brands.map((item, i) => (
-                <div
-                  key={item.label}
-                  className={`item ${active == i ? 'active': ''}`}
-                  onMouseEnter={() => handleHover(i)}
-                  onClick={() => handleItem(i)}
-                >
-                  {item.label.toUpperCase()}
-                </div>
-              ))
+              brands.map((item, i) => {
+                if (item.label == "REEL") return (<div />)
+                return (
+                  <div
+                    key={item.label}
+                    className={`item ${active == i ? 'active': ''}`}
+                    onMouseEnter={() => handleHover(i)}
+                    onClick={() => handleItem(i)}
+                  >
+                    {item.label.toUpperCase()}
+                  </div>
+                )
+              })
             }
           </div>
         </div>
@@ -503,6 +504,10 @@ function Home () {
           }
           :global(iframe.home#POWERADE) {
             width: 200%;
+          }
+          :global(iframe.home#REEL) {
+            max-width: 100%;
+            height: 100%;
           }
           
           :global(body) {

@@ -19119,7 +19119,7 @@ function Home() {
   }, {
     label: 'powerade',
     img: "BITT_05"
-  }, {
+  },{
     label: 'villavicencio',
     img: "BITT_06"
   }];
