@@ -496,6 +496,11 @@ function Home () {
       </style>
       <style jsx>
         {`
+          @media screen and (max-width: 1024px) {
+            #Work::first-child {
+              display:none;
+            }
+          }
           :global(iframe.home) {
             width: 181%;
             height: 100%;

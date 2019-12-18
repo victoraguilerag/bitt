@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import Thumbnail from './thumbnail.js'
 import About from './about.js'
 import Members from './members.js'
@@ -11,26 +11,35 @@ function Grilla ({
     handleIcon,
     selected
 }) {
+    const [tablet, setTablet] = useState(false)
     let pie = (items.length) / 3;
     pie = pie - parseInt(pie);
     pie = parseInt(pie * 100);
     pie = pie == 66 ? '3/4': pie == 33 ? '2/4' : '1/4';
     console.log(items)
 
+    useEffect(() => {
+        console.log(window.matchMedia("(max-width: 1024px)").matches)
+        if (window.matchMedia("(max-width: 1024px)").matches) {
+            console.log("true")
+            setTablet(true)
+        }
+    }, []);
+    if (tablet) {
+        items.pop()
+    }
     return (
         <div id="Work" className="items-container">
             {
                 items && items.map((item, i) => {
-                    // if (i == 0) return false
-                    // if (i == 1) return false
                     return (
-                            <Thumbnail
-                                key={item.label}
-                                item={item}
-                                onClick={() => {
-                                    selectProject(i)
-                                }}
-                            />
+                        <Thumbnail
+                            key={item.label}
+                            item={item}
+                            onClick={() => {
+                                selectProject(i)
+                            }}
+                        />
                     )
                 })
             }

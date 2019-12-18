@@ -37,8 +37,9 @@ function Thumbnail (props) {
     }, [])
     const handleIn = () => {
         if (!active) {
-            const reel  = document.getElementById("REEL") 
-            if (reel.classList.contains("active")) {
+            const reel  = document.getElementById("REEL")
+            console.log(reel.classList.contains("active"))
+            if (reel && reel.classList.contains("active")) {
                 console.log("staph")
                 const REELPlayer = new Vimeo(reel)
                 REELPlayer.pause()
@@ -109,7 +110,16 @@ function Thumbnail (props) {
                     @media screen and (max-width: 1024px) {
                         :global(iframe.thumbnail-video) {
                             width: 100%;
-                            top: 20px;
+                            top: 0;
+                            height: 88%;
+                            left: 0;
+                        }
+
+                    }
+                    @media screen and (max-width: 600px) {
+                        :global(iframe.thumbnail-video) {
+                            width: 100%;
+                            top: -3px;
                             height: 88%;
                             left: 0;
                         }
