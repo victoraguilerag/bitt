@@ -29,15 +29,27 @@ function Detalle ({
 
     return (
         <div id="detalle" className={`Detalle ${active ? 'active':''}`}>
+            <div className="embed-container">
             {
                 selected && selected.img && (
                     <React.Fragment>
                         <img id="video" className="video" src={`/${selected.img}.jpg`} />
+                        <iframe
+                          id={selected.label}
+                          className="big"
+                          src={`https://player.vimeo.com/video/${selected.video}`}
+                          width="100vw"
+                          height="880"
+                          frameborder="0"
+                          autoplay
+                          allow="autoplay; fullscreen"
+                          allowfullscreen
+                        />
                         <img onClick={handleIcon} className="play-icon" src="/play-icon.svg" />
                     </React.Fragment>
                 )
             }
-
+            </div>
 
             {
                 selected && selected.miembros && (
@@ -76,6 +88,11 @@ function Detalle ({
                         max-width: none;
                         height: 100%;
                     }
+                    .embed-container {
+                        position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
+                    }
+                    .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                    } 
                     .arrow-white {
                         position: absolute;
                         bottom: 24px;
