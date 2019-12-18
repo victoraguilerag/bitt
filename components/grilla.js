@@ -12,26 +12,28 @@ function Grilla ({
     selected
 }) {
     const [tablet, setTablet] = useState(false)
+    const [parsedItems, setParsedItems] = useState(items)
     let pie = (items.length) / 3;
     pie = pie - parseInt(pie);
     pie = parseInt(pie * 100);
     pie = pie == 66 ? '3/4': pie == 33 ? '2/4' : '1/4';
-    console.log(items)
 
     useEffect(() => {
-        console.log(window.matchMedia("(max-width: 1024px)").matches)
         if (window.matchMedia("(max-width: 1024px)").matches) {
-            console.log("true")
             setTablet(true)
         }
+        let aux = items[0]
+        const parsedItemsAux = items
+        parsedItemsAux.shift()
+        parsedItemsAux.push(aux)
+        setParsedItems(parsedItemsAux)
     }, []);
-    if (tablet) {
-        items.pop()
-    }
+
     return (
         <div id="Work" className="items-container">
             {
-                items && items.map((item, i) => {
+                parsedItems && parsedItems.map((item, i) => {
+                    if (!item) return false;
                     return (
                         <Thumbnail
                             key={item.label}
@@ -64,7 +66,6 @@ function Grilla ({
                 </div>
             </div>
             <About />
-            <Members />
             <Awards handleIcon={handleIcon} />
             <Contact handleIcon={handleIcon} />
             <style jsx>

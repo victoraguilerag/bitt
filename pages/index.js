@@ -73,17 +73,17 @@ function Home () {
     {
       label: 'POWERADE',
       img: "POWERADE_MANIFESTO",
-      nombre: 'MONITO',
+      nombre: 'MANIFIESTO',
       miembros: [
-        { label: 'DIRECTOR', value: 'Santi Elías' },        
-        { label: 'CLIENT', value: 'Volkswagen Argentina' },
-        { label: 'AGENCY', value: 'Kepel y Mata'},
+        { label: 'DIRECTOR', value: 'Nico Perez Veiga' },        
+        { label: 'CLIENT', value: 'Powerade' },
+        { label: 'AGENCY', value: 'David Agency'},
         { label: 'PROD. COMPANY', value: 'Primo'},
-        { label: 'YEAR', value: '2016'}
+        { label: 'YEAR', value: '2019'}
       ],
       video: "377153977",
       videothumb: "380006703",
-      videosquare: "380000559",
+      videosquare: "380006703",
     },
     {
       label: 'VOLKSWAGEN',
@@ -211,7 +211,7 @@ function Home () {
       nombre: 'Bathroom Blitz',
       miembros: [
         { label: 'DIRECTOR', value: 'Russell Appleford' },        
-        { label: 'CLIENT', value: '' },
+        { label: 'CLIENT', value: 'SC JOHNSON'},
         { label: 'AGENCY', value: 'DLKW Lowe'},
         { label: 'PROD. COMPANY', value: 'Mill+ London'},
         { label: 'YEAR', value: '2015'}
