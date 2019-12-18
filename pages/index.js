@@ -359,6 +359,7 @@ function Home () {
 
   const handleHover = i => {
     window.clearTimeout(timer)
+    console.log(items[i])
     setActive(i)
   }
 

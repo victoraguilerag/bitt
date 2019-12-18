@@ -22,11 +22,6 @@ function Grilla ({
         if (window.matchMedia("(max-width: 1024px)").matches) {
             setTablet(true)
         }
-        let aux = items[0]
-        const parsedItemsAux = items
-        parsedItemsAux.shift()
-        parsedItemsAux.push(aux)
-        setParsedItems(parsedItemsAux)
     }, []);
 
     return (
