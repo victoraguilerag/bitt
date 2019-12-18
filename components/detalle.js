@@ -33,6 +33,17 @@ function Detalle ({
                 selected && selected.img && (
                     <React.Fragment>
                         <img id="video" className="video" src={`/${selected.img}.jpg`} />
+                        <iframe
+                          id={selected.label}
+                          className="big"
+                          src={`https://player.vimeo.com/video/${selected.video}`}
+                          width="880"
+                          height="880"
+                          frameborder="0"
+                          autoplay
+                          allow="autoplay; fullscreen"
+                          allowfullscreen
+                        />
                         <img onClick={handleIcon} className="play-icon" src="/play-icon.svg" />
                     </React.Fragment>
                 )
