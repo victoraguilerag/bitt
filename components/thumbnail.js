@@ -70,7 +70,7 @@ function Thumbnail (props) {
     return (
         <div
             ref={videoPlayer}
-            id="video"
+            id={"thumbnail-"+item.label}
             className="thumbnail"
             onClick={onClick}
             onMouseEnter={handleIn}
