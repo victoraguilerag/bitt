@@ -105,6 +105,7 @@ function Thumbnail (props) {
                         top: inherit;
                         height: 104%;
                         cursor: pointer !important;
+                        pointer-events: none;
                     }
                     @media screen and (max-width: 1100px) {
                         :global(iframe.thumbnail-video) {
