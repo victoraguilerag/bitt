@@ -20,7 +20,7 @@ function Home () {
        { label: 'PROD. COMPANY', value: 'Bitt Animation'},
        { label: 'YEAR', value: '2019'}
        ],
-         video: "191811253",
+         video: "267613699",
          videothumb: "380006083",
          videosquare: "380039446",
     },
