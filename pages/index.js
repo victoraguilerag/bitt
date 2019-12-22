@@ -21,8 +21,8 @@ function Home () {
        { label: 'YEAR', value: '2019'}
        ],
          video: "267613699",
-         videothumb: "380006083",
-         videosquare: "380039446",
+         videothumb: "381058163",
+         videosquare: "381057593",
     },
     {
       label: 'ford',
@@ -36,8 +36,8 @@ function Home () {
         { label: 'YEAR', value: '2018'}
       ],
       video: "296648062",
-      videothumb: "380006311",
-      videosquare: "380039695",
+      videothumb: "381058274",
+      videosquare: "381057737",
 
     },
     {
@@ -52,8 +52,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "377153093",
-      videothumb: "380006228",
-      videosquare: "380039597",
+      videothumb: "381058232",
+      videosquare: "381057702",
     },
     {
       label: 'NIVEA',
@@ -67,8 +67,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "377153466",
-      videothumb: "380006573",
-      videosquare: "380039948",
+      videothumb: "381058423",
+      videosquare: "381057948",
     },
     {
       label: 'POWERADE',
@@ -82,8 +82,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "377153977",
-      videothumb: "380006703",
-      videosquare: "380006703",
+      videothumb: "381058529",
+      videosquare: "381058529",
     },
     {
       label: 'VOLKSWAGEN',
@@ -97,8 +97,8 @@ function Home () {
         { label: 'YEAR', value: '2016'}
       ],
       video: "196440067",
-      videothumb: "380006779",
-      videosquare: "380040141",
+      videothumb: "381058576",
+      videosquare: "381058050",
     },
     {
       label: 'NESCAFÉ',
@@ -112,8 +112,8 @@ function Home () {
         { label: 'YEAR', value: '2017'}
       ],
       video: "280999698",
-      videothumb: "380006519",
-      videosquare: "380039909",
+      videothumb: "381058389",
+      videosquare: "381057913",
     },
     {
       label: 'TOYOTA',
@@ -127,8 +127,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "377154373",
-      videothumb: "380006749",
-      videosquare: "380040100",
+      videothumb: "381058546",
+      videosquare: "381058022",
     },
     {
       label: 'Palacio de Hierro',
@@ -142,8 +142,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "377642328",
-      videothumb: "380006634",
-      videosquare: "380040036",
+      videothumb: "381058510",
+      videosquare: "381057997",
     },
     {
       label: 'La Campagnola',
@@ -157,8 +157,8 @@ function Home () {
         { label: 'YEAR', value: '2015'}
       ],
       video: "192136233",
-      videothumb: "380006137",
-      videosquare: "380039515",
+      videothumb: "381058197",
+      videosquare: "381057669",
     },
     {
       label: 'GCBA',
@@ -172,8 +172,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "191811252",
-      videothumb: "380038557",
-      videosquare: "380039789",
+      videothumb: "381058317",
+      videosquare: "381057787",
     },
     {
       label: 'Manzanada',
@@ -187,8 +187,8 @@ function Home () {
         { label: 'YEAR', value: '2017'}
       ],
       video: "377153242",
-      videothumb: "380006482",
-      videosquare: "380039860",
+      videothumb: "381058369",
+      videosquare: "381057881",
     },
     {
       label: 'Fritos',
@@ -202,8 +202,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "267843690",
-      videothumb: "380006365",
-      videosquare: "380039747",
+      videothumb: "381058306",
+      videosquare: "381057763",
     },
     {
       label: 'DOMESTOS',
@@ -217,8 +217,8 @@ function Home () {
         { label: 'YEAR', value: '2015'}
       ],
       video: "152621594",
-      videothumb: "380006267",
-      videosquare: "380039631",
+      videothumb: "381058250",
+      videosquare: "381057713",
     },
     {
       label: 'GOT MILK',
@@ -232,8 +232,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "191811264",
-      videothumb: "380006450",
-      videosquare: "380039818",
+      videothumb: "381058338",
+      videosquare: "381057824",
     },
     {
       label: 'ORBIT',
@@ -247,8 +247,8 @@ function Home () {
         { label: 'YEAR', value: '2018'}
       ],
       video: "377161041",
-      videothumb: "380006599",
-      videosquare: "380039984",
+      videothumb: "381058485",
+      videosquare: "381057976",
     },
     {
       label: 'CATSUP',
@@ -262,8 +262,8 @@ function Home () {
         { label: 'YEAR', value: '2019'}
       ],
       video: "191811253",
-      videothumb: "380038525",
-      videosquare: "380039556",
+      videothumb: "381058216",
+      videosquare: "381057684",
     },
   ]
   const animationContainer = useRef(null)

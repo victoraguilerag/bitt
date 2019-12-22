@@ -57,8 +57,9 @@ function About ({}) {
                         margin-right: 38px;
                     }
                     .bittlogoR {
-                        width: 15vw;
+                        width: 350px;
                         height: auto;
+                        max-width: 20vw;
                     }
                     .text {
                         font-family: 'TT';
@@ -79,21 +80,23 @@ function About ({}) {
                     .bold {
                         font-weight: 500;
                     }
-                    @media screen and (max-width: 1100px) {
+                    @media screen and (max-width: 1200px) {
                         .About {
                             flex-flow: column;
                             width: 570px;
                             margin-left: 30px;
                             padding-bottom: 72px;
                         }
+                        .About .text {
+                            font-size: 1em;
+                        }
                         .image {
-                            width: 570px;
-                            height: 570px;
+                            width: 100%;
                             margin-top: 40px;
                         }
                         .bittlogoR {
-                            height: 200px;
-                            width: 200px;
+                            height: 250px;
+                            width: 250px;
                         }
                         .information {
                             max-width: 570px;
