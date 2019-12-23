@@ -574,7 +574,7 @@ function Home () {
           }
           .video-container {
             justify-self: flex-end;
-            background: url(${`/${items[active].img}.jpg`});
+            background: #1A1918;
             background-position: center;
             background-size: cover;
             margin: 30px;
