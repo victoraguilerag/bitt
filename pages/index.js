@@ -482,27 +482,31 @@ function Home () {
 
           @font-face {
             font-family: "Drunk";
-            src: url("/DrukWide-Medium.otf");
+            src: local("system"), url("/DrukWide-Medium.otf");
             font-weight: 400;
             font-style: normal;
+            font-display: swap;
           }
           @font-face {
             font-family: "Drunk";
-            src: url("/DrukWide-Bold.otf");
+            src: local("system"), url("/DrukWide-Bold.otf");
             font-weight: 500;
             font-style: normal;
+            font-display: swap;
           }
           @font-face {
             font-family: "TT";
-            src: url("/TT-Hoves-ExtraLight.otf");
+            src: local("system"), url("/TT-Hoves-ExtraLight.otf");
             font-weight: lighter;
             font-style: 400;
+            font-display: swap;
           }
           @font-face {
             font-family: "TT";
-            src: url("/TT-Hoves-Medium.otf");
+            src: local("system"), url("/TT-Hoves-Medium.otf");
             font-weight: 500;
             font-style: normal;
+            font-display: swap;
           }
         `}
       </style>
