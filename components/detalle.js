@@ -11,7 +11,6 @@ function Detalle ({
 }) {
     const handleIcon = () => {
         // const video = document.getElementById('video')
-        // console.log(video)
         // video.scrollIntoView({ behavior: 'smooth'})
         setTimeout(() => {
             const Hero = document.getElementById('Hero')

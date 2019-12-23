@@ -210,7 +210,6 @@ function Awards ({ handleIcon }) {
                 columnSecond,
                 columnThird
             ])
-            console.log(columns)
         }
     }, [])
 

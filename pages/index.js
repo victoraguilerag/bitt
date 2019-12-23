@@ -341,7 +341,6 @@ function Home () {
   }, [active])
 
   const handleItem = i => {
-    console.log(i)
     if (items) {
       const selItem = items[items.indexOf(i)]
       if (selItem == selected) {
@@ -369,9 +368,7 @@ function Home () {
   }, [selected])
 
   const handleHover = i => {
-    console.log(i)
     window.clearTimeout(timer)
-    console.log(items[i])
     setActive(i)
   }
 
@@ -384,7 +381,6 @@ function Home () {
   }
 
   const handleIcon = () => {
-    console.log('epa')
     // const video = document.getElementById('video')
     // console.log(video)
     // video.scrollIntoView({ behavior: 'smooth'})
@@ -397,7 +393,6 @@ function Home () {
 
     setTimeout(() => {
         const detalle = document.getElementById('detalle')
-        console.log(detalle.scrollTop)
         detalle.scrollTop = 0
     }, 1000)
   }
