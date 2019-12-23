@@ -279,6 +279,8 @@ function Home () {
   const [timer, setTimer] = useState(false)
   const [iframes, setIframes] = useState(false)
   const [loaded, setLoaded] = useState(false)
+  const [grillaLoaded, setGrillaLoaded] = useState(false)
+
 
   useEffect(() => {
     animation.current = lottie.loadAnimation({
@@ -326,6 +328,7 @@ function Home () {
     setTimeout(() => {
       setIframes(true)
     }, 5000)
+    setGrillaLoaded(true)
   }, [])
 
   useEffect(() => {
@@ -475,7 +478,7 @@ function Home () {
       </div>
       <Detalle selected={selected} items={items} selectProject={handleItem} />
       {
-        !selected && (
+        !selected && grillaLoaded && (
           <Grilla items={items} handleIcon={handleIcon} selectProject={handleItem} />
         )
       }

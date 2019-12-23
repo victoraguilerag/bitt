@@ -1,12 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import videojs from 'video.js'
-import 'videojs-youtube'
-import 'video.js/dist/video-js.css'
 import Vimeo from '@vimeo/player'
-{/* <video width="320" height="240" controls>
-    <source src={`/${item.img}.mp4`} type="video/mp4" />
-    Your browser does not support the video tag.
-</video> */}
 function Thumbnail (props) {
     const [active, setActive] = useState(false)
     const [player, setPlayer] = useState(false);
@@ -21,17 +14,6 @@ function Thumbnail (props) {
     const iframe = useRef()
     
     useEffect(() => {
-        // setPlayer(
-        //     videojs(videoPlayer.current, props, function onPlayerReady() {
-        //     console.log('onPlayerReady', this)
-        // }))
-        // return () => {
-        //     if (player) {
-        //         player.dispose();
-        //     }
-        // }
-
-
         if (window.matchMedia("(max-width: 768px)").matches) {
             setMobile(true);
         } else {
