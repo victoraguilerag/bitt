@@ -63,7 +63,7 @@ function Thumbnail (props) {
             onMouseEnter={handleIn}
             onMouseLeave={handleOut}
         >
-            <img src={`/${item.img}.jpg`} className={`img ${loaded ? "active":""}`} />
+            <img src={`/${item.img}.jpeg`} className={`img ${loaded ? "active":""}`} />
             {
                 !mobile && (
                     <iframe

@@ -601,7 +601,7 @@ function Home () {
             flex-flow: column;
             justify-content: flex-end;
             align-self: flex-end;
-            margin-bottom: 26px;
+            margin-bottom: 30px;
           }
           .menu .item {
             height: 40px;
