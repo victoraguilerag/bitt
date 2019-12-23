@@ -308,7 +308,7 @@ function Awards ({ handleIcon }) {
                             width: 326px;
                         }
                     }
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 7680px) {
                     .Awards {
                         padding: 30px;
                     }
