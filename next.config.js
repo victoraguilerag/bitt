@@ -1,8 +1,8 @@
 // next.config.js
 const withCSS = require('@zeit/next-css')
-const withVideos = require('next-videos')
+const withFonts = require('next-fonts');
 
-module.exports = withVideos(withCSS({
+module.exports = withFonts(withCSS({
     webpack: function (config) {
         config.module.rules.push({
             test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
