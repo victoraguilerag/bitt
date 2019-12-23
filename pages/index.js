@@ -428,9 +428,7 @@ function Home () {
       </Head>
 
       <div id="Hero" className="Hero">
-        <div className={`preloader ${loaded ? "": "active"}`}>
-          <div ref={secondAnimationContainer} className="preloader-animation" />
-        </div>
+
         <div ref={animationContainer} onClick={handleAnimation} className="animation">
         </div>
         <Sections active={activeSections} />
