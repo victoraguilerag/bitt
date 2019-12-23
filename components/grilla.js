@@ -134,8 +134,8 @@ function Grilla ({
                         .items-container {
                             display: flex;
                             flex-flow: column;
-                            max-width: 570px;
-                            width: 570px;
+                            max-width: none;
+                            width: 100%;
                         }
                     }
                 `}
