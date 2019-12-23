@@ -267,8 +267,10 @@ function Home () {
     },
   ]
   const animationContainer = useRef(null)
+  const secondAnimationContainer = useRef(null)
   const animationDirection = useRef('forward');
   const animation = useRef(null)
+  const secondAnimation = useRef(null)
   const [animationState, setAnimationState] = useState(false);
   const [activeSections, setActiveSections] = useState(false);
   const [items, setItems] = useState(brands);
@@ -276,11 +278,9 @@ function Home () {
   const [active, setActive] = useState(0);
   const [timer, setTimer] = useState(false)
   const [iframes, setIframes] = useState(false)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    console.log(animationContainer)
-    console.log('animationContainer')
-
     animation.current = lottie.loadAnimation({
       container: animationContainer.current, // the dom element that will contain the animation
       renderer: 'svg',
@@ -289,7 +289,13 @@ function Home () {
       path: '/burger-animation-lottie.json' // the path to the animation json
     });
 
-    console.log(animation.current)
+    secondAnimation.current = lottie.loadAnimation({
+      container: secondAnimationContainer.current, // the dom element that will contain the animation
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/burger-animation-lottie.json' // the path to the animation json
+    });
 
     setTimeout(() => {
       animation.current.addEventListener('enterFrame', e => {
@@ -332,8 +338,10 @@ function Home () {
   }, [active])
 
   const handleItem = i => {
+    console.log(i)
     if (items) {
-      if (items[i] == selected) {
+      const selItem = items[items.indexOf(i)]
+      if (selItem == selected) {
         const video = document.getElementById('video');
         if (!video) return false
         video.scrollIntoView({
@@ -341,7 +349,7 @@ function Home () {
           block: 'start'
         })  
       }
-      setSelected(items[i]);
+      setSelected(selItem);
     }
   }
   
@@ -358,6 +366,7 @@ function Home () {
   }, [selected])
 
   const handleHover = i => {
+    console.log(i)
     window.clearTimeout(timer)
     console.log(items[i])
     setActive(i)
@@ -366,6 +375,9 @@ function Home () {
   const handleAnimation = () => {
     animation.current.play();
     setActiveSections(!activeSections);
+  }
+  const handleSecondAnimation = () => {
+    secondAnimation.current.play();
   }
 
   const handleIcon = () => {
@@ -399,6 +411,7 @@ function Home () {
   const handleLoad = (e) => {
     const player = new Vimeo(e.target)
     player.play()
+    setLoaded(true);
   }
 
   return (
@@ -415,7 +428,9 @@ function Home () {
       </Head>
 
       <div id="Hero" className="Hero">
-
+        <div className={`preloader ${loaded ? "": "active"}`}>
+          <div ref={secondAnimationContainer} className="preloader-animation" />
+        </div>
         <div ref={animationContainer} onClick={handleAnimation} className="animation">
         </div>
         <Sections active={activeSections} />
@@ -497,6 +512,34 @@ function Home () {
       </style>
       <style jsx>
         {`
+          .preloader {
+            opacity: 0;
+            transition: 1s opacity ease;
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+          }
+          .preloader.active {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s opacity ease;
+            opacity: 1;
+          }
+          .preloader-animation {
+            width: 40px;
+          } 
           @media screen and (max-width: 1024px) {
             #Work::first-child {
               display:none;
@@ -610,11 +653,28 @@ function Home () {
               height: 50px;
             }
           }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 768px) {
+            .Hero {
+              display: flex;
+              flex-flow: column;
+            }
+            .animation {
+              position: inherit;
+              align-self: flex-end;
+              margin-right: 13%;
+              margin-top: 32px;
+            }
             .video-container {
               margin: 30px;
               height: calc(100vw - 60px);
               width: calc(100vw - 60px);
+            }
+            .animation {
+              margin: 0;
+              margin-right: 30px;
+              margin-top: 30px;
+              width: 100px;
+              height: 100px;
             }
           }
         `}

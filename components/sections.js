@@ -47,9 +47,21 @@ function Sections ({ active }) {
                             top: 105px;
                         }
                     }
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 768px) {
                         .sections {
-                            top: 70px;
+                            position: initial;
+                            height: 0;
+                            overflow-y: hidden;
+                            transition: 1s height ease;
+                        }
+                        .sections.active {
+                            height: auto;
+                            transition: 1s height ease;
+                            margin-right: 30px;
+                        }
+                        .section {
+                            font-size: 24px;
+                            margin-top: 16px;
                         }
                     }
                 `}

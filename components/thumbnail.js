@@ -11,6 +11,7 @@ function Thumbnail (props) {
     const [active, setActive] = useState(false)
     const [player, setPlayer] = useState(false);
     const [loaded, setLoaded] = useState(false);
+    const [mobile, setMobile] = useState(false)
     const videoPlayer = useRef()
     const {
         item,
@@ -29,17 +30,21 @@ function Thumbnail (props) {
         //         player.dispose();
         //     }
         // }
-        setTimeout(() => {
-            var event = new Event('click');
 
-            videoPlayer.current.dispatchEvent(event)
-        },100)
+
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            setMobile(true);
+        } else {
+
+        }
+
     }, [])
     const handleIn = () => {
-        if (!active) {
+        if (mobile) return false
+
+        if (!active && !mobile) {
             const reel  = document.getElementById("REEL")
             if (reel && reel.classList &&reel.classList.contains("active")) {
-                console.log("staph")
                 const REELPlayer = new Vimeo(reel)
                 REELPlayer.pause()
             }
@@ -56,10 +61,10 @@ function Thumbnail (props) {
         }
     }
     const handleLoad = () => {
+        if (mobile) return false;
         const player = new Vimeo(iframe.current)
         setTimeout(() => {
             if (iframe.current.id == "REEL") {
-                console.log("REEL")
                 setLoaded(true)
                 setActive(true);
                 return player.play();
@@ -77,18 +82,22 @@ function Thumbnail (props) {
             onMouseLeave={handleOut}
         >
             <img src={`/${item.img}.jpg`} className={`img ${loaded ? "active":""}`} />
-            <iframe
-                ref={iframe}
-                id={item.label}
-                className={`thumbnail-video ${active ? "active":""}`}
-                src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1`}
-                width="360"
-                height="180"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay"
-                onLoad={handleLoad}
-            />
+            {
+                !mobile && (
+                    <iframe
+                        ref={iframe}
+                        id={item.label}
+                        className={`thumbnail-video ${active ? "active":""}`}
+                        src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1`}
+                        width="360"
+                        height="180"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="autoplay"
+                        onLoad={handleLoad}
+                    />
+                )
+            }
             <div className="information">
                 <div className="title">{item.nombre.toUpperCase()}.</div>
                 <div className="label">{item.label.toUpperCase()}</div>
@@ -97,6 +106,9 @@ function Thumbnail (props) {
 
             <style jsx>
                 {`
+                    .preloader {
+                        
+                    }
                     :global(iframe.thumbnail-video) {
                         position: absolute;
                         left: -2%;
@@ -117,7 +129,7 @@ function Thumbnail (props) {
 
                     }
 
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 768px) {
                         :global(iframe.thumbnail-video) {
                             width: 100%;
                             top: -3px;
@@ -181,10 +193,14 @@ function Thumbnail (props) {
                             padding: 0;
                         }
                     }
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 768px) {
                         .thumbnail {
                             width: calc(100vw - 75px);
                             margin-left: 30px;
+                            margin-bottom: 24px;
+                        }
+                        .label {
+                            margin-bottom: 0;
                         }
                     }
                 `}
