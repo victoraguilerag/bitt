@@ -69,6 +69,7 @@ function Thumbnail (props) {
                     <iframe
                         ref={iframe}
                         id={item.label}
+                        title={item.label}
                         className={`thumbnail-video ${active ? "active":""}`}
                         src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1`}
                         width="360"

@@ -437,6 +437,7 @@ function Home () {
                 <iframe
                   id={items[active].label}
                   className="home"
+                  title={items[active].label}
                   src={`https://player.vimeo.com/video/${items[active].videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
                   width="880"
                   height="880"

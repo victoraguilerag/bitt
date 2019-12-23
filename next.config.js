@@ -13,6 +13,10 @@ module.exports = withFonts(withCSS({
                     name: '[name].[ext]'
                 }
             }
+        }),
+        config.module.rules.push({
+            test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+            use: 'base64-inline-loader'
         })
         return config
     },
