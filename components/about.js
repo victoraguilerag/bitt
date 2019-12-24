@@ -45,9 +45,9 @@ function About ({}) {
                         grid-column: 1/4;
                         background: #ECE6DE;
                         display: flex;
-                        padding-top: 100px;
-                        padding-bottom: 100px;
-                        width: calc(100% - 200px);
+                        padding-top: 5vw;
+                        padding-bottom: 5vw;
+                        width: 90vw;
                        margin: 0 auto;
                     }
                     .information, .image {
@@ -59,7 +59,6 @@ function About ({}) {
                     .bittlogoR {
                         width: 350px;
                         height: auto;
-                        max-width: 20vw;
                     }
                     .text {
                         font-family: 'TT';
@@ -83,7 +82,7 @@ function About ({}) {
                     @media screen and (max-width: 1200px) {
                         .About {
                             flex-flow: column;
-                            width: 570px;
+                            width: 50vw;
                             margin-left: 30px;
                             padding-bottom: 72px;
                         }
@@ -93,9 +92,6 @@ function About ({}) {
                         .image {
                             width: 100%;
                             margin-top: 40px;
-                        }
-                        .bittlogoR {
-                            width: 300px;
                         }
                         .information {
                             max-width: 570px;
@@ -116,6 +112,10 @@ function About ({}) {
                             margin-right: 0px;
                         }
                         .text {width: 100%;}
+                        .bittlogoR {
+                            width: 250px;
+                            height: auto;
+                        }
                     }
                 `}
             </style>

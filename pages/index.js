@@ -595,7 +595,7 @@ function Home () {
           .water-mark {
             width: 94%;
             height: auto;
-            margin-bottom: 5%;
+            margin-bottom: 2%;
             z-index: 10;
           }
           .menu {
@@ -664,20 +664,16 @@ function Home () {
             .animation {
               position: inherit;
               align-self: flex-end;
-              margin-right: 13%;
-              margin-top: 32px;
-            }
-            .video-container {
-              margin: 30px;
-              height: calc(100vw - 60px);
-              width: calc(100vw - 60px);
-            }
-            .animation {
-              margin: 0;
               margin-right: 30px;
               margin-top: 30px;
-              width: 100px;
-              height: 100px;
+              width: 12vw;
+              height: 12vw;
+            }
+            .video-container {
+              margin-top: 10px !important;
+              margin-bottom: 30px;
+              height: calc(100vw - 60px);
+              width: calc(100vw - 60px);
             }
           }
         `}

@@ -178,12 +178,15 @@ function Thumbnail (props) {
                     }
                     @media screen and (max-width: 768px) {
                         .thumbnail {
-                            width: calc(100vw - 75px);
+                            width: calc(100vw - 60px);
                             margin-left: 30px;
                             margin-bottom: 24px;
                         }
                         .label {
                             margin-bottom: 0;
+                        }
+                        .title {
+                            font-size: 16px;
                         }
                     }
                 `}

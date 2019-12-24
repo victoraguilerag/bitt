@@ -257,7 +257,7 @@ function Awards ({ handleIcon }) {
                         margin-top: 84px;
                     }
                     .Awards {
-                        padding: 50px 100px 100px;
+                        padding: 5vw;
                         grid-column: 1/4;
                         width: 100vw;
                         background: #1A1918;
@@ -294,7 +294,7 @@ function Awards ({ handleIcon }) {
                     @media screen and (max-width: 1100px) {
                         .Awards {
                             height: auto;
-                            padding: 50px;
+                            padding: 5vw;
                         }
                         .items {
                             grid-template-columns: 1fr 1fr;
@@ -310,7 +310,7 @@ function Awards ({ handleIcon }) {
                     }
                     @media screen and (max-width: 768px) {
                     .Awards {
-                        padding: 30px;
+                        padding: 5vw;
                     }
                     .items {
                             display: grid;

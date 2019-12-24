@@ -47,16 +47,17 @@ function Contact ({ handleIcon }) {
             <style jsx>
                 {`
                     .Contact {
-                        width: 100vw;
+                        width: 90vw;
                         background: #EDE9E3;
                         color: #141313;
-                        padding-left: 100px;
+                        padding: 5vw;
                     }
                     .Contact .title {
                         font-size: 2.2em;
                         font-family: 'Drunk';
                         font-weight: 500;
                         margin-bottom: 0;
+                        margin-top: 0;
                     }
                     form {
                         display: flex;
@@ -145,17 +146,11 @@ function Contact ({ handleIcon }) {
                         max-height: 6vh;
                     }
                     @media screen and (max-width:1100px) {
-                        .Contact {
-                            padding: 50px;
-                        }
                         .Contact .title {
                             margin-top: 0;
                         }
                     }
                     @media screen and (max-width: 768px) {
-                        .Contact {
-                            padding: 30px;
-                        }
                         .input {
                             width: calc(100vw - 90px);
                         }
