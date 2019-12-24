@@ -111,6 +111,7 @@ function About ({}) {
                         }
                         .image {
                             width: calc(100vw - 60px);
+                            height: auto;
                         }
                         .information {
                             margin-right: 0px;

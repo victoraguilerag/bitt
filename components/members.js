@@ -2,9 +2,7 @@ import { useState } from 'react'
 
 function Members () {
     const handleIcon = () => {
-        console.log('epa')
         // const video = document.getElementById('video')
-        // console.log(video)
         // video.scrollIntoView({ behavior: 'smooth'})
         const Hero = document.getElementById('Hero')
         document.body.style.overflowY = 'scroll';
@@ -15,7 +13,6 @@ function Members () {
     
         setTimeout(() => {
             const detalle = document.getElementById('detalle')
-            console.log(detalle.scrollTop)
             detalle.scrollTop = 0
         }, 1000)
     }

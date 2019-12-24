@@ -1,8 +1,8 @@
 // next.config.js
 const withCSS = require('@zeit/next-css')
-const withVideos = require('next-videos')
+const withFonts = require('next-fonts');
 
-module.exports = withVideos(withCSS({
+module.exports = withFonts(withCSS({
     webpack: function (config) {
         config.module.rules.push({
             test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
@@ -13,6 +13,10 @@ module.exports = withVideos(withCSS({
                     name: '[name].[ext]'
                 }
             }
+        }),
+        config.module.rules.push({
+            test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+            use: 'base64-inline-loader'
         })
         return config
     },

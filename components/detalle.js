@@ -11,7 +11,6 @@ function Detalle ({
 }) {
     const handleIcon = () => {
         // const video = document.getElementById('video')
-        // console.log(video)
         // video.scrollIntoView({ behavior: 'smooth'})
         setTimeout(() => {
             const Hero = document.getElementById('Hero')
@@ -33,7 +32,7 @@ function Detalle ({
             {
                 selected && selected.img && (
                     <React.Fragment>
-                        <img id="video" className="video" src={`/${selected.img}.jpg`} />
+                        <img id="video" className="video" src={`/${selected.img}.jpeg`} />
                         <iframe
                           id={selected.label}
                           className="big"

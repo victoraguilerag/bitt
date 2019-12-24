@@ -12,15 +12,24 @@ function Grilla ({
     selected
 }) {
     const [tablet, setTablet] = useState(false)
-    const [parsedItems, setParsedItems] = useState(items)
+    const [mobile, setMobile] = useState(false)
+    const [parsedItems, setParsedItems] = useState([...items.slice(1, items.length), items[0]])
+
     let pie = (items.length) / 3;
     pie = pie - parseInt(pie);
     pie = parseInt(pie * 100);
     pie = pie == 66 ? '3/4': pie == 33 ? '2/4' : '1/4';
 
     useEffect(() => {
+        const items = parsedItems;
+
         if (window.matchMedia("(max-width: 1024px)").matches) {
-            setTablet(true)
+            setTablet(true);
+            setParsedItems(items.slice(1, items.length - 1));
+        } else
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            setMobile(true);
+            setParsedItems(items.slice(1, items.length - 1));
         }
     }, []);
 
@@ -34,7 +43,7 @@ function Grilla ({
                             key={item.label}
                             item={item}
                             onClick={() => {
-                                selectProject(i)
+                                selectProject(item)
                             }}
                         />
                     )
@@ -119,6 +128,14 @@ function Grilla ({
                             grid-template-columns: 1fr;
                             max-width: 570px;
                             width: 570px;
+                        }
+                    }
+                    @media screen and (max-width: 768px) {
+                        .items-container {
+                            display: flex;
+                            flex-flow: column;
+                            max-width: none;
+                            width: 100%;
                         }
                     }
                 `}

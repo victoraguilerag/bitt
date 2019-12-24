@@ -267,8 +267,10 @@ function Home () {
     },
   ]
   const animationContainer = useRef(null)
+  const secondAnimationContainer = useRef(null)
   const animationDirection = useRef('forward');
   const animation = useRef(null)
+  const secondAnimation = useRef(null)
   const [animationState, setAnimationState] = useState(false);
   const [activeSections, setActiveSections] = useState(false);
   const [items, setItems] = useState(brands);
@@ -276,11 +278,11 @@ function Home () {
   const [active, setActive] = useState(0);
   const [timer, setTimer] = useState(false)
   const [iframes, setIframes] = useState(false)
+  const [loaded, setLoaded] = useState(false)
+  const [grillaLoaded, setGrillaLoaded] = useState(false)
+
 
   useEffect(() => {
-    console.log(animationContainer)
-    console.log('animationContainer')
-
     animation.current = lottie.loadAnimation({
       container: animationContainer.current, // the dom element that will contain the animation
       renderer: 'svg',
@@ -289,7 +291,13 @@ function Home () {
       path: '/burger-animation-lottie.json' // the path to the animation json
     });
 
-    console.log(animation.current)
+    secondAnimation.current = lottie.loadAnimation({
+      container: secondAnimationContainer.current, // the dom element that will contain the animation
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/burger-animation-lottie.json' // the path to the animation json
+    });
 
     setTimeout(() => {
       animation.current.addEventListener('enterFrame', e => {
@@ -320,6 +328,7 @@ function Home () {
     setTimeout(() => {
       setIframes(true)
     }, 5000)
+    setGrillaLoaded(true)
   }, [])
 
   useEffect(() => {
@@ -333,7 +342,8 @@ function Home () {
 
   const handleItem = i => {
     if (items) {
-      if (items[i] == selected) {
+      const selItem = items[items.indexOf(i)]
+      if (selItem == selected) {
         const video = document.getElementById('video');
         if (!video) return false
         video.scrollIntoView({
@@ -341,7 +351,7 @@ function Home () {
           block: 'start'
         })  
       }
-      setSelected(items[i]);
+      setSelected(selItem);
     }
   }
   
@@ -359,7 +369,6 @@ function Home () {
 
   const handleHover = i => {
     window.clearTimeout(timer)
-    console.log(items[i])
     setActive(i)
   }
 
@@ -367,9 +376,11 @@ function Home () {
     animation.current.play();
     setActiveSections(!activeSections);
   }
+  const handleSecondAnimation = () => {
+    secondAnimation.current.play();
+  }
 
   const handleIcon = () => {
-    console.log('epa')
     // const video = document.getElementById('video')
     // console.log(video)
     // video.scrollIntoView({ behavior: 'smooth'})
@@ -382,7 +393,6 @@ function Home () {
 
     setTimeout(() => {
         const detalle = document.getElementById('detalle')
-        console.log(detalle.scrollTop)
         detalle.scrollTop = 0
     }, 1000)
   }
@@ -399,6 +409,7 @@ function Home () {
   const handleLoad = (e) => {
     const player = new Vimeo(e.target)
     player.play()
+    setLoaded(true);
   }
 
   return (
@@ -426,6 +437,7 @@ function Home () {
                 <iframe
                   id={items[active].label}
                   className="home"
+                  title={items[active].label}
                   src={`https://player.vimeo.com/video/${items[active].videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
                   width="880"
                   height="880"
@@ -462,7 +474,7 @@ function Home () {
       </div>
       <Detalle selected={selected} items={items} selectProject={handleItem} />
       {
-        !selected && (
+        !selected && grillaLoaded && (
           <Grilla items={items} handleIcon={handleIcon} selectProject={handleItem} />
         )
       }
@@ -471,32 +483,64 @@ function Home () {
 
           @font-face {
             font-family: "Drunk";
-            src: url("/DrukWide-Medium.otf");
+            src: local("system"), url("/DrukWide-Medium.otf");
             font-weight: 400;
             font-style: normal;
+            font-display: swap;
           }
           @font-face {
             font-family: "Drunk";
-            src: url("/DrukWide-Bold.otf");
+            src: local("system"), url("/DrukWide-Bold.otf");
             font-weight: 500;
             font-style: normal;
+            font-display: swap;
           }
           @font-face {
             font-family: "TT";
-            src: url("/TT-Hoves-ExtraLight.otf");
+            src: local("system"), url("/TT-Hoves-ExtraLight.otf");
             font-weight: lighter;
             font-style: 400;
+            font-display: swap;
           }
           @font-face {
             font-family: "TT";
-            src: url("/TT-Hoves-Medium.otf");
+            src: local("system"), url("/TT-Hoves-Medium.otf");
             font-weight: 500;
             font-style: normal;
+            font-display: swap;
           }
         `}
       </style>
       <style jsx>
         {`
+          .preloader {
+            opacity: 0;
+            transition: 1s opacity ease;
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+          }
+          .preloader.active {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s opacity ease;
+            opacity: 1;
+          }
+          .preloader-animation {
+            width: 40px;
+          } 
           @media screen and (max-width: 1024px) {
             #Work::first-child {
               display:none;
@@ -533,7 +577,7 @@ function Home () {
           }
           .video-container {
             justify-self: flex-end;
-            background: url(${`/${items[active].img}.jpg`});
+            background: #1A1918;
             background-position: center;
             background-size: cover;
             margin: 30px;
@@ -558,7 +602,7 @@ function Home () {
             flex-flow: column;
             justify-content: flex-end;
             align-self: flex-end;
-            margin-bottom: 26px;
+            margin-bottom: 30px;
           }
           .menu .item {
             height: 40px;
@@ -610,11 +654,28 @@ function Home () {
               height: 50px;
             }
           }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 768px) {
+            .Hero {
+              display: flex;
+              flex-flow: column;
+            }
+            .animation {
+              position: inherit;
+              align-self: flex-end;
+              margin-right: 13%;
+              margin-top: 32px;
+            }
             .video-container {
               margin: 30px;
               height: calc(100vw - 60px);
               width: calc(100vw - 60px);
+            }
+            .animation {
+              margin: 0;
+              margin-right: 30px;
+              margin-top: 30px;
+              width: 100px;
+              height: 100px;
             }
           }
         `}

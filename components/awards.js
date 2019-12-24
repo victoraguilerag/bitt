@@ -210,7 +210,6 @@ function Awards ({ handleIcon }) {
                 columnSecond,
                 columnThird
             ])
-            console.log(columns)
         }
     }, [])
 
@@ -224,7 +223,7 @@ function Awards ({ handleIcon }) {
                         <div className="column" key={i}>
                             {
                                 items && items.map((item) => (
-                                    <div className="item" key={item.label}>
+                                    <div key={item.label} className="item" key={item.label}>
                                         <p className="title">{item.title}</p>
                                         {
                                             item && item.awards && item.awards.map((award) => (
@@ -309,7 +308,7 @@ function Awards ({ handleIcon }) {
                             width: 326px;
                         }
                     }
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 7680px) {
                     .Awards {
                         padding: 30px;
                     }

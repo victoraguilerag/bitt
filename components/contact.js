@@ -152,7 +152,7 @@ function Contact ({ handleIcon }) {
                             margin-top: 0;
                         }
                     }
-                    @media screen and (max-width: 600px) {
+                    @media screen and (max-width: 768px) {
                         .Contact {
                             padding: 30px;
                         }
