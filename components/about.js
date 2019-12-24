@@ -95,8 +95,7 @@ function About ({}) {
                             margin-top: 40px;
                         }
                         .bittlogoR {
-                            height: 250px;
-                            width: 250px;
+                            width: 300px;
                         }
                         .information {
                             max-width: 570px;
