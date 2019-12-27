@@ -259,7 +259,7 @@ function Awards ({ handleIcon }) {
                     .Awards {
                         padding: 5vw;
                         grid-column: 1/4;
-                        width: 100vw;
+                        width: 95vw;
                         background: #1A1918;
                         font-family: 'Drunk';
                         color: #EDE9E3;
@@ -310,6 +310,7 @@ function Awards ({ handleIcon }) {
                     }
                     @media screen and (max-width: 768px) {
                     .Awards {
+                        position: relative;
                         padding: 5vw;
                     }
                     .items {
@@ -321,7 +322,8 @@ function Awards ({ handleIcon }) {
                             margin-left: 0px;
                         }
                     .arrow {
-                            right: 30px;
+                        right: 36px;
+                        bottom: 28px;
                         }
                     }
                 `}

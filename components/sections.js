@@ -2,6 +2,7 @@ function Sections ({ active }) {
     const scrollTo = (target) => {
         const tag = document.getElementById(target)
         tag.scrollIntoView({
+            block: "start",
             behavior: 'smooth',
         })
     }

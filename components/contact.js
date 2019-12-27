@@ -16,7 +16,7 @@ function Contact ({ handleIcon }) {
                 <img src="/footerlogo.svg" className="logo" />
                 <div className="redes">
                     <a
-                        className="red"
+                        className="red first"
                         href="https://www.instagram.com/bittanimation/"
                         target="_blank"
                     >
@@ -119,7 +119,7 @@ function Contact ({ handleIcon }) {
                     }
                     .brand-footer .arrow {
                         position: absolute;
-                        right: 5%;
+                        right: 0;
                         bottom: 0;
                         cursor: pointer;
                     }
@@ -156,6 +156,16 @@ function Contact ({ handleIcon }) {
                         }
                         .brand-footer .logo {
                             margin-right: 95px;
+                        }
+                        .brand-footer .logo {
+                            max-width: 165px;
+                            margin-bottom: 32px;
+                        }
+                        .brand-footer {
+                            flex-flow: column;
+                        }
+                        .redes .red.first {
+                            margin-left: 0px;
                         }
                     }
                 `}
