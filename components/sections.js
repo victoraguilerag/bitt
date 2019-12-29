@@ -45,7 +45,7 @@ function Sections ({ active }) {
                     }
                     @media screen and (max-width: 1100px) {
                         .sections {
-                            top: 105px;
+                            top: 70px;
                         }
                     }
                     @media screen and (max-width: 768px) {
@@ -61,8 +61,8 @@ function Sections ({ active }) {
                             margin-right: 30px;
                         }
                         .section {
-                            font-size: 24px;
-                            margin-top: 16px;
+                            font-size: 16px;
+                            margin-top: 10px;
                         }
                     }
                 `}
