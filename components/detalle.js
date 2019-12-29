@@ -56,12 +56,15 @@ function Detalle ({
                     <h2 className="title">{selected.nombre.toUpperCase()}</h2>
                         <div className="list">
                                 {
-                                    selected && selected.miembros && selected.miembros.map(miembro => (
-                                        <div className="item">
-                                            <div className="label">{miembro.label.toUpperCase()}</div>
-                                            <div className="value">{miembro.value.toUpperCase()}</div>
-                                        </div>
-                                    ))
+                                    selected && selected.miembros && selected.miembros.map(miembro => {
+                                        if (selected.nombre == "BITT REEL") return false;
+                                        return (
+                                            <div className="item">
+                                                <div className="label">{miembro.label.toUpperCase()}</div>
+                                                <div className="value">{miembro.value.toUpperCase()}</div>
+                                            </div>
+                                        )
+                                    })
                                 }
                         </div>
                         <img onClick={handleIcon} className="arrow" width="50" src="/arrow.svg" />

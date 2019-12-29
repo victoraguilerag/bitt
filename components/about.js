@@ -5,6 +5,7 @@ import * as animationData from '../public/burger-animation-lottie.json'
 function About ({}) {
     const animationContainer = useRef();
     const animation = useRef(null);
+    const slider = useRef(null);
     useEffect(() => {
         animation.current = lottie.loadAnimation({
             container: animationContainer.current, // the dom element that will contain the animation
@@ -13,6 +14,20 @@ function About ({}) {
             autoplay: false,
             path: '/burger-animation-lottie.json' // the path to the animation json
         });
+
+        setTimeout(() => {
+            const sliderInterval = setInterval(() => {
+                if (!slider || !slider.current || slider.current.scrollLeft) return false;
+                console.log(slider.current);
+                console.log(slider.current.scrollTo);
+                console.log(slider.current.scrollLeft);
+                slider.current.scrollTo(slider.current.scrollLeft + 1, 0)
+            }, 250)
+        }, 3000)
+
+        setTimeout(() => {
+            console.log(slider.current)
+        },2000)
     }, [])
     return (
         <div id="About" className="About">
@@ -36,11 +51,20 @@ function About ({}) {
                     Our high level of commitment, creativity, vision, inspiration and professionalism has been recognized by the most important international festivals and it has contributed to making Bitt what it is today.
                 </p>
             </div>
-            <div className="image">
+            <div className="image slider" ref={slider}>
                 <img src="/slide-1.png" className="image"></img>
+                <img src="/slide-2.png" className="image"></img>
             </div>
             <style jsx>
                 {`
+                    .slider {
+                        display: flex;
+                        max-width: calc(100vw - 60px);
+                        overflow-x: scroll;
+                    }
+                    .slider .image {
+                        margin-top: 0;
+                    }
                     .About {
                         grid-column: 1/4;
                         background: #ECE6DE;

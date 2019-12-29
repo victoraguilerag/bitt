@@ -280,6 +280,7 @@ function Home () {
   const [iframes, setIframes] = useState(false)
   const [loaded, setLoaded] = useState(false)
   const [grillaLoaded, setGrillaLoaded] = useState(false)
+  const [mobile, setMobile] = useState(false)
 
 
   useEffect(() => {
@@ -329,6 +330,10 @@ function Home () {
       setIframes(true)
     }, 5000)
     setGrillaLoaded(true)
+
+    if (window && window.matchMedia('(max-width: 1024px)').matches) {
+      setMobile(true);
+    }
   }, [])
 
   useEffect(() => {
@@ -435,21 +440,25 @@ function Home () {
         <div className="Hero-content">
           <div className="video-container">
             {
-              iframes && items && items[active] && items[active].video && (
-                <iframe
-                  id={items[active].label}
-                  className="home"
-                  title={items[active].label}
-                  src={`https://player.vimeo.com/video/${items[active].videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
-                  width="880"
-                  height="880"
-                  frameborder="0"
-                  autoplay
-                  allow="autoplay; fullscreen"
-                  allowfullscreen
-                  onLoad={e => handleLoad(e)}
-                />
-              )
+              items && items.map((item, i) => {
+                if (mobile && i !== 0) return false;
+                return (
+                  <iframe
+                    id={item.label}
+                    className="home"
+                    className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
+                    title={item.label}
+                    src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
+                    width="880"
+                    height="880"
+                    frameborder="0"
+                    autoplay
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                    onLoad={i == 0 ? e => handleLoad(e) : false}
+                  />
+                )
+              }) 
             }
             <div className="water-mark">
               <img src="/bitt-logo.svg" />
@@ -553,6 +562,12 @@ function Home () {
             height: 100%;
             position: absolute;
             max-width: none;
+          }
+          :global(iframe.home.apagado) {
+            display: none;
+          }
+          :global(iframe.home.encendido) {
+            display: flex;
           }
           :global(iframe.home#POWERADE) {
             width: 200%;
@@ -689,3 +704,24 @@ export default Home;
   <div className="item">Item</div>
   <div className="pie">Pie</div>
 </div> */}
+
+
+/*
+{
+  iframes && items && items[active] && items[active].video && (
+    <iframe
+      id={items[active].label}
+      className="home"
+      title={items[active].label}
+      src={`https://player.vimeo.com/video/${items[active].videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
+      width="880"
+      height="880"
+      frameborder="0"
+      autoplay
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      onLoad={e => handleLoad(e)}
+    />
+  )
+}
+*/

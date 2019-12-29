@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "production": "pm2 start npm --name 'next' -- start"
   },
   "dependencies": {
     "@vimeo/player": "^2.10.0",
