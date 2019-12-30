@@ -98,7 +98,6 @@ function About ({}) {
                     }
                     .slider {
                         display: flex;
-                        max-width: calc(100vw - 60px);
                         overflow-x: scroll;
                     }
                     .slider .image {

@@ -112,7 +112,7 @@ function Members () {
                     }
                     .arrow {
                         position: absolute;
-                        right: -150px;
+                        right: -80px;
                         cursor: pointer;
                     }
                     .member {
