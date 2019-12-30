@@ -74,7 +74,7 @@ function Members () {
             <style jsx>
                 {`
                     .Members {
-                        display: none;
+                        display: block;
                         background: #1A1918;
                         color: #EDE9E3;
                         grid-column: 1/4;

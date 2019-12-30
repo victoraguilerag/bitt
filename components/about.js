@@ -6,6 +6,9 @@ function About ({}) {
     const animationContainer = useRef();
     const animation = useRef(null);
     const slider = useRef(null);
+    const arrow = useRef(null);
+    const arrowLeft = useRef(null);
+    const [sliderPosition, setSliderPosition] = useState(0)
     useEffect(() => {
         animation.current = lottie.loadAnimation({
             container: animationContainer.current, // the dom element that will contain the animation
@@ -24,11 +27,20 @@ function About ({}) {
                 slider.current.scrollTo(slider.current.scrollLeft + 1, 0)
             }, 250)
         }, 3000)
-
-        setTimeout(() => {
-            console.log(slider.current)
-        },2000)
     }, [])
+    useEffect(() => {
+        slider.current.scrollLeft = sliderPosition * slider.current.clientWidth;
+    }, [sliderPosition])
+    const handleNext = (i) => {
+        console.log(i)
+        if (sliderPosition == 1) return false
+        setSliderPosition(sliderPosition + 1)
+    }
+    const handlePrevious = (i) => {
+        console.log(i)
+        if (sliderPosition == 0) return false
+        setSliderPosition(sliderPosition - 1)
+    }
     return (
         <div id="About" className="About">
             <div className="information">
@@ -51,12 +63,39 @@ function About ({}) {
                     Our high level of commitment, creativity, vision, inspiration and professionalism has been recognized by the most important international festivals and it has contributed to making Bitt what it is today.
                 </p>
             </div>
-            <div className="image slider" ref={slider}>
-                <img src="/slide-1.png" className="image"></img>
-                <img src="/slide-2.png" className="image"></img>
+            <div className="slider-container">
+                <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition == 1 ? "active":""}`} onClick={handlePrevious}></img>
+                <div className="image slider" ref={slider}>
+                    <img src="/slide-1.png" className="image"></img>
+                    <img src="/slide-2.png" className="image"></img>
+                </div>
+                <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition == 0 ? "active":""}`} onClick={handleNext}></img>
             </div>
             <style jsx>
                 {`
+                    .arrow-slider {
+                        position: absolute;
+                        right: 8px;
+                        width: 20px;
+                        top: calc(50% - 10px);
+                        filter: invert(1);
+                        cursor: pointer;
+                        display: none;
+                    }
+                    .arrow-slider-left {
+                        position: absolute;
+                        left: 8px;
+                        width: 20px;
+                        top: calc(50% - 10px);
+                        filter: invert(1);
+                        cursor: pointer;
+                        transform: rotate(180deg);
+                        display: none;
+                    }
+                    .slider-container {
+                        position: relative;
+                        width: auto; 
+                    }
                     .slider {
                         display: flex;
                         max-width: calc(100vw - 60px);
@@ -64,6 +103,12 @@ function About ({}) {
                     }
                     .slider .image {
                         margin-top: 0;
+                    }
+                    .arrow-slider.active {
+                        display: block;
+                    }
+                    .arrow-slider-left.active {
+                        display: block;
                     }
                     .About {
                         grid-column: 1/4;
@@ -97,7 +142,6 @@ function About ({}) {
                     }
                     .image {
                         background: transparent;
-                        max-width: 880px;
                         height: auto;
                     }
                     .bold {

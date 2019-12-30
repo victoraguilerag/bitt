@@ -186,6 +186,28 @@ function Detalle ({
                         left: 45%;
                         cursor: pointer;
                     }
+                    @media screen and (max-width: 768px) {
+                        .title {
+                            width: 100%;
+                        }
+                        .list .item {
+                            width: 100%;
+                            margin-right: 30px;
+                            margin-bottom: 10px;
+                        }
+                        .list .item .value {
+                            width: 100%;
+                        }
+                        .list .item .label {
+                            width: none;
+                        }
+                        .information {
+                            padding-right: 30px;
+                        }
+                        .information .arrow {
+                            right: 30px;
+                        }
+                    }
                 `}
             </style>
         

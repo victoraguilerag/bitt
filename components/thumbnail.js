@@ -109,6 +109,9 @@ function Thumbnail (props) {
                             height: 88%;
                             left: 0;
                         }
+                        #thumbnail-REEL {
+                            display: none;
+                        }
 
                     }
 
@@ -181,6 +184,9 @@ function Thumbnail (props) {
                             width: calc(100vw - 60px);
                             margin-left: 30px;
                             margin-bottom: 24px;
+                        }
+                        .thumbnail:nth-child(even) .information {
+                            justify-content: flex-end;
                         }
                         .label {
                             margin-bottom: 0;

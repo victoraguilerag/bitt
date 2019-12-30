@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Thumbnail from './thumbnail.js'
 import About from './about.js'
 import Members from './members.js'
+import Extras from './extras.js'
 import Awards from './awards.js'
 import Contact from './contact.js'
 
@@ -11,10 +12,23 @@ function Grilla ({
     handleIcon,
     selected
 }) {
+    const extras = [
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-a.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-b.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-c.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-d.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-e.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-f.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-g.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-h.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-i.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-j.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-k.svg" },
+        { nombre: "NOMBRE", apellido: "APELLIDO", img: "/face-l.svg" },
+    ]
     const [tablet, setTablet] = useState(false)
     const [mobile, setMobile] = useState(false)
     const [parsedItems, setParsedItems] = useState([...items.slice(1, items.length), items[0]])
-
     let pie = (items.length) / 3;
     pie = pie - parseInt(pie);
     pie = parseInt(pie * 100);
@@ -70,7 +84,10 @@ function Grilla ({
                 </div>
             </div>
             <About />
+            <Members />
+            <Extras extras={extras} />
             <Awards handleIcon={handleIcon} />
+
             <Contact handleIcon={handleIcon} />
             <style jsx>
                 {`
@@ -126,8 +143,11 @@ function Grilla ({
                     @media screen and (max-width: 1100px) {
                         .items-container {
                             grid-template-columns: 1fr;
-                            max-width: 570px;
-                            width: 570px;
+                            display: flex;
+                            flex-flow: column;
+                            width: 100%;
+                            margin: 0;
+                            max-width: none;
                         }
                     }
                     @media screen and (max-width: 768px) {
@@ -137,6 +157,7 @@ function Grilla ({
                             max-width: none;
                             width: 100%;
                         }
+
                     }
                 `}
             </style>
