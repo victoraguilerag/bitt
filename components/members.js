@@ -62,15 +62,12 @@ function Members () {
                                     ))
                                 }
                             </div>
-                            {
-                                i == 2 && (
-                                    <img onClick={handleIcon} className="arrow" src="/white-arrow.svg" />
-                                )
-                            }
                         </div>
                     </div>
                 ))
             }
+            <img onClick={handleIcon} className="arrow" src="/white-arrow.svg" />
+
             <style jsx>
                 {`
                     .Members {
@@ -112,7 +109,7 @@ function Members () {
                     }
                     .arrow {
                         position: absolute;
-                        right: -80px;
+                        right: 5vw;
                         cursor: pointer;
                     }
                     .member {

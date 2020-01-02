@@ -414,7 +414,9 @@ function Home () {
   const handleLoad = (e) => {
     const player = new Vimeo(e.target)
     player.play()
-    setLoaded(true);
+    setTimeout(() => {
+      setLoaded(true);
+    }, 5000)
   }
 
   return (

@@ -252,7 +252,7 @@ function Awards ({ handleIcon }) {
                 {`
                     .arrow {
                         position: absolute;
-                        right: 100px;
+                        right: 5vw;
                         cursor: pointer;
                         margin-top: 84px;
                     }

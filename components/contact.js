@@ -37,13 +37,13 @@ function Contact ({ handleIcon }) {
                         <img src="/facebook.svg" className="red-icon" />
                     </a>
                 </div>
-                <img
-                        src="/white-arrow.svg"
-                        className="arrow"
-                        onClick={handleIcon}
-                        tabIndex="0"
-                    />
             </div>
+            <img
+                src="/arrow.svg"
+                className="arrow"
+                onClick={handleIcon}
+                tabIndex="0"
+            />
             <style jsx>
                 {`
                     .Contact {
@@ -51,6 +51,7 @@ function Contact ({ handleIcon }) {
                         background: #EDE9E3;
                         color: #141313;
                         padding: 5vw;
+                        position: relative;
                     }
                     .Contact .title {
                         font-size: 2.2em;
@@ -117,10 +118,9 @@ function Contact ({ handleIcon }) {
                     .brand-footer .logo {
                         margin-right: 262px;
                     }
-                    .brand-footer .arrow {
+                    .arrow {
                         position: absolute;
-                        right: 0;
-                        bottom: 0;
+                        right: 5vw;
                         cursor: pointer;
                     }
                     .brand-footer .red {

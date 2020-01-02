@@ -94,7 +94,8 @@ function About ({}) {
                     }
                     .slider-container {
                         position: relative;
-                        width: auto; 
+                        width: auto;
+                        height: fit-content;
                     }
                     .slider {
                         display: flex;
@@ -102,6 +103,8 @@ function About ({}) {
                     }
                     .slider .image {
                         margin-top: 0;
+                        max-height: 100%;
+                        height: 100%;
                     }
                     .arrow-slider.active {
                         display: block;
