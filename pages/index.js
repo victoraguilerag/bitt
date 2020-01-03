@@ -530,7 +530,7 @@ function Home () {
             opacity: 0;
             transition: 1s opacity ease;
             position: fixed;
-            background: white;
+            background: #EDE9E3;
             width: 100%;
             height: 100%;
             z-index: 50;
@@ -541,7 +541,7 @@ function Home () {
           }
           .preloader.active {
             position: fixed;
-            background: white;
+            background: #EDE9E3;
             width: 100%;
             height: 100%;
             z-index: 50;
@@ -552,7 +552,7 @@ function Home () {
             opacity: 1;
           }
           .preloader-animation {
-            width: 40px;
+            width: 100px;
           } 
           @media screen and (max-width: 1024px) {
             #Work::first-child {

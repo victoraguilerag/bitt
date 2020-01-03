@@ -35,6 +35,10 @@ function Extras ({ extras }) {
                         position: relative;
                         cursor: pointer
                     }
+                    .extra:hover {
+                        filter: invert(1);
+                        background: #EDE9E3;
+                    }
                     .extra .img {
                         width: 100%;
                     }
@@ -52,7 +56,7 @@ function Extras ({ extras }) {
                         margin-top: 5vw;
                         margin-bottom: 100px;
                         display: grid;
-                        grid-gap: 40px;
+                        grid-gap: 30px;
                         grid-template-columns: 1fr 1fr 1fr;
                     }
                     @media screen and (max-width: 1100px) {
