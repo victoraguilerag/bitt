@@ -48,8 +48,8 @@ function Extras ({ extras }) {
                     }
                     .extras-container {
                         max-width: 50vw;
-                        margin-left: 100px;
-                        margin-top: 100px;
+                        margin-left: 5vw;
+                        margin-top: 5vw;
                         margin-bottom: 100px;
                         display: grid;
                         grid-gap: 40px;

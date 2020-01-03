@@ -75,7 +75,7 @@ function Members () {
                         background: #1A1918;
                         color: #EDE9E3;
                         grid-column: 1/4;
-                        padding: 100px;
+                        padding: 5vw;
                     }
                     .img {
                         width:25vw;
@@ -125,10 +125,6 @@ function Members () {
                         font-weight: 500;
                     }
                     @media screen and (max-width: 1100px) {
-                        .Members {
-                            padding-left: 50px;
-                            padding-bottom: 50px;
-                        }
                         .member {
                             flex-flow: column;
                             align-items: flex-start;
