@@ -97,6 +97,9 @@ function About ({}) {
                         width: auto;
                         height: fit-content;
                     }
+                    .slider-container .image.slider {
+                        overflow: hidden;
+                    }
                     .slider {
                         display: flex;
                         overflow-x: scroll;

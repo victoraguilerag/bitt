@@ -180,8 +180,8 @@ function Detalle ({
                     }
                     .Detalle .play-icon {
                         position: absolute;
-                        width: 10%;
-                        height: 10%;
+                        width: 50px;
+                        height: 50px;
                         top: 45%;
                         left: 45%;
                         cursor: pointer;

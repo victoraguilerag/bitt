@@ -347,7 +347,11 @@ function Home () {
 
   const handleItem = i => {
     if (items) {
-      const selItem = items[items.indexOf(i)]
+      console.log(items)
+      console.log(i)
+      console.log(items.indexOf(i))
+      const selItem = items.find(item => item.label == i.label)
+      console.log(selItem)
       if (selItem == selected) {
         const video = document.getElementById('video');
         if (!video) return false
@@ -375,6 +379,11 @@ function Home () {
   const handleHover = i => {
     window.clearTimeout(timer)
     setActive(i)
+  }
+
+  const handleDeHover = i => {
+    window.clearTimeout(timer)
+    setActive(0)
   }
 
   const handleAnimation = () => {
@@ -475,7 +484,8 @@ function Home () {
                     key={item.label}
                     className={`item ${active == i ? 'active': ''}`}
                     onMouseEnter={() => handleHover(i)}
-                    onClick={() => handleItem(i)}
+                    onMouseLeave={() => handleDeHover()}
+                    onClick={() => handleItem(item)}
                   >
                     {item.label.toUpperCase()}
                   </div>
