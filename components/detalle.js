@@ -32,13 +32,11 @@ function Detalle ({
             {
                 selected && selected.img && (
                     <React.Fragment>
-                        <img id="video" className="video" src={`/${selected.img}.jpeg`} />
                         <iframe
-                          id={selected.label}
+                          id="video"
                           className="big"
                           src={`https://player.vimeo.com/video/${selected.video}`}
                           width="100vw"
-                          height="880"
                           frameborder="0"
                           autoplay
                           allow="autoplay; fullscreen"
@@ -177,6 +175,7 @@ function Detalle ({
                     }
                     .Detalle .video {
                         width: 100%;
+                        height: fit-content;
                     }
                     .Detalle .play-icon {
                         position: absolute;
