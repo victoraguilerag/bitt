@@ -22,7 +22,7 @@ function Detalle ({
             const detalle = document.getElementById('detalle')
             detalle.scrollTop = 0
 
-        }, 700);
+        }, 2000);
         // detalle.scrollTop = 0
     }
 

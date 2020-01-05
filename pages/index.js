@@ -347,11 +347,7 @@ function Home () {
 
   const handleItem = i => {
     if (items) {
-      console.log(items)
-      console.log(i)
-      console.log(items.indexOf(i))
       const selItem = items.find(item => item.label == i.label)
-      console.log(selItem)
       if (selItem == selected) {
         const video = document.getElementById('video');
         if (!video) return false
@@ -404,11 +400,6 @@ function Home () {
       behavior: 'smooth',
       block: 'start'
     })
-
-    setTimeout(() => {
-        const detalle = document.getElementById('detalle')
-        detalle.scrollTop = 0
-    }, 1000)
   }
 
   const defaultOptions = {

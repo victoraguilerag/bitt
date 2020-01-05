@@ -11,10 +11,6 @@ function Members () {
           block: 'start'
         })
     
-        setTimeout(() => {
-            const detalle = document.getElementById('detalle')
-            detalle.scrollTop = 0
-        }, 1000)
     }
     const [members, setMembers] = useState([
         {
@@ -66,7 +62,7 @@ function Members () {
                     </div>
                 ))
             }
-            <img onClick={handleIcon} className="arrow" src="/white-arrow.svg" />
+                <img onClick={handleIcon} className="arrow" src="/white-arrow.svg" />                
 
             <style jsx>
                 {`

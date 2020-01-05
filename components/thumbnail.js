@@ -46,7 +46,7 @@ function Thumbnail (props) {
         if (mobile) return false;
         const player = new Vimeo(iframe.current)
         setTimeout(() => {
-            if (iframe.current.id == "REEL") {
+            if (iframe && iframe.current && iframe.current.id == "REEL") {
                 setLoaded(true)
                 setActive(true);
                 return player.play();

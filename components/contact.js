@@ -41,8 +41,8 @@ function Contact ({ handleIcon }) {
             <img
                 src="/arrow.svg"
                 className="arrow"
-                onClick={handleIcon}
                 tabIndex="0"
+                onClick={handleIcon}
             />
             <style jsx>
                 {`
