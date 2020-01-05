@@ -416,7 +416,7 @@ function Home () {
     player.play()
     setTimeout(() => {
       setLoaded(true);
-    }, 5000)
+    }, 6000)
   }
 
   return (
