@@ -414,7 +414,7 @@ function Home () {
   const handleLoad = (e) => {
     setTimeout(() => {
       setLoaded(true);
-    }, 3000)
+    }, 4000)
   }
 
   return (
