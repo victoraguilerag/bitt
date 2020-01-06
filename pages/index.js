@@ -412,11 +412,9 @@ function Home () {
   };
 
   const handleLoad = (e) => {
-    const player = new Vimeo(e.target)
-    player.play()
     setTimeout(() => {
       setLoaded(true);
-    }, 6000)
+    }, 3000)
   }
 
   return (
@@ -457,7 +455,7 @@ function Home () {
                     autoplay
                     allow="autoplay; fullscreen"
                     allowfullscreen
-                    onLoad={i == 0 ? e => handleLoad(e) : false}
+                    onLoad={i == active ? e => handleLoad(e) : () => {}}
                   />
                 )
               }) 
@@ -565,12 +563,13 @@ function Home () {
             height: 100%;
             position: absolute;
             max-width: none;
+            display: flex;
           }
           :global(iframe.home.apagado) {
-            display: none;
+            opacity: 0;
           }
           :global(iframe.home.encendido) {
-            display: flex;
+            opacity: 1;
           }
           :global(iframe.home#POWERADE) {
             width: 200%;
