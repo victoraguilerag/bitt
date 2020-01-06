@@ -76,7 +76,8 @@ function Home () {
     },
     {
       label: 'POWERADE',
-      img: "POWERADE_MANIFESTO-SQ",
+      img: "POWERADE_MANIFESTO",
+      heroimg: "POWERADE_MANIFESTO-SQ",
       nombre: 'MANIFIESTO',
       miembros: [
         { label: 'DIRECTOR', value: 'Nico Perez Veiga' },        
