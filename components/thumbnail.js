@@ -82,8 +82,8 @@ function Thumbnail (props) {
                 )
             }
             <div className="information">
-                <div className="title">{item.nombre.toUpperCase()}</div>
                 <div className="label">{item.label.toUpperCase()}</div>
+                <div className="title">{item.nombre.toUpperCase()}</div>
             </div>
 
 
@@ -143,12 +143,13 @@ function Thumbnail (props) {
                         font-family: 'Drunk';
                         font-weight: 400;
                         font-size: 17px;
+                        margin-left: 4px;
+                        color: #B3AFA8;
                     }
                     .label {
                         font-family: 'Drunk';
-                        color: #B3AFA8;
                         margin-bottom: 20px;
-                        margin-left: 8px;
+                        margin-left: 0px;
                     }
                     .thumbnail {
                         position: relative;
