@@ -190,11 +190,11 @@ function Thumbnail (props) {
                             justify-content: flex-end;
                         }
                         .label {
-                            font-size: 10px;
+                            font-size: 11px;
                             margin-bottom: 0;
                         }
                         .title {
-                            font-size: 10px;
+                            font-size: 11px;
                             margin-bottom: 0;
                         }
                     }
