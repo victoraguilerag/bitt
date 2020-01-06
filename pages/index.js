@@ -431,7 +431,7 @@ function Home () {
   const handleLoad = (e) => {
     setTimeout(() => {
       setLoaded(true);
-    }, 4500)
+    }, 3300)
   }
 
   return (
