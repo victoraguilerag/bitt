@@ -82,7 +82,7 @@ function Thumbnail (props) {
                 )
             }
             <div className="information">
-                <div className="title">{item.nombre.toUpperCase()}.</div>
+                <div className="title">{item.nombre.toUpperCase()}</div>
                 <div className="label">{item.label.toUpperCase()}</div>
             </div>
 
@@ -189,11 +189,12 @@ function Thumbnail (props) {
                             justify-content: flex-end;
                         }
                         .label {
-                            font-size: 12px;
+                            font-size: 10px;
                             margin-bottom: 0;
                         }
                         .title {
                             font-size: 10px;
+                            margin-bottom: 0;
                         }
                     }
                 `}

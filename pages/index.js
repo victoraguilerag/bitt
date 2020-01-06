@@ -11,7 +11,7 @@ function Home () {
   const brands = [
     {
       label: 'REEL',
-       img: "BITT-REEL",
+       img: "BITT-REEL-SQ",
        nombre: 'BITT REEL',
        miembros: [
        { label: 'DIRECTOR', value: 'Bitt Animation' },        
@@ -26,7 +26,7 @@ function Home () {
     },
     {
       label: 'ford',
-      img: 'FORD_T-REX',
+      img: 'FORD_T-REX-SQ',
       nombre: 'FORD KA T-REX',
       miembros: [
         { label: 'DIRECTOR', value: 'Nicolás Kasakoff' },        
@@ -42,7 +42,7 @@ function Home () {
     },
     {
       label: 'Coca-Cola',
-      img: "COCA-COLA_TERMINATOR",
+      img: "COCA-COLA_TERMINATOR-SQ",
       nombre: 'M.A.R.T.A TERMINATOR',
       miembros: [
         { label: 'DIRECTOR', value: 'Felipe Gomez Aparicio' },        
@@ -57,7 +57,7 @@ function Home () {
     },
     {
       label: 'NIVEA',
-      img: "NIVEA_PIONEERSOFSENSIBILITY",
+      img: "NIVEA_PIONEERSOFSENSIBILITY-SQ",
       nombre: 'PIONEERS OF SENSIBILITY',
       miembros: [
         { label: 'DIRECTOR', value: 'Nico Perez Veiga' },        
@@ -72,7 +72,7 @@ function Home () {
     },
     {
       label: 'POWERADE',
-      img: "POWERADE_MANIFESTO",
+      img: "POWERADE_MANIFESTO-SQ",
       nombre: 'MANIFIESTO',
       miembros: [
         { label: 'DIRECTOR', value: 'Nico Perez Veiga' },        
@@ -87,7 +87,7 @@ function Home () {
     },
     {
       label: 'VOLKSWAGEN',
-      img: "VOLKSWAGEN_MONITO",
+      img: "VOLKSWAGEN_MONITO-SQ",
       nombre: 'MONITO',
       miembros: [
         { label: 'DIRECTOR', value: 'Santi Elías' },        
@@ -102,7 +102,7 @@ function Home () {
     },
     {
       label: 'NESCAFÉ',
-      img: "NESCAFE_CUERDAS",
+      img: "NESCAFE_CUERDAS-SQ",
       nombre: 'CUERDAS',
       miembros: [
         { label: 'DIRECTOR', value: 'Andy Fogwill' },        
@@ -117,7 +117,7 @@ function Home () {
     },
     {
       label: 'TOYOTA',
-      img: "TOYOTA_CHOOSETHETOUGHESTFIELD",
+      img: "TOYOTA_CHOOSETHETOUGHESTFIELD-SQ",
       nombre: 'CHOOSE THE TOUGHEST FIELD',
       miembros: [
         { label: 'DIRECTOR', value: 'Jonnny Mass' },        
@@ -132,7 +132,7 @@ function Home () {
     },
     {
       label: 'Palacio de Hierro',
-      img: "PALACIODEHIERRO_CHRISTMAS",
+      img: "PALACIODEHIERRO_CHRISTMAS-SQ",
       nombre: 'CHRISTMAS',
       miembros: [
         { label: 'DIRECTOR', value: 'Jonathan Gurvit' },        
@@ -147,7 +147,7 @@ function Home () {
     },
     {
       label: 'La Campagnola',
-      img: "CAMPAGNOLA_GALLO",
+      img: "CAMPAGNOLA_GALLO-SQ",
       nombre: 'Gallo',
       miembros: [
         { label: 'DIRECTOR', value: 'Pablo Fusco' },        
@@ -162,7 +162,7 @@ function Home () {
     },
     {
       label: 'GCBA',
-      img: "GCBA_SAPO",
+      img: "GCBA_SAPO-SQ",
       nombre: 'SAPO',
       miembros: [
         { label: 'DIRECTOR', value: 'Diego Kaplan' },        
@@ -177,7 +177,7 @@ function Home () {
     },
     {
       label: 'Manzanada',
-      img: "MANZANADA_SENTIDOS",
+      img: "MANZANADA_SENTIDOS-SQ",
       nombre: 'Sentidos',
       miembros: [
         { label: 'DIRECTOR', value: 'Bitt Animation' },        
@@ -192,7 +192,7 @@ function Home () {
     },
     {
       label: 'Fritos',
-      img: "FRITOS_HERO",
+      img: "FRITOS_HERO-SQ",
       nombre: 'Hero',
       miembros: [
         { label: 'DIRECTOR', value: 'Bitt Animation - Can Can Club'},        
@@ -207,7 +207,7 @@ function Home () {
     },
     {
       label: 'DOMESTOS',
-      img: "DOMESTOS_BATHROOMBLITZ",
+      img: "DOMESTOS_BATHROOMBLITZ-SQ",
       nombre: 'Bathroom Blitz',
       miembros: [
         { label: 'DIRECTOR', value: 'Russell Appleford' },        
@@ -222,7 +222,7 @@ function Home () {
     },
     {
       label: 'GOT MILK',
-      img: "GOTMILK_BATTLE",
+      img: "GOTMILK_BATTLE-SQ",
       nombre: 'BATTLE OF POSITIVISM',
       miembros: [
         { label: 'DIRECTOR', value: 'Armando Bo' },        
@@ -237,7 +237,7 @@ function Home () {
     },
     {
       label: 'ORBIT',
-      img: "ORBIT_EATDRINKANDCHEW",
+      img: "ORBIT_EATDRINKANDCHEW-SQ",
       nombre: 'EAT, DRINK AND CHEW',
       miembros: [
         { label: 'DIRECTOR', value: 'The Mill+' },        
@@ -252,7 +252,7 @@ function Home () {
     },
     {
       label: 'CATSUP',
-      img: "CATSUP_CATAPULTA",
+      img: "CATSUP_CATAPULTA-SQ",
       nombre: 'CATAPULTA',
       miembros: [
         { label: 'DIRECTOR', value: 'Bitt Animation' },        
