@@ -458,21 +458,30 @@ function Home () {
           <div className="video-container">
             {
               items && items.map((item, i) => {
+                if (i == 0) {
+                  return (
+                    <iframe
+                      id={item.label}
+                      className="home"
+                      className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
+                      title={item.label}
+                      src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
+                      width="880"
+                      height="880"
+                      frameborder="0"
+                      autoplay
+                      allow="autoplay; fullscreen"
+                      allowfullscreen
+                      onLoad={i == active ? e => handleLoad(e) : () => {}}
+                    />
+                  )
+                }
                 if (mobile && i !== 0) return false;
                 return (
-                  <iframe
+                  <img
                     id={item.label}
-                    className="home"
                     className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
-                    title={item.label}
-                    src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
-                    width="880"
-                    height="880"
-                    frameborder="0"
-                    autoplay
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                    onLoad={i == active ? e => handleLoad(e) : () => {}}
+                    src={"/" + item.heroimg + ".jpg"}
                   />
                 )
               }) 
@@ -587,6 +596,19 @@ function Home () {
           }
           :global(iframe.home.encendido) {
             opacity: 1;
+          }
+          .apagado {
+            opacity: 0;
+          }
+          .encendido {
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
           }
           :global(iframe.home#POWERADE) {
             width: 200%;
