@@ -356,7 +356,7 @@ function Home () {
       if (!loaded) {
         setLoaded(true);
       }
-    }, 8000)
+    }, 7000)
   }, [])
 
   useEffect(() => {
