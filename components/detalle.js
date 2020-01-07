@@ -163,12 +163,14 @@ function Detalle ({
                         font-weight: normal;
                     }
                     .Detalle {
+
                         position: absolute;
                         top: 100%;
                         max-width: 100%;
                         width: 100vw;
                         max-height: 100vh;
                         overflow-y: scroll;
+                        overflow-x: hidden;
                         display: flex;
                         flex-flow: column;
                         background: #ECE6DE;

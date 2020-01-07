@@ -356,7 +356,7 @@ function Home () {
       if (!loaded) {
         setLoaded(true);
       }
-    }, 7000)
+    }, 6000)
   }, [])
 
   useEffect(() => {
@@ -436,9 +436,10 @@ function Home () {
 
   const handleLoad = (e) => {
     setTimeout(() => {
+      console.log("loaded")
       if (!loaded) return false;
       setLoaded(true);
-    }, 3300)
+    }, 1000)
   }
 
   return (
@@ -479,7 +480,7 @@ function Home () {
                       autoplay
                       allow="autoplay; fullscreen"
                       allowfullscreen
-                      onLoad={i == active ? e => handleLoad(e) : () => {}}
+                      onLoad={i == 0 ? e => handleLoad(e) : () => {}}
                     />
                   )
                 }
@@ -656,10 +657,11 @@ function Home () {
           }
 
           .water-mark {
+            position: absolute;
             width: 94%;
             height: auto;
             margin-bottom: 2%;
-            z-index: 10;
+            z-index: 11;
           }
           .menu {
             height: calc(100vh - 40px);
