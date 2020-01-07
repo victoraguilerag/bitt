@@ -351,6 +351,12 @@ function Home () {
     if (window && window.matchMedia('(max-width: 1024px)').matches) {
       setMobile(true);
     }
+
+    setTimeout(() => {
+      if (!loaded) {
+        setLoaded(true);
+      }
+    }, 8000)
   }, [])
 
   useEffect(() => {
@@ -430,6 +436,7 @@ function Home () {
 
   const handleLoad = (e) => {
     setTimeout(() => {
+      if (!loaded) return false;
       setLoaded(true);
     }, 3300)
   }
