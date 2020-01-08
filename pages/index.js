@@ -29,7 +29,7 @@ function Home () {
       label: 'ford',
       img: 'FORD_T-REX',
       heroimg: 'FORD_T-REX-SQ',
-      nombre: 'FORD KA T-REX',
+      nombre: 'T-REX',
       miembros: [
         { label: 'DIRECTOR', value: 'Nicolás Kasakoff' },        
         { label: 'CLIENT', value: 'FORD ARGENTINA' },
@@ -472,7 +472,7 @@ function Home () {
                       className="home"
                       className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
                       title={item.label}
-                      src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
+                      src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&quality=720p&loop=1&autopause=0&background=1`}
                       width="880"
                       height="880"
                       frameborder="0"
@@ -660,7 +660,7 @@ function Home () {
             position: absolute;
             width: 94%;
             height: auto;
-            margin-bottom: 2%;
+            padding-bottom: 2%;
             z-index: 11;
           }
           .menu {
