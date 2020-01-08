@@ -67,7 +67,7 @@ function Thumbnail (props) {
                         id={item.label}
                         title={item.label}
                         className={`thumbnail-video ${active ? "active":""}`}
-                        src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1`}
+                        src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1&quality=360p`}
                         width="360"
                         height="180"
                         frameborder="0"
