@@ -182,9 +182,6 @@ function Thumbnail (props) {
                             margin-left: 30px;
                             margin-bottom: 24px;
                         }
-                        .thumbnail:nth-child(even) .information {
-                            justify-content: flex-end;
-                        }
                         .label {
                             font-size: 11px;
                             margin-bottom: 0;
