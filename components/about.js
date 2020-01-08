@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import lottie from 'lottie-web'
 import * as animationData from '../public/burger-animation-lottie.json'
 
-function About ({}) {
+function About ({ handleIcon }) {
     const animationContainer = useRef();
     const animation = useRef(null);
     const slider = useRef(null);
@@ -71,8 +71,29 @@ function About ({}) {
                 </div>
                 <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition == 0 ? "active":""}`} onClick={handleNext}></img>
             </div>
+            <img
+                src="/arrow.svg"
+                className="arrow"
+                tabIndex="0"
+                onClick={handleIcon}
+            />
             <style jsx>
                 {`
+                    #About {
+                        position: relative;
+                    }
+                    .arrow {
+                        position: absolute;
+                        right: -41vw;
+                        cursor: pointer;
+                        bottom: 10vh;
+                    }
+                    @media screen and (min-width: 1200px) {
+                        .arrow {
+                            bottom: 2vh;
+                            right: 0;
+                        }
+                    } 
                     .arrow-slider {
                         position: absolute;
                         right: 8px;
@@ -141,6 +162,7 @@ function About ({}) {
                         margin-top: 16px;
                         margin-bottom: 0;
                         text-align: justify;
+                        opacity: .7;
                     }
                     .logo-container {
                         position: relative;

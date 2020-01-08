@@ -1,6 +1,7 @@
 function Sections ({ active }) {
     const scrollTo = (target) => {
         const tag = document.getElementById(target)
+        if (!tag) return false
         tag.scrollIntoView({
             block: "start",
             behavior: 'smooth',
@@ -9,9 +10,11 @@ function Sections ({ active }) {
     return (
         <div className={`sections ${active ? 'active' : ''}`}>
             <h3 className="section first" onClick={() => scrollTo('Work')}>
-                WORK
+                WORKS
             </h3>
+            <h3 className="section" onClick={() => scrollTo('Reel')}>REEL</h3>
             <h3 className="section" onClick={() => scrollTo('About')}>ABOUT</h3>
+            <h3 className="section" onClick={() => scrollTo('Awards')}>AWARDS</h3>
             <h3 className="section" onClick={() => scrollTo('Contact')}>CONTACT</h3>
 
             <style jsx>

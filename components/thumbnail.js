@@ -46,11 +46,7 @@ function Thumbnail (props) {
         if (mobile) return false;
         const player = new Vimeo(iframe.current)
         setTimeout(() => {
-            if (iframe && iframe.current && iframe.current.id == "REEL") {
-                setLoaded(true)
-                setActive(true);
-                return player.play();
-            }
+            console.log("pause")
             player.pause()
         }, 1000)
     }
@@ -185,9 +181,6 @@ function Thumbnail (props) {
                             width: calc(100vw - 60px);
                             margin-left: 30px;
                             margin-bottom: 24px;
-                        }
-                        .thumbnail:nth-child(even) .information {
-                            justify-content: flex-end;
                         }
                         .label {
                             font-size: 11px;

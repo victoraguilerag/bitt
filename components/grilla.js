@@ -83,9 +83,9 @@ function Grilla ({
                     />
                 </div>
             </div>
-            <About />
-            <Members />
-            <Extras extras={extras} />
+            <About handleIcon={handleIcon} />
+            {/* <Members /> */}
+            {/* <Extras extras={extras} /> */}
             <Awards handleIcon={handleIcon} />
 
             <Contact handleIcon={handleIcon} />

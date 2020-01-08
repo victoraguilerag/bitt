@@ -215,7 +215,7 @@ function Awards ({ handleIcon }) {
 
 
     return (
-        <div className="Awards">
+        <div id="Awards" className="Awards">
             <h3>AWARDS</h3>
             <div className="items">
                 {

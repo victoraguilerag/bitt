@@ -92,7 +92,9 @@ function Detalle ({
                         position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
                     }
                     .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-                    } 
+                    }
+                    iframe#toyota {position: relative; padding-bottom: 43.25%!important; height: 0; overflow: hidden; max-width: 100%;}
+
                     .arrow-white {
                         position: absolute;
                         bottom: 24px;
@@ -163,12 +165,14 @@ function Detalle ({
                         font-weight: normal;
                     }
                     .Detalle {
+
                         position: absolute;
                         top: 100%;
                         max-width: 100%;
                         width: 100vw;
                         max-height: 100vh;
                         overflow-y: scroll;
+                        overflow-x: hidden;
                         display: flex;
                         flex-flow: column;
                         background: #ECE6DE;

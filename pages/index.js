@@ -260,7 +260,7 @@ function Home () {
         { label: 'CLIENT', value: 'Wrigleys India' },
         { label: 'AGENCY', value: 'DDB Mudra Group'},
         { label: 'PROD. COMPANY', value: 'The mill+'},
-        { label: 'YEAR', value: '2018'}
+        { label: 'YEAR', value: '2015'}
       ],
       video: "377161041",
       videothumb: "381058485",
@@ -351,6 +351,12 @@ function Home () {
     if (window && window.matchMedia('(max-width: 1024px)').matches) {
       setMobile(true);
     }
+
+    setTimeout(() => {
+      if (!loaded) {
+        setLoaded(true);
+      }
+    }, 6000)
   }, [])
 
   useEffect(() => {
@@ -430,8 +436,9 @@ function Home () {
 
   const handleLoad = (e) => {
     setTimeout(() => {
+      if (!loaded) return false;
       setLoaded(true);
-    }, 3300)
+    }, 1000)
   }
 
   return (
@@ -472,7 +479,7 @@ function Home () {
                       autoplay
                       allow="autoplay; fullscreen"
                       allowfullscreen
-                      onLoad={i == active ? e => handleLoad(e) : () => {}}
+                      onLoad={i == 0 ? e => handleLoad(e) : () => {}}
                     />
                   )
                 }
@@ -503,6 +510,7 @@ function Home () {
                     onClick={() => handleItem(item)}
                   >
                     {item.label.toUpperCase()}
+                    <span className="title">{item.nombre.toUpperCase()}</span>
                   </div>
                 )
               })
@@ -649,10 +657,11 @@ function Home () {
           }
 
           .water-mark {
+            position: absolute;
             width: 94%;
             height: auto;
             margin-bottom: 2%;
-            z-index: 10;
+            z-index: 11;
           }
           .menu {
             height: calc(100vh - 40px);
@@ -674,11 +683,17 @@ function Home () {
           .menu .item.active {
             color: #141313;
           }
+          .menu .item .title {
+            opacity: .75;
+            margin-left: 10px;
+            font-size: 20px;
+          }
           @media screen and (max-width: 1600px) {
             .menu {
             }
             .menu .item {
-              height: 24px;
+              min-height: 24px;
+              height: auto;
               font-size: 24px;
               line-height: 24px;
               margin-top: 0px;
