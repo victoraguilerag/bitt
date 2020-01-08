@@ -672,7 +672,7 @@ function Home () {
             margin-bottom: 30px;
           }
           .menu .item {
-            height: 40px;
+            height: 35px;
             font-size: 40px;
             font-weight: bold;
             font-family: 'Drunk';
