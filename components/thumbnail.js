@@ -67,7 +67,7 @@ function Thumbnail (props) {
                         id={item.label}
                         title={item.label}
                         className={`thumbnail-video ${active ? "active":""}`}
-                        src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1`}
+                        src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1&quality=360p`}
                         width="360"
                         height="180"
                         frameborder="0"
@@ -181,9 +181,6 @@ function Thumbnail (props) {
                             width: calc(100vw - 60px);
                             margin-left: 30px;
                             margin-bottom: 24px;
-                        }
-                        .thumbnail:nth-child(even) .information {
-                            justify-content: flex-end;
                         }
                         .label {
                             font-size: 11px;

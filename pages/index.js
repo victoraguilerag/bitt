@@ -29,7 +29,7 @@ function Home () {
       label: 'ford',
       img: 'FORD_T-REX',
       heroimg: 'FORD_T-REX-SQ',
-      nombre: 'FORD KA T-REX',
+      nombre: 'T-REX',
       miembros: [
         { label: 'DIRECTOR', value: 'Nicolás Kasakoff' },        
         { label: 'CLIENT', value: 'FORD ARGENTINA' },
@@ -260,7 +260,7 @@ function Home () {
         { label: 'CLIENT', value: 'Wrigleys India' },
         { label: 'AGENCY', value: 'DDB Mudra Group'},
         { label: 'PROD. COMPANY', value: 'The mill+'},
-        { label: 'YEAR', value: '2018'}
+        { label: 'YEAR', value: '2015'}
       ],
       video: "377161041",
       videothumb: "381058485",
@@ -452,7 +452,6 @@ function Home () {
 
   const handleLoad = (e) => {
     setTimeout(() => {
-      console.log("loaded")
       if (!loaded) return false;
       setLoaded(true);
     }, 1000)
@@ -489,7 +488,7 @@ function Home () {
                       className="home"
                       className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
                       title={item.label}
-                      src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
+                      src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&quality=720p&loop=1&autopause=0&background=1`}
                       width="880"
                       height="880"
                       frameborder="0"
@@ -527,6 +526,7 @@ function Home () {
                     onClick={() => handleItem(item)}
                   >
                     {item.label.toUpperCase()}
+                    <span className="title">{item.nombre.toUpperCase()}</span>
                   </div>
                 )
               })
@@ -676,7 +676,7 @@ function Home () {
             position: absolute;
             width: 94%;
             height: auto;
-            margin-bottom: 2%;
+            padding-bottom: 2%;
             z-index: 11;
           }
           .menu {
@@ -688,7 +688,7 @@ function Home () {
             margin-bottom: 30px;
           }
           .menu .item {
-            height: 40px;
+            height: 35px;
             font-size: 40px;
             font-weight: bold;
             font-family: 'Drunk';
@@ -699,11 +699,17 @@ function Home () {
           .menu .item.active {
             color: #141313;
           }
+          .menu .item .title {
+            opacity: .75;
+            margin-left: 10px;
+            font-size: 20px;
+          }
           @media screen and (max-width: 1600px) {
             .menu {
             }
             .menu .item {
-              height: 24px;
+              min-height: 24px;
+              height: auto;
               font-size: 24px;
               line-height: 24px;
               margin-top: 0px;
