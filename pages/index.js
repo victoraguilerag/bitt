@@ -282,6 +282,22 @@ function Home () {
       videothumb: "381058216",
       videosquare: "381057684",
     },
+    {
+      label: 'VILLAVICENCIO',
+       img: "VILLAVICENCIO_CIMIENTOS",
+       heroimg: "VILLAVICENCIO_CIMIENTOS-SQ",
+       nombre: 'CIMIENTOS',
+       miembros: [
+       { label: 'DIRECTOR', value: 'Federico Tachella' },        
+       { label: 'CLIENT', value: 'Villavicencio' },
+       { label: 'AGENCY', value: 'VML Y&R'},
+       { label: 'PROD. COMPANY', value: 'Rebolución'},
+       { label: 'YEAR', value: '2020'}
+       ],
+         video: "383774851",
+         videothumb: "383841300",
+         videosquare: "383841300",
+    },
   ]
   const animationContainer = useRef(null)
   const secondAnimationContainer = useRef(null)
