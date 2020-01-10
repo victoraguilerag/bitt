@@ -23,6 +23,7 @@ function Reel () {
                         height: 0;
                         overflow: hidden;
                         max-width: 100%;
+                        background: #1A1918;
                     }
                    #reel-video {
                         position: absolute;
