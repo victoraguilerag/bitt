@@ -61,7 +61,7 @@ function Thumbnail (props) {
         >
             <div className="shadow" />
             <div className="thumbnail-title">{item.label.toUpperCase()}</div>
-            <div className="thumbnail-nombre">{item.nombre}</div>
+            <div className="thumbnail-nombre">{item.nombre.toUpperCase()}</div>
             <img src={`/${item.img}.jpeg`} className={`img ${loaded ? "active":""}`} />
             {
                 !mobile && (

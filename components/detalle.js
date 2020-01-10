@@ -173,7 +173,6 @@ function Detalle ({
                         font-weight: normal;
                     }
                     .Detalle {
-
                         position: absolute;
                         top: 100%;
                         max-width: 100%;
@@ -198,6 +197,9 @@ function Detalle ({
                         cursor: pointer;
                     }
                     @media screen and (max-width: 768px) {
+                        .Detalle {
+                            position: relative;
+                        }
                         .title {
                             width: 100%;
                         }
