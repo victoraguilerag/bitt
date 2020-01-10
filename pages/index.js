@@ -403,7 +403,6 @@ function Home () {
     if (selected) {
       const video = document.getElementById('video');
       if (!video) return false
-      document.body.style.overflowY = 'hidden';
       video.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -535,11 +534,6 @@ function Home () {
         </div>
       </div>
       <Detalle selected={selected} items={items} selectProject={handleItem} />
-      {
-        !selected && grillaLoaded && (
-          <Grilla items={items} handleIcon={handleIcon} selectProject={handleItem} />
-        )
-      }
       <style jsx global>
         {`
 

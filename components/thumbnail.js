@@ -59,6 +59,9 @@ function Thumbnail (props) {
             onMouseEnter={handleIn}
             onMouseLeave={handleOut}
         >
+            <div className="shadow" />
+            <div className="thumbnail-title">{item.label.toUpperCase()}</div>
+            <div className="thumbnail-nombre">{item.nombre}</div>
             <img src={`/${item.img}.jpeg`} className={`img ${loaded ? "active":""}`} />
             {
                 !mobile && (
@@ -85,6 +88,28 @@ function Thumbnail (props) {
 
             <style jsx>
                 {`
+                    .thumbnail-title {
+                        font-family: "Drunk";
+                        position: absolute;
+                        z-index: 2;
+                        color: white;
+                        bottom: 28px;
+                        left: 8px;
+                        color: #A7A19A;
+                        z-index: 2;
+                        opacity: 0;
+                    }
+                    .thumbnail-nombre {
+                        font-family: "Drunk";
+                        position: absolute;
+                        z-index: 2;
+                        color: white;
+                        bottom: 8px;
+                        left: 8px;
+                        color: #b8b2ab;
+                        z-index: 2;
+                        opacity: 0;
+                    }
                     .preloader {
                         
                     }
@@ -132,6 +157,21 @@ function Thumbnail (props) {
                     .thumbnail {
                         cursor: pointer;
                     }
+                    .thumbnail:hover .shadow {
+                        position: absolute;
+                        background: rgba(0,0,0,1);
+                        opacity: .6;
+                        width: 100%;
+                        height: 100%;
+                        transition: 1s ease linear;
+                        z-index: 2;
+                    }
+                    .thumbnail:hover .thumbnail-title {
+                        opacity: 1;
+                    }
+                    .thumbnail:hover .thumbnail-nombre {
+                        opacity: 1;
+                    }
                     .information {
                         display: flex;
                     }
@@ -175,6 +215,15 @@ function Thumbnail (props) {
                             margin-left: 30px;
                             padding: 0;
                         }
+                        .thumbnail .shadow {
+                            display: none;
+                        }
+                        .thumbnail-nombre {
+                            display: none;
+                        }
+                        .thumbnail-title {
+                            display: none;
+                        }
                     }
                     @media screen and (max-width: 768px) {
                         .thumbnail {
@@ -190,6 +239,7 @@ function Thumbnail (props) {
                             font-size: 11px;
                             margin-bottom: 0;
                         }
+
                     }
                 `}
             </style>

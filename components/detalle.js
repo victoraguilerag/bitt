@@ -28,13 +28,13 @@ function Detalle ({
 
     return (
         <div id="detalle" className={`Detalle ${active ? 'active':''}`}>
-            <div className="embed-container">
+            <div className={`embed-container ${selected ? "active": ""} ${selected && selected.label ? selected.label: ""}`}>
             {
                 selected && selected.img && (
                     <React.Fragment>
                         <iframe
                           id="video"
-                          className="big"
+                          className={`big ${selected.label}`}
                           src={`https://player.vimeo.com/video/${selected.video}`}
                           width="100vw"
                           frameborder="0"
@@ -69,11 +69,7 @@ function Detalle ({
                     </div>
                 )
             }
-            {
-                selected && (
-                    <Grilla selected={selected} items={items} selectProject={selectProject} handleIcon={handleIcon} />
-                )
-            }
+            <Grilla selected={selected} items={items} selectProject={selectProject} handleIcon={handleIcon} />
             <style jsx>
                 {`
                     :global(iframe.big) {
@@ -89,8 +85,20 @@ function Detalle ({
                         height: 100%;
                     }
                     .embed-container {
-                        position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
+                        display: none;
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        max-width: 100%;
                     }
+                    .embed-container.active {
+                        display: block;
+                    }
+                    .embed-container.TOYOTA {
+                        padding-bottom: 43.25%;
+                    }
+
                     .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
                     }
                     iframe#toyota {position: relative; padding-bottom: 43.25%!important; height: 0; overflow: hidden; max-width: 100%;}
@@ -170,8 +178,8 @@ function Detalle ({
                         top: 100%;
                         max-width: 100%;
                         width: 100vw;
-                        max-height: 100vh;
-                        overflow-y: scroll;
+                        min-height: 100vh;
+                        overflow-y: auto;
                         overflow-x: hidden;
                         display: flex;
                         flex-flow: column;

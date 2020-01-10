@@ -20,16 +20,16 @@ function About ({ handleIcon }) {
 
         setTimeout(() => {
             const sliderInterval = setInterval(() => {
-                if (!slider || !slider.current || slider.current.scrollLeft) return false;
-                console.log(slider.current);
-                console.log(slider.current.scrollTo);
-                console.log(slider.current.scrollLeft);
-                slider.current.scrollTo(slider.current.scrollLeft + 1, 0)
             }, 250)
         }, 3000)
     }, [])
     useEffect(() => {
-        slider.current.scrollLeft = sliderPosition * slider.current.clientWidth;
+        // console.log(slider.current)
+        // slider.current.classList.add("fade")
+        // slider.current.scrollLeft = sliderPosition * slider.current.clientWidth;
+        // setTimeout(() => {
+        //     slider.current.classList.remove("fade");
+        // }, 200)
     }, [sliderPosition])
     const handleNext = (i) => {
         console.log(i)
@@ -64,14 +64,11 @@ function About ({ handleIcon }) {
                 </p>
             </div>
             <div className="slider-container">
-                <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition > 0 ? "active":""}`} onClick={handlePrevious}></img>
+                <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition > 0 ? "active":""} ${sliderPosition === 5 ? "black":""}`} onClick={handlePrevious}></img>
                 <div className="image slider" ref={slider}>
-                    <img src="/bitt-slide-1.png" width="200" className="image"></img>
-                    <img src="/bitt-slide-2.png" width="200" className="image"></img>
-                    <img src="/bitt-slide-3.png" width="200" className="image"></img>
-                    <img src="/bitt-slide-4.png" width="200" className="image"></img>
-                    <img src="/bitt-slide-5.png" width="200" className="image"></img>
-                    <img src="/bitt-slide-6.png" width="200" className="image"></img>
+                    {
+                        <img src={`/bitt-slide-${sliderPosition + 1}.png`} width="200" className="image"></img>
+                    }
                 </div>
                 <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition < 5 ? "active":""}`} onClick={handleNext}></img>
             </div>
@@ -107,6 +104,9 @@ function About ({ handleIcon }) {
                         cursor: pointer;
                         display: none;
                     }
+                    .arrow-slider-left.black {
+                        filter: none;
+                    }
                     .arrow-slider-left {
                         position: absolute;
                         left: 8px;
@@ -118,12 +118,26 @@ function About ({ handleIcon }) {
                         display: none;
                     }
                     .slider-container {
+                        max-height: 800px;
+                        width: auto;
                         position: relative;
                         width: auto;
                         height: fit-content;
+                        height: 100%;
                     }
                     .slider-container .image.slider {
                         overflow: hidden;
+                        max-width: 1800px;
+                        opacity: 1;
+                        transition: .1s ease opacity;
+                    }
+                    @keyframes fadeAnimation {
+                        from {
+                            opacity: 0;
+                        }
+                        to {
+                            opacity: 1;
+                        }
                     }
                     .slider {
                         display: flex;

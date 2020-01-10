@@ -5,6 +5,7 @@ import Members from './members.js'
 import Extras from './extras.js'
 import Awards from './awards.js'
 import Contact from './contact.js'
+import Reel from './reel.js'
 
 function Grilla ({
     items,
@@ -28,8 +29,8 @@ function Grilla ({
     ]
     const [tablet, setTablet] = useState(false)
     const [mobile, setMobile] = useState(false)
-    const [parsedItems, setParsedItems] = useState([...items.slice(1, items.length), items[0]])
-    let pie = (items.length) / 3;
+    const [parsedItems, setParsedItems] = useState([...items.slice(1, items.length)])
+    let pie = (parsedItems.length) / 3;
     pie = pie - parseInt(pie);
     pie = parseInt(pie * 100);
     pie = pie == 66 ? '3/4': pie == 33 ? '2/4' : '1/4';
@@ -83,6 +84,7 @@ function Grilla ({
                     />
                 </div>
             </div>
+            <Reel />
             <About handleIcon={handleIcon} />
             {/* <Members /> */}
             {/* <Extras extras={extras} /> */}
