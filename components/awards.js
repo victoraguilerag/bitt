@@ -291,6 +291,9 @@ function Awards ({ handleIcon }) {
                         width: 80vw;
                         max-width: 900px;
                     }
+                    .column {
+                        padding-right: 2vw;
+                    }
                     @media screen and (max-width: 1100px) {
                         .Awards {
                             height: auto;

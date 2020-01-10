@@ -103,9 +103,11 @@ function About ({ handleIcon }) {
                         filter: invert(1);
                         cursor: pointer;
                         display: none;
+                        opacity: 0;
                     }
                     .arrow-slider-left.black {
                         filter: none;
+                        opacity: 0;
                     }
                     .arrow-slider-left {
                         position: absolute;
@@ -116,6 +118,7 @@ function About ({ handleIcon }) {
                         cursor: pointer;
                         transform: rotate(180deg);
                         display: none;
+                        opacity: 0;
                     }
                     .slider-container {
                         max-height: 800px;
