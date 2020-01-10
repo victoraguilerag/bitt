@@ -33,7 +33,7 @@ function About ({ handleIcon }) {
     }, [sliderPosition])
     const handleNext = (i) => {
         console.log(i)
-        if (sliderPosition == 1) return false
+        if (sliderPosition == 5) return false
         setSliderPosition(sliderPosition + 1)
     }
     const handlePrevious = (i) => {
@@ -64,12 +64,16 @@ function About ({ handleIcon }) {
                 </p>
             </div>
             <div className="slider-container">
-                <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition == 1 ? "active":""}`} onClick={handlePrevious}></img>
+                <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition > 0 ? "active":""}`} onClick={handlePrevious}></img>
                 <div className="image slider" ref={slider}>
-                    <img src="/slide-1.png" className="image"></img>
-                    <img src="/slide-2.png" className="image"></img>
+                    <img src="/bitt-slide-1.png" width="200" className="image"></img>
+                    <img src="/bitt-slide-2.png" width="200" className="image"></img>
+                    <img src="/bitt-slide-3.png" width="200" className="image"></img>
+                    <img src="/bitt-slide-4.png" width="200" className="image"></img>
+                    <img src="/bitt-slide-5.png" width="200" className="image"></img>
+                    <img src="/bitt-slide-6.png" width="200" className="image"></img>
                 </div>
-                <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition == 0 ? "active":""}`} onClick={handleNext}></img>
+                <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition < 5 ? "active":""}`} onClick={handleNext}></img>
             </div>
             <img
                 src="/arrow.svg"
