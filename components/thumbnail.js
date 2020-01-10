@@ -107,6 +107,7 @@ function Thumbnail (props) {
                         bottom: 8px;
                         left: 8px;
                         color: #b8b2ab;
+                        opacity: .8;
                         z-index: 2;
                         opacity: 0;
                     }
