@@ -121,7 +121,7 @@ function About ({ handleIcon }) {
                         opacity: 0;
                     }
                     .slider-container {
-                        max-height: 800px;
+                        max-height: 1080px;
                         width: auto;
                         position: relative;
                         width: auto;
@@ -130,7 +130,7 @@ function About ({ handleIcon }) {
                     }
                     .slider-container .image.slider {
                         overflow: hidden;
-                        max-width: 1800px;
+                        max-width: 1080px;
                         opacity: 1;
                         transition: .1s ease opacity;
                     }
@@ -173,13 +173,13 @@ function About ({ handleIcon }) {
                         margin-right: 38px;
                     }
                     .bittlogoR {
-                        width: 350px;
+                        width: 300px;
                         height: auto;
                     }
                     .text {
                         font-family: 'TT';
-                        line-height: 1.2em;
-                        font-size: 1.1em;
+                        line-height: 1em;
+                        font-size: 1em;
                         margin-top: 16px;
                         margin-bottom: 0;
                         text-align: justify;
@@ -201,9 +201,6 @@ function About ({ handleIcon }) {
                             width: 50vw;
                             margin-left: 30px;
                             padding-bottom: 72px;
-                        }
-                        .About .text {
-                            font-size: 1em;
                         }
                         .image {
                             width: 100%;

@@ -8,10 +8,10 @@ function Reel () {
                 id="reel-video"
                 className="reel-iframe"
                 title="reel"
-                src={`https://player.vimeo.com/video/${id}?quality=1080p&autopause=0&background=0`}
+                src={`https://player.vimeo.com/video/${id}?quality=720p&autopause=0&background=0`}
                 frameborder="0"
                 allow="fullscreen"
-                allowfullscreen
+                allowFullScreen
             />
             <style jsx>
                 {`

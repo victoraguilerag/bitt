@@ -644,7 +644,7 @@ function Home () {
           .Hero {
             background: #ECE6DE;
             height: 100vh;
-            overflow-x: 'hidden';
+            overflow-x: hidden;
             max-width: 100vw;
           }
           .Hero-content {
