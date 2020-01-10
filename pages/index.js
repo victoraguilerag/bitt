@@ -717,7 +717,7 @@ function Home () {
             }
             .menu .item {
               height: 1em;
-              font-size: 1.6em;
+              font-size: 1.5em;
             }
             .menu .item .title {
               font-size: 0.8em;
@@ -731,7 +731,7 @@ function Home () {
             }
             .menu .item {
               height: 1em;
-              font-size: 1.6em;
+              font-size: 1.4em;
             }
             .menu .item .title {
               font-size: 0.8em;
