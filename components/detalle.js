@@ -147,7 +147,7 @@ function Detalle ({
                         font-family: 'Drunk';
                         font-size: 20px;
                         font-weight: bold;
-                        padding-left: 100px;
+                        padding-left: 5vw;
                         padding-top: 48px;
                         padding-bottom: 48px;
                     }
@@ -173,7 +173,7 @@ function Detalle ({
                         font-weight: normal;
                     }
                     .Detalle {
-                        position: absolute;
+                        position: relative;
                         top: 100%;
                         max-width: 100%;
                         width: 100vw;

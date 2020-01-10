@@ -490,10 +490,10 @@ function Home () {
                       src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&quality=720p&loop=1&autopause=0&background=1`}
                       width="880"
                       height="880"
-                      frameborder="0"
-                      autoplay
+                      frameBorder="0"
+                      autoPlay
                       allow="autoplay; fullscreen"
-                      allowfullscreen
+                      allowFullScreen
                       onLoad={i == 0 ? e => handleLoad(e) : () => {}}
                     />
                   )
@@ -682,8 +682,8 @@ function Home () {
             margin-bottom: 30px;
           }
           .menu .item {
-            height: 35px;
-            font-size: 40px;
+            height: 1em;
+            font-size: 1.9em;
             font-weight: bold;
             font-family: 'Drunk';
             cursor: pointer;
@@ -696,18 +696,7 @@ function Home () {
           .menu .item .title {
             opacity: .75;
             margin-left: 10px;
-            font-size: 20px;
-          }
-          @media screen and (max-width: 1600px) {
-            .menu {
-            }
-            .menu .item {
-              min-height: 24px;
-              height: auto;
-              font-size: 24px;
-              line-height: 24px;
-              margin-top: 0px;
-            }
+            font-size: 0.8em;
           }
           .animation {
             display: flex;
@@ -719,6 +708,48 @@ function Home () {
             height: 50px;
             cursor: pointer;
             background: #EDE9E3;
+          }
+          @media screen and (max-width: 1660px) {
+            .video-container {
+              max-width: 880px;
+              max-height: 880px;
+              align-self: flex-end;
+            }
+            .menu .item {
+              height: 1em;
+              font-size: 1.6em;
+            }
+            .menu .item .title {
+              font-size: 0.8em;
+            }
+          }
+          @media screen and (max-width: 1450px) {
+            .video-container {
+              max-width: 880px;
+              max-height: 880px;
+              align-self: flex-end;
+            }
+            .menu .item {
+              height: 1em;
+              font-size: 1.6em;
+            }
+            .menu .item .title {
+              font-size: 0.8em;
+            }
+          }
+          @media screen and (max-width: 1280px) {
+            .video-container {
+              max-width: 570px;
+              max-height: 570px;
+              align-self: flex-end;
+            }
+            .menu .item {
+              height: 1em;
+              font-size: 1.2em;
+            }
+            .menu .item .title {
+              font-size: 0.8em;
+            }
           }
           @media screen and (max-width: 1100px) {
             .Hero {
@@ -782,10 +813,10 @@ export default Home;
       src={`https://player.vimeo.com/video/${items[active].videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
       width="880"
       height="880"
-      frameborder="0"
-      autoplay
+      frameBorder="0"
+      autoPlay
       allow="autoplay; fullscreen"
-      allowfullscreen
+      allowFullScreen
       onLoad={e => handleLoad(e)}
     />
   )
