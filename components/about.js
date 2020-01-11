@@ -184,6 +184,7 @@ function About ({ handleIcon }) {
                         margin-bottom: 0;
                         text-align: justify;
                         opacity: .7;
+                        font-weight: 300;
                     }
                     .logo-container {
                         position: relative;
