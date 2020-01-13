@@ -47,12 +47,12 @@ function About ({ handleIcon }) {
                     // timing options
                     fill: "forwards",
                     easing: "ease-in-out",
-                    duration: 2000,
+                    duration: 3000,
                     iterations: Infinity
                 });
                 init.current = true;
             }
-        }, 2000)
+        }, 3000)
     }, [])
 
     useEffect(() => {
