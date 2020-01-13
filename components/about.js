@@ -31,10 +31,10 @@ function About ({ handleIcon }) {
             if (!init.current) {
                 sliderTag.current.animate([
                     // keyframes
-                    { opacity: '0' }, 
-                    { opacity: '.2' },
+                    { opacity: '.2' }, 
                     { opacity: '.6' },
                     { opacity: '.8' },
+                    { opacity: '1' },
                     { opacity: '1' },
                     { opacity: '1' },
                     { opacity: '1' },
