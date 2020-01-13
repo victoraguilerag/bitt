@@ -431,13 +431,6 @@ function Home () {
   return (
     <div className="Home">
       <Head>
-        <title>Bitt</title>
-        <style>
-          {
-            `
-            `
-          }
-        </style>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -462,7 +455,7 @@ function Home () {
                     src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
                     width="880"
                     height="880"
-                    frameborder="0"
+                    frameBorder="0"
                     autoplay
                     allow="autoplay; fullscreen"
                     allowfullscreen

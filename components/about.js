@@ -8,7 +8,11 @@ function About ({ handleIcon }) {
     const slider = useRef(null);
     const arrow = useRef(null);
     const arrowLeft = useRef(null);
+    const init = useRef(false);
+    const [automatic, setAutomatic] = useState(false);
     const [sliderPosition, setSliderPosition] = useState(0)
+    const newSliderPosition = useRef(0)
+    const sliderTag = useRef(false)
     useEffect(() => {
         animation.current = lottie.loadAnimation({
             container: animationContainer.current, // the dom element that will contain the animation
@@ -18,11 +22,37 @@ function About ({ handleIcon }) {
             path: '/burger-animation-lottie.json' // the path to the animation json
         });
 
-        setTimeout(() => {
-            const sliderInterval = setInterval(() => {
-            }, 250)
-        }, 3000)
+        setInterval(() => {
+            newSliderPosition.current = newSliderPosition.current + 1;
+            if (newSliderPosition.current == 6) {
+                newSliderPosition.current = 0;
+            }
+            setSliderPosition(newSliderPosition.current)
+            if (!init.current) {
+                sliderTag.current.animate([
+                    // keyframes
+                    { opacity: '0' }, 
+                    { opacity: '.2' },
+                    { opacity: '.6' },
+                    { opacity: '.8' },
+                    { opacity: '1' },
+                    { opacity: '1' },
+                    { opacity: '1' },
+                    { opacity: '1' },
+                    { opacity: '.8' },
+                    { opacity: '0' }
+                ], { 
+                    // timing options
+                    fill: "forwards",
+                    easing: "ease-in-out",
+                    duration: 2000,
+                    iterations: Infinity
+                });
+                init.current = true;
+            }
+        }, 2000)
     }, [])
+
     useEffect(() => {
         // console.log(slider.current)
         // slider.current.classList.add("fade")
@@ -32,12 +62,10 @@ function About ({ handleIcon }) {
         // }, 200)
     }, [sliderPosition])
     const handleNext = (i) => {
-        console.log(i)
         if (sliderPosition == 5) return false
         setSliderPosition(sliderPosition + 1)
     }
     const handlePrevious = (i) => {
-        console.log(i)
         if (sliderPosition == 0) return false
         setSliderPosition(sliderPosition - 1)
     }
@@ -63,7 +91,7 @@ function About ({ handleIcon }) {
                     Our high level of commitment, creativity, vision, inspiration and professionalism has been recognized by the most important international festivals and it has contributed to making Bitt what it is today.
                 </p>
             </div>
-            <div className="slider-container">
+            <div ref={sliderTag} className="slider-container">
                 <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition > 0 ? "active":""} ${sliderPosition === 5 ? "black":""}`} onClick={handlePrevious}></img>
                 <div className="image slider" ref={slider}>
                     {
@@ -104,6 +132,7 @@ function About ({ handleIcon }) {
                         cursor: pointer;
                         display: none;
                         opacity: 0;
+                        display: none;
                     }
                     .arrow-slider-left.black {
                         filter: none;
@@ -127,13 +156,16 @@ function About ({ handleIcon }) {
                         width: auto;
                         height: fit-content;
                         height: 100%;
+                        opacity: 0;
                     }
+
                     .slider-container .image.slider {
                         overflow: hidden;
                         max-width: 1080px;
                         opacity: 1;
                         transition: .1s ease opacity;
                     }
+
                     @keyframes fadeAnimation {
                         from {
                             opacity: 0;
@@ -171,6 +203,7 @@ function About ({ handleIcon }) {
                     }
                     .information {
                         margin-right: 38px;
+                        max-width: 50%;
                     }
                     .bittlogoR {
                         width: 300px;

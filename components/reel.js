@@ -9,7 +9,7 @@ function Reel () {
                 className="reel-iframe"
                 title="reel"
                 src={`https://player.vimeo.com/video/${id}?quality=720p&autopause=0&background=0`}
-                frameborder="0"
+                frameBorder="0"
                 allow="fullscreen"
                 allowFullScreen
             />

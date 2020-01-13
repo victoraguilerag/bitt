@@ -37,10 +37,10 @@ function Detalle ({
                           className={`big ${selected.label}`}
                           src={`https://player.vimeo.com/video/${selected.video}`}
                           width="100vw"
-                          frameborder="0"
+                          frameBorder="0"
                           autoplay
                           allow="autoplay; fullscreen"
-                          allowfullscreen
+                          allowFullscreen
                         />
                         <img onClick={handleIcon} className="play-icon" src="/play-icon.svg" />
                     </React.Fragment>
