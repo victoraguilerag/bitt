@@ -39,7 +39,7 @@ function About ({ handleIcon }) {
                     { opacity: '1' },
                     { opacity: '1' },
                     { opacity: '1' },
-                    { opacity: '.8' },
+                    { opacity: '1' },
                     { opacity: '0' }
                 ], { 
                     // timing options
