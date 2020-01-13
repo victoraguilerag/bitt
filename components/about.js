@@ -12,6 +12,7 @@ function About ({ handleIcon }) {
     const [automatic, setAutomatic] = useState(false);
     const [sliderPosition, setSliderPosition] = useState(0)
     const newSliderPosition = useRef(0)
+    const lastPosition = useRef(5)
     const sliderTag = useRef(false)
     useEffect(() => {
         animation.current = lottie.loadAnimation({
@@ -21,37 +22,15 @@ function About ({ handleIcon }) {
             autoplay: false,
             path: '/burger-animation-lottie.json' // the path to the animation json
         });
-
+        setInterval(() => {
+            lastPosition.current = newSliderPosition.current
+        }, 2950)
         setInterval(() => {
             newSliderPosition.current = newSliderPosition.current + 1;
             if (newSliderPosition.current == 6) {
                 newSliderPosition.current = 0;
             }
             setSliderPosition(newSliderPosition.current)
-            if (!init.current) {
-                sliderTag.current.animate([
-                    // keyframes
-                    { opacity: '.2' }, 
-                    { opacity: '.6' },
-                    { opacity: '.8' },
-                    { opacity: '1' },
-                    { opacity: '1' },
-                    { opacity: '1' },
-                    { opacity: '1' },
-                    { opacity: '1' },
-                    { opacity: '1' },
-                    { opacity: '1' },
-                    { opacity: '1' },
-                    { opacity: '0' }
-                ], { 
-                    // timing options
-                    fill: "forwards",
-                    easing: "ease-in-out",
-                    duration: 3000,
-                    iterations: Infinity
-                });
-                init.current = true;
-            }
         }, 3000)
     }, [])
 
@@ -93,13 +72,18 @@ function About ({ handleIcon }) {
                     Our high level of commitment, creativity, vision, inspiration and professionalism has been recognized by the most important international festivals and it has contributed to making Bitt what it is today.
                 </p>
             </div>
-            <div ref={sliderTag} className="slider-container">
+            <div className="slider-container">
                 <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition > 0 ? "active":""} ${sliderPosition === 5 ? "black":""}`} onClick={handlePrevious}></img>
-                <div className="image slider" ref={slider}>
-                    {
-                        <img src={`/bitt-slide-${sliderPosition + 1}.png`} width="200" className="image"></img>
-                    }
+                <div  className="image slider">
+                    <img  src={`/bitt-slide-1.png`} width="200" className={`image blank`}></img>
+                    <img  src={`/bitt-slide-1.png`} width="200" className={`image main ${newSliderPosition.current == 0 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-2.png`} width="200" className={`image main ${newSliderPosition.current == 1 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-3.png`} width="200" className={`image main ${newSliderPosition.current == 2 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-4.png`} width="200" className={`image main ${newSliderPosition.current == 3 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-5.png`} width="200" className={`image main ${newSliderPosition.current == 4 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-6.png`} width="200" className={`image main ${newSliderPosition.current == 5 ? "active" : ""}`}></img>
                 </div>
+
                 <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition < 5 ? "active":""}`} onClick={handleNext}></img>
             </div>
             <img
@@ -158,7 +142,7 @@ function About ({ handleIcon }) {
                         width: auto;
                         height: fit-content;
                         height: 100%;
-                        opacity: 0;
+                        opacity: 1;
                     }
 
                     .slider-container .image.slider {
@@ -166,6 +150,22 @@ function About ({ handleIcon }) {
                         max-width: 1080px;
                         opacity: 1;
                         transition: .1s ease opacity;
+                    }
+                    .main {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        opacity: 0;
+                        transition: 1s ease opacity;
+                    }
+                    .main.active {
+                        opacity: 1;
+                        transition: 1s ease opacity;
+                    }  
+                    .image.blank {
+                        opacity: 0;
                     }
 
                     @keyframes fadeAnimation {
@@ -240,11 +240,11 @@ function About ({ handleIcon }) {
                         }
                         .image {
                             width: 100%;
-                            margin-top: 40px;
                         }
                         .information {
                             max-width: 570px;
                             width: 100%;
+                            margin-bottom: 50px;
                         }
                     }
                     @media screen and (max-width: 600px) {
