@@ -49,7 +49,7 @@ function Home () {
       nombre: 'M.A.R.T.A TERMINATOR',
       miembros: [
         { label: 'DIRECTOR', value: 'Felipe Gomez Aparicio' },        
-        { label: 'CLIENT', value: 'Coca Cola' },
+        { label: 'CLIENT', value: 'Coca-Cola Company' },
         { label: 'AGENCY', value: 'Grey Argentina'},
         { label: 'PROD. COMPANY', value: 'Primo'},
         { label: 'YEAR', value: '2019'}
@@ -130,7 +130,7 @@ function Home () {
       miembros: [
         { label: 'DIRECTOR', value: 'Jonnny Mass' },        
         { label: 'CLIENT', value: 'Toyota' },
-        { label: 'AGENCY', value: 'Conil'},
+        { label: 'AGENCY', value: 'Conill'},
         { label: 'PROD. COMPANY', value: 'Mssngpeces'},
         { label: 'YEAR', value: '2019'}
       ],
@@ -180,7 +180,7 @@ function Home () {
         { label: 'CLIENT', value: 'GCBA' },
         { label: 'AGENCY', value: 'Savaglio'},
         { label: 'PROD. COMPANY', value: 'Oruga Films'},
-        { label: 'YEAR', value: '2019'}
+        { label: 'YEAR', value: '2014'}
       ],
       video: "191811252",
       videothumb: "381058317",
@@ -212,7 +212,7 @@ function Home () {
         { label: 'CLIENT', value: 'Pepsico' },
         { label: 'AGENCY', value: 'BBDO Mexico'},
         { label: 'PROD. COMPANY', value: 'Bitt Animation'},
-        { label: 'YEAR', value: '2019'}
+        { label: 'YEAR', value: '2017'}
       ],
       video: "267843690",
       videothumb: "381058306",
@@ -244,7 +244,7 @@ function Home () {
         { label: 'CLIENT', value: 'Got Milk' },
         { label: 'AGENCY', value: 'Grupo Gallegos'},
         { label: 'PROD. COMPANY', value: 'Rebolución'},
-        { label: 'YEAR', value: '2019'}
+        { label: 'YEAR', value: '2013'}
       ],
       video: "191811264",
       videothumb: "381058338",
@@ -276,7 +276,7 @@ function Home () {
         { label: 'CLIENT', value: 'Con Agra' },
         { label: 'AGENCY', value: 'BBDO MEX'},
         { label: 'PROD. COMPANY', value: 'Bitt Animation'},
-        { label: 'YEAR', value: '2019'}
+        { label: 'YEAR', value: '2015'}
       ],
       video: "191811253",
       videothumb: "381058216",
@@ -292,7 +292,7 @@ function Home () {
        { label: 'CLIENT', value: 'Villavicencio' },
        { label: 'AGENCY', value: 'VML Y&R'},
        { label: 'PROD. COMPANY', value: 'Rebolución'},
-       { label: 'YEAR', value: '2020'}
+       { label: 'YEAR', value: '2018'}
        ],
          video: "383774851",
          videothumb: "383841300",
