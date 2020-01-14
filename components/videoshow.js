@@ -15,7 +15,7 @@ function VideoShow () {
                 frameborder="0"
                 autoplay
                 allow="autoplay; fullscreen"
-                allowfullscreen
+                allowFullScreen
                 onLoad={e => handleLoad(e)}
                 />
             )

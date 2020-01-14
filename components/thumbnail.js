@@ -46,7 +46,6 @@ function Thumbnail (props) {
         if (mobile) return false;
         const player = new Vimeo(iframe.current)
         setTimeout(() => {
-            console.log("pause")
             player.pause()
         }, 1000)
     }
@@ -73,8 +72,8 @@ function Thumbnail (props) {
                         src={`https://player.vimeo.com/video/${item.videothumb}?autoplay=1&loop=1&autopause=1&background=1&quality=360p`}
                         width="360"
                         height="180"
-                        frameborder="0"
-                        allowfullscreen
+                        frameBorder="0"
+                        allowFullScreen
                         allow="autoplay"
                         onLoad={handleLoad}
                     />

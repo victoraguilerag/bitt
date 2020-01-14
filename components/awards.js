@@ -44,7 +44,7 @@ function Awards ({ handleIcon }) {
         {
             title: 'AXE QUAKE',
             awards: [
-                'Bronze: Cannes Adevertising Festival'
+                'Bronze: Cannes Advertising Festival'
             ]
         },
         {
@@ -222,8 +222,8 @@ function Awards ({ handleIcon }) {
                     columns && columns.map((items, i) => (
                         <div className="column" key={i}>
                             {
-                                items && items.map((item) => (
-                                    <div key={item.label} className="item" key={item.label}>
+                                items && items.map((item, i) => (
+                                    <div id={item.awards[0] + item.title + i} key={item.title + item.awards[0] + i} className="item" key={item.label}>
                                         <p className="title">{item.title}</p>
                                         {
                                             item && item.awards && item.awards.map((award) => (

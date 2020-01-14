@@ -459,13 +459,9 @@ function Home () {
   return (
     <div className="Home">
       <Head>
-        <title>Bitt</title>
-        <style>
-          {
-            `
-            `
-          }
-        </style>
+        <title>BITT</title>
+        <link rel="preconnect" href="https://vimeo.com" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" /> 
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -483,6 +479,7 @@ function Home () {
                 if (i == 0) {
                   return (
                     <iframe
+                    key={item.label}
                       id={item.label}
                       className="home"
                       className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
@@ -501,6 +498,7 @@ function Home () {
                 if (mobile && i !== 0) return false;
                 return (
                   <img
+                    key={item.label}
                     id={item.label}
                     className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
                     src={"/" + item.heroimg + ".jpg"}
@@ -515,7 +513,7 @@ function Home () {
           <div className="menu">
             {
               brands.map((item, i) => {
-                if (item.label == "REEL") return (<div />)
+                if (item.label == "REEL") return (<div key={item.label}/>)
                 return (
                   <div
                     key={item.label}
@@ -564,6 +562,14 @@ function Home () {
             font-weight: 500;
             font-style: normal;
             font-display: swap;
+          }
+          :global(html) {
+            overflow-x: hidden;
+            position:relative;
+          }
+          :global(body) {
+            overflow-x: hidden;
+            position:relative;
           }
         `}
       </style>

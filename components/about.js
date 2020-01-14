@@ -8,7 +8,12 @@ function About ({ handleIcon }) {
     const slider = useRef(null);
     const arrow = useRef(null);
     const arrowLeft = useRef(null);
+    const init = useRef(false);
+    const [automatic, setAutomatic] = useState(false);
     const [sliderPosition, setSliderPosition] = useState(0)
+    const newSliderPosition = useRef(0)
+    const lastPosition = useRef(5)
+    const sliderTag = useRef(false)
     useEffect(() => {
         animation.current = lottie.loadAnimation({
             container: animationContainer.current, // the dom element that will contain the animation
@@ -17,12 +22,18 @@ function About ({ handleIcon }) {
             autoplay: false,
             path: '/burger-animation-lottie.json' // the path to the animation json
         });
-
-        setTimeout(() => {
-            const sliderInterval = setInterval(() => {
-            }, 250)
+        setInterval(() => {
+            lastPosition.current = newSliderPosition.current
+        }, 2950)
+        setInterval(() => {
+            newSliderPosition.current = newSliderPosition.current + 1;
+            if (newSliderPosition.current == 6) {
+                newSliderPosition.current = 0;
+            }
+            setSliderPosition(newSliderPosition.current)
         }, 3000)
     }, [])
+
     useEffect(() => {
         // console.log(slider.current)
         // slider.current.classList.add("fade")
@@ -32,12 +43,10 @@ function About ({ handleIcon }) {
         // }, 200)
     }, [sliderPosition])
     const handleNext = (i) => {
-        console.log(i)
         if (sliderPosition == 5) return false
         setSliderPosition(sliderPosition + 1)
     }
     const handlePrevious = (i) => {
-        console.log(i)
         if (sliderPosition == 0) return false
         setSliderPosition(sliderPosition - 1)
     }
@@ -65,11 +74,16 @@ function About ({ handleIcon }) {
             </div>
             <div className="slider-container">
                 <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition > 0 ? "active":""} ${sliderPosition === 5 ? "black":""}`} onClick={handlePrevious}></img>
-                <div className="image slider" ref={slider}>
-                    {
-                        <img src={`/bitt-slide-${sliderPosition + 1}.png`} width="200" className="image"></img>
-                    }
+                <div  className="image slider">
+                    <img  src={`/bitt-slide-1.png`} width="200" className={`image blank`}></img>
+                    <img  src={`/bitt-slide-1.png`} width="200" className={`image main ${newSliderPosition.current == 0 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-2.png`} width="200" className={`image main ${newSliderPosition.current == 1 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-3.png`} width="200" className={`image main ${newSliderPosition.current == 2 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-4.png`} width="200" className={`image main ${newSliderPosition.current == 3 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-5.png`} width="200" className={`image main ${newSliderPosition.current == 4 ? "active" : ""}`}></img>
+                    <img  src={`/bitt-slide-6.png`} width="200" className={`image main ${newSliderPosition.current == 5 ? "active" : ""}`}></img>
                 </div>
+
                 <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition < 5 ? "active":""}`} onClick={handleNext}></img>
             </div>
             <img
@@ -104,6 +118,7 @@ function About ({ handleIcon }) {
                         cursor: pointer;
                         display: none;
                         opacity: 0;
+                        display: none;
                     }
                     .arrow-slider-left.black {
                         filter: none;
@@ -127,13 +142,32 @@ function About ({ handleIcon }) {
                         width: auto;
                         height: fit-content;
                         height: 100%;
+                        opacity: 1;
                     }
+
                     .slider-container .image.slider {
                         overflow: hidden;
                         max-width: 1080px;
                         opacity: 1;
                         transition: .1s ease opacity;
                     }
+                    .main {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        opacity: 0;
+                        transition: 1s ease opacity;
+                    }
+                    .main.active {
+                        opacity: 1;
+                        transition: 1s ease opacity;
+                    }  
+                    .image.blank {
+                        opacity: 0;
+                    }
+
                     @keyframes fadeAnimation {
                         from {
                             opacity: 0;
@@ -171,6 +205,7 @@ function About ({ handleIcon }) {
                     }
                     .information {
                         margin-right: 38px;
+                        max-width: 50%;
                     }
                     .bittlogoR {
                         width: 300px;
@@ -205,11 +240,11 @@ function About ({ handleIcon }) {
                         }
                         .image {
                             width: 100%;
-                            margin-top: 40px;
                         }
                         .information {
                             max-width: 570px;
                             width: 100%;
+                            margin-bottom: 50px;
                         }
                     }
                     @media screen and (max-width: 600px) {

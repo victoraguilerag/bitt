@@ -38,14 +38,14 @@ function Grilla ({
     useEffect(() => {
         const items = parsedItems;
 
-        if (window.matchMedia("(max-width: 1024px)").matches) {
-            setTablet(true);
-            setParsedItems(items.slice(1, items.length - 1));
-        } else
-        if (window.matchMedia("(max-width: 768px)").matches) {
-            setMobile(true);
-            setParsedItems(items.slice(1, items.length - 1));
-        }
+        // if (window.matchMedia("(max-width: 1024px)").matches) {
+        //     setTablet(true);
+        //     setParsedItems(items.slice(1, items.length - 1));
+        // } else
+        // if (window.matchMedia("(max-width: 768px)").matches) {
+        //     setMobile(true);
+        //     setParsedItems(items.slice(1, items.length - 1));
+        // }
     }, []);
 
     return (
