@@ -656,8 +656,11 @@ function Home () {
           .Hero-content {
             display: flex;
             justify-content: flex-start;
+            align-items: flex-end;
           }
           .video-container {
+            max-width: 1024px;
+            max-height: 1024px;
             justify-self: flex-end;
             background: #1A1918;
             background-position: center;
@@ -688,7 +691,7 @@ function Home () {
             margin-bottom: 30px;
           }
           .menu .item {
-            height: 1em;
+            height: auto;
             font-size: 1.9em;
             font-weight: bold;
             font-family: 'Drunk';
@@ -717,12 +720,12 @@ function Home () {
           }
           @media screen and (max-width: 1660px) {
             .video-container {
-              max-width: 880px;
-              max-height: 880px;
+              max-width: 680px;
+              max-height: 680px;
               align-self: flex-end;
             }
             .menu .item {
-              height: 1em;
+              height: auto;
               font-size: 1.5em;
             }
             .menu .item .title {
@@ -731,12 +734,12 @@ function Home () {
           }
           @media screen and (max-width: 1450px) {
             .video-container {
-              max-width: 880px;
-              max-height: 880px;
+              max-width: 680px;
+              max-height: 680px;
               align-self: flex-end;
             }
             .menu .item {
-              height: 1em;
+              height: auto;
               font-size: 1.4em;
             }
             .menu .item .title {
@@ -750,7 +753,7 @@ function Home () {
               align-self: flex-end;
             }
             .menu .item {
-              height: 1em;
+              height: auto;
               font-size: 1.2em;
             }
             .menu .item .title {
