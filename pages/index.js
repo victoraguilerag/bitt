@@ -659,8 +659,8 @@ function Home () {
             align-items: flex-end;
           }
           .video-container {
-            max-width: 1024px;
-            max-height: 1024px;
+            max-width: 880px;
+            max-height: 880px;
             justify-self: flex-end;
             background: #1A1918;
             background-position: center;
