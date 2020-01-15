@@ -688,11 +688,11 @@ function Home () {
             flex-flow: column;
             justify-content: flex-end;
             align-self: flex-end;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
           }
           .menu .item {
-            height: auto;
-            font-size: 1.9em;
+            line-height: 1em;
+            font-size: 1.8em;
             font-weight: bold;
             font-family: 'Drunk';
             cursor: pointer;
@@ -710,7 +710,7 @@ function Home () {
           .animation {
             display: flex;
             position: absolute;
-            background: white;
+            background: #ECE6DE;
             top: 30px;
             right: 30px;
             width: 50px;
@@ -725,7 +725,7 @@ function Home () {
               align-self: flex-end;
             }
             .menu .item {
-              height: auto;
+              line-height: 1em;
               font-size: 1.5em;
             }
             .menu .item .title {
@@ -739,7 +739,7 @@ function Home () {
               align-self: flex-end;
             }
             .menu .item {
-              height: auto;
+              line-height: 1em;
               font-size: 1.4em;
             }
             .menu .item .title {
@@ -753,7 +753,7 @@ function Home () {
               align-self: flex-end;
             }
             .menu .item {
-              height: auto;
+              line-height: 1em;
               font-size: 1.2em;
             }
             .menu .item .title {
