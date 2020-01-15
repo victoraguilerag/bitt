@@ -66,7 +66,7 @@ function Grilla ({
             }
             {/* FORD KA. T-REX */}
             <div className="redes">
-                <h3 className="redes-title">FOR MORE PROJECTS MAKE<br/> SURE TO CHECK OUR <br/>VIMEO ACCOUNT.</h3>
+                <h3 className="redes-title">FOR MORE PROJECTS<br/>MAKE SURE TO CHECK OUR<br/>VIMEO ACCOUNT.</h3>
                 <div className="redes-container">
                     <a
                         className="red"
@@ -131,7 +131,7 @@ function Grilla ({
                     }
                     .redes .redes-title {
                         width: 400px;
-                        max-width: 80%;
+                        max-width: 90%;
                         color: #EDE9E3;
                         font-family: 'Drunk';
                         font-size: 14px;
@@ -159,7 +159,9 @@ function Grilla ({
                             max-width: none;
                             width: 100%;
                         }
-
+                        .arrow-white {
+                            display:none;
+                        }
                     }
                 `}
             </style>
