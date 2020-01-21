@@ -5,7 +5,7 @@ function Contact ({ handleIcon }) {
         <div id="Contact" className="Contact">
             <h3 className="title">CONTACT</h3>
             <h4 className="label">For Jobs or General Inquiries please use this form.</h4>
-            <form action="https://formspree.io/xqkejgyg" method="POST" className="form">
+            <form action="https://formspree.io/xrgpjllv" method="POST" className="form">
                 <input type="text" className="input" placeholder="Name" name="Name" id="Name" />
                 <input type="email" className="input" placeholder="Mail" name="Mail" id="Mail" />
                 <input type="text" className="input" placeholder="Subject" name="Subject" id="Subject" />
