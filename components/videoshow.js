@@ -21,11 +21,18 @@ function VideoShow () {
             )
             }
             <div className="water-mark">
-                <img src="/bitt-logo.svg" />
+                <div className="text">LARSEA</div>
             </div>
         </div>
         <style jsx>
-            {`
+            {`{
+                .water-mark .text {
+                  font-family: 'Drunk';
+                  font-size: 91px;
+                  position: ABSOLUTE;
+                  bottom: 0;
+                  color: #ece9e3;
+                }
                 .video-container {
                     justify-self: flex-end;
                     background: #1A1918;

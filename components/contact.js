@@ -12,7 +12,7 @@ function Contact ({ handleIcon }) {
                 <textarea type="text" className="input big" placeholder="Message" name="Message" id="Message" />
                 <input type="submit" className="submit" id="submit" name="submit" value="SUBMIT" />
             </form>
-            <div className="brand-footer">
+            {/* <div className="brand-footer">
                 <img src="/footerlogo.svg" className="logo" />
                 <div className="redes">
                     <a
@@ -37,7 +37,7 @@ function Contact ({ handleIcon }) {
                         <img src="/facebook.svg" className="red-icon" />
                     </a>
                 </div>
-            </div>
+            </div> */}
             <img
                 src="/arrow.svg"
                 className="arrow"

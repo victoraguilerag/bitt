@@ -57,7 +57,7 @@ function About ({ handleIcon }) {
                 <img src="/iso-con-r.svg" className="bittlogoR" />
                 </div>
                 <p className="text">
-                    First established in 2001, Bitt is one of the most renowned post-production companies both locally and internationally with a focus on 3D and 2D animation, as well as on visual FX for commercials, series, feature films and all contents.
+                    First established in 2001, Larsea is one of the most renowned post-production companies both locally and internationally with a focus on 3D and 2D animation, as well as on visual FX for commercials, series, feature films and all contents.
                 </p>
                 <p className="text bold">
                     Driven by creative ideas executed professionally, with the main objective in meeting the needs of our clients. 
@@ -69,7 +69,7 @@ function About ({ handleIcon }) {
                     Our reputation relies on a world-class human and artistic team, which contributes to providing a second to none service to our clients by offering first quality solutions, technical excellence and efficient quotations.
                 </p>
                 <p className="text bold">
-                    Our high level of commitment, creativity, vision, inspiration and professionalism has been recognized by the most important international festivals and it has contributed to making Bitt what it is today.
+                    Our high level of commitment, creativity, vision, inspiration and professionalism has been recognized by the most important international festivals and it has contributed to making Larsea what it is today.
                 </p>
             </div>
             <div className="slider-container">

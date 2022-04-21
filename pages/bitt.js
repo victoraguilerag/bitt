@@ -465,7 +465,7 @@ function Home () {
               }) 
             }
             <div className="water-mark">
-              <img src="/bitt-logo.svg" />
+              <div className="text">LARSEA</div>
             </div>
           </div>
           <div className="menu">
@@ -617,6 +617,13 @@ function Home () {
             height: auto;
             margin-bottom: 2%;
             z-index: 10;
+          }
+          .water-mark .text {
+            font-family: 'Drunk';
+            font-size: 91px;
+            position: ABSOLUTE;
+            bottom: 0;
+            color: #ece9e3;
           }
           .menu {
             height: calc(100vh - 40px);

@@ -481,7 +481,6 @@ function Home () {
                     <iframe
                     key={item.label}
                       id={item.label}
-                      className="home"
                       className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
                       title={item.label}
                       src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&quality=720p&loop=1&autopause=0&background=1`}
@@ -507,7 +506,7 @@ function Home () {
               }) 
             }
             <div className="water-mark">
-              <img src="/bitt-logo.svg" />
+              <div className="text">LARSEA</div>
             </div>
           </div>
           <div className="menu">
@@ -681,6 +680,13 @@ function Home () {
             height: auto;
             padding-bottom: 2%;
             z-index: 11;
+          }
+          .water-mark .text {
+            font-family: 'Drunk';
+            font-size: 91px;
+            position: ABSOLUTE;
+            bottom: 0;
+            color: #ece9e3;
           }
           .menu {
             height: calc(100vh - 40px);

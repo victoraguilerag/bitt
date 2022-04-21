@@ -5,7 +5,7 @@ import Members from './members.js'
 import Extras from './extras.js'
 import Awards from './awards.js'
 import Contact from './contact.js'
-import Reel from './reel.js'
+// import Reel from './reel.js'
 
 function Grilla ({
     items,
@@ -84,7 +84,7 @@ function Grilla ({
                     />
                 </div>
             </div>
-            <Reel />
+            {/* <Reel /> */}
             <About handleIcon={handleIcon} />
             {/* <Members /> */}
             {/* <Extras extras={extras} /> */}
