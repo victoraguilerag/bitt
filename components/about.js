@@ -4,7 +4,7 @@ import * as animationData from '../public/burger-animation-lottie.json'
 
 function About ({ handleIcon }) {
     const animationContainer = useRef();
-    const animation = useRef(null);
+    // const animation = useRef(null);
     const slider = useRef(null);
     const arrow = useRef(null);
     const arrowLeft = useRef(null);
@@ -15,13 +15,13 @@ function About ({ handleIcon }) {
     const lastPosition = useRef(5)
     const sliderTag = useRef(false)
     useEffect(() => {
-        animation.current = lottie.loadAnimation({
-            container: animationContainer.current, // the dom element that will contain the animation
-            renderer: 'svg',
-            loop: true,
-            autoplay: false,
-            path: '/burger-animation-lottie.json' // the path to the animation json
-        });
+        // animation.current = lottie.loadAnimation({
+        //     container: animationContainer.current, // the dom element that will contain the animation
+        //     renderer: 'svg',
+        //     loop: true,
+        //     autoplay: false,
+        //     path: '/burger-animation-lottie.json' // the path to the animation json
+        // });
         setInterval(() => {
             lastPosition.current = newSliderPosition.current
         }, 2950)
@@ -53,9 +53,6 @@ function About ({ handleIcon }) {
     return (
         <div id="About" className="About">
             <div className="information">
-                <div className="logo-container">
-                <img src="/iso-con-r.svg" className="bittlogoR" />
-                </div>
                 <p className="text">
                     First established in 2001, Larsea is one of the most renowned post-production companies both locally and internationally with a focus on 3D and 2D animation, as well as on visual FX for commercials, series, feature films and all contents.
                 </p>
@@ -74,7 +71,7 @@ function About ({ handleIcon }) {
             </div>
             <div className="slider-container">
                 <img src="/arrow-slider.svg" ref={arrowLeft} className={`arrow-slider-left ${sliderPosition > 0 ? "active":""} ${sliderPosition === 5 ? "black":""}`} onClick={handlePrevious}></img>
-                <div  className="image slider">
+                {/* <div  className="image slider">
                     <img  src={`/bitt-slide-1.png`} width="200" className={`image blank`}></img>
                     <img  src={`/bitt-slide-1.png`} width="200" className={`image main ${newSliderPosition.current == 0 ? "active" : ""}`}></img>
                     <img  src={`/bitt-slide-2.png`} width="200" className={`image main ${newSliderPosition.current == 1 ? "active" : ""}`}></img>
@@ -82,7 +79,7 @@ function About ({ handleIcon }) {
                     <img  src={`/bitt-slide-4.png`} width="200" className={`image main ${newSliderPosition.current == 3 ? "active" : ""}`}></img>
                     <img  src={`/bitt-slide-5.png`} width="200" className={`image main ${newSliderPosition.current == 4 ? "active" : ""}`}></img>
                     <img  src={`/bitt-slide-6.png`} width="200" className={`image main ${newSliderPosition.current == 5 ? "active" : ""}`}></img>
-                </div>
+                </div> */}
 
                 <img src="/arrow-slider.svg" ref={arrow} className={`arrow-slider ${sliderPosition < 5 ? "active":""}`} onClick={handleNext}></img>
             </div>
@@ -220,6 +217,7 @@ function About ({ handleIcon }) {
                         text-align: justify;
                         opacity: .7;
                         font-weight: 300;
+                        font-size: 16px;
                     }
                     .logo-container {
                         position: relative;

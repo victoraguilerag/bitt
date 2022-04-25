@@ -283,58 +283,58 @@ function Home () {
   const [mobile, setMobile] = useState(false)
 
 
-  useEffect(() => {
-    animation.current = lottie.loadAnimation({
-      container: animationContainer.current, // the dom element that will contain the animation
-      renderer: 'svg',
-      loop: true,
-      autoplay: false,
-      path: '/burger-animation-lottie.json' // the path to the animation json
-    });
+  // useEffect(() => {
+  //   animation.current = lottie.loadAnimation({
+  //     container: animationContainer.current, // the dom element that will contain the animation
+  //     renderer: 'svg',
+  //     loop: true,
+  //     autoplay: false,
+  //     path: '/burger-animation-lottie.json' // the path to the animation json
+  //   });
 
-    secondAnimation.current = lottie.loadAnimation({
-      container: secondAnimationContainer.current, // the dom element that will contain the animation
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/burger-animation-lottie.json' // the path to the animation json
-    });
+  //   secondAnimation.current = lottie.loadAnimation({
+  //     container: secondAnimationContainer.current, // the dom element that will contain the animation
+  //     renderer: 'svg',
+  //     loop: true,
+  //     autoplay: true,
+  //     path: '/burger-animation-lottie.json' // the path to the animation json
+  //   });
 
-    setTimeout(() => {
-      animation.current.addEventListener('enterFrame', e => {
-        if (e.currentTime >= 27 && animationDirection.current !== 'back') {
-          animationDirection.current = 'back'
-          animation.current.pause();
-        } else if (e.currentTime < 25 && animationDirection.current !== 'forward') {
-          animationDirection.current = 'forward'
-          animation.current.pause();
-        }
-      })
-    }, 2000)
+  //   setTimeout(() => {
+  //     animation.current.addEventListener('enterFrame', e => {
+  //       if (e.currentTime >= 27 && animationDirection.current !== 'back') {
+  //         animationDirection.current = 'back'
+  //         animation.current.pause();
+  //       } else if (e.currentTime < 25 && animationDirection.current !== 'forward') {
+  //         animationDirection.current = 'forward'
+  //         animation.current.pause();
+  //       }
+  //     })
+  //   }, 2000)
 
-    setTimeout(() => {
-      const Hero = document.getElementById('Hero')
-      document.body.style.overflowY = 'scroll';
-      Hero.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
-      const images = []
-      for (let i = 0; i < items.length; i++) {
-        images[i] = new Image()
-        images[i].src = items[i]
-      }
-    }, 1000)
+  //   setTimeout(() => {
+  //     const Hero = document.getElementById('Hero')
+  //     document.body.style.overflowY = 'scroll';
+  //     Hero.scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'start'
+  //     })
+  //     const images = []
+  //     for (let i = 0; i < items.length; i++) {
+  //       images[i] = new Image()
+  //       images[i].src = items[i]
+  //     }
+  //   }, 1000)
 
-    setTimeout(() => {
-      setIframes(true)
-    }, 5000)
-    setGrillaLoaded(true)
+  //   setTimeout(() => {
+  //     setIframes(true)
+  //   }, 5000)
+  //   setGrillaLoaded(true)
 
-    if (window && window.matchMedia('(max-width: 1024px)').matches) {
-      setMobile(true);
-    }
-  }, [])
+  //   if (window && window.matchMedia('(max-width: 1024px)').matches) {
+  //     setMobile(true);
+  //   }
+  // }, [])
 
   useEffect(() => {
     // const timer = setTimeout(() => {
@@ -449,7 +449,6 @@ function Home () {
                 return (
                   <iframe
                     id={item.label}
-                    className="home"
                     className={`home ${items[active].label == item.label ? "encendido" : "apagado"}`}
                     title={item.label}
                     src={`https://player.vimeo.com/video/${item.videosquare}?autoplay=1&loop=1&autopause=0&background=1`}
@@ -620,7 +619,7 @@ function Home () {
           }
           .water-mark .text {
             font-family: 'Drunk';
-            font-size: 91px;
+            font-size: 64px;
             position: ABSOLUTE;
             bottom: 0;
             color: #ece9e3;
@@ -681,6 +680,11 @@ function Home () {
             .animation {
               width: 50px;
               height: 50px;
+            }
+          }
+          @media screen and (max-width: 600px) {
+            .water-mark .text {
+              font-size: 64px;
             }
           }
           @media screen and (max-width: 768px) {

@@ -317,33 +317,33 @@ function Home () {
 
 
   useEffect(() => {
-    animation.current = lottie.loadAnimation({
-      container: animationContainer.current, // the dom element that will contain the animation
-      renderer: 'svg',
-      loop: true,
-      autoplay: false,
-      path: '/burger-animation-lottie.json' // the path to the animation json
-    });
+    // animation.current = lottie.loadAnimation({
+    //   container: animationContainer.current, // the dom element that will contain the animation
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: false,
+    //   path: '/burger-animation-lottie.json' // the path to the animation json
+    // });
 
-    secondAnimation.current = lottie.loadAnimation({
-      container: secondAnimationContainer.current, // the dom element that will contain the animation
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/burger-animation-lottie.json' // the path to the animation json
-    });
+  //    secondAnimation.current = lottie.loadAnimation({
+  //     container: secondAnimationContainer.current, // the dom element that will contain the animation
+  //     renderer: 'svg',
+  //     loop: true,
+  //     autoplay: true,
+  //     path: '/burger-animation-lottie.json' // the path to the animation json
+  //   });
 
-    setTimeout(() => {
-      animation.current.addEventListener('enterFrame', e => {
-        if (e.currentTime >= 27 && animationDirection.current !== 'back') {
-          animationDirection.current = 'back'
-          animation.current.pause();
-        } else if (e.currentTime < 25 && animationDirection.current !== 'forward') {
-          animationDirection.current = 'forward'
-          animation.current.pause();
-        }
-      })
-    }, 2000)
+    // setTimeout(() => {
+    //   animation.current.addEventListener('enterFrame', e => {
+    //     if (e.currentTime >= 27 && animationDirection.current !== 'back') {
+    //       animationDirection.current = 'back'
+    //       animation.current.pause();
+    //     } else if (e.currentTime < 25 && animationDirection.current !== 'forward') {
+    //       animationDirection.current = 'forward'
+    //       animation.current.pause();
+    //     }
+    //   })
+    // }, 2000)
 
     setTimeout(() => {
       const Hero = document.getElementById('Hero')
@@ -421,7 +421,7 @@ function Home () {
   }
 
   const handleAnimation = () => {
-    animation.current.play();
+    // animation.current.play();
     setActiveSections(!activeSections);
   }
   const handleSecondAnimation = () => {
@@ -459,7 +459,7 @@ function Home () {
   return (
     <div className="Home">
       <Head>
-        <title>BITT</title>
+        <title>Larsea</title>
         <link rel="preconnect" href="https://vimeo.com" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" /> 
         <link rel="icon" href="/favicon.ico" />
@@ -467,10 +467,14 @@ function Home () {
 
       <div id="Hero" className="Hero">
         <div className={`preloader ${loaded ? "": "active"}`}>
-          <div ref={secondAnimationContainer} className="preloader-animation" />
+          {/* <div ref={secondAnimationContainer} className="preloader-animation" /> */}
+          <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
-        <div ref={animationContainer} onClick={handleAnimation} className="animation">
+        <div className="animation">
+          <img className="animation" src="/menu-icon.svg" onClick={handleAnimation}/>
         </div>
+        {/* <div ref={animationContainer} onClick={handleAnimation} className="animation">
+        </div> */}
         <Sections active={activeSections} />
         <div className="Hero-content">
           <div className="video-container">
@@ -683,7 +687,7 @@ function Home () {
           }
           .water-mark .text {
             font-family: 'Drunk';
-            font-size: 91px;
+            font-size: 64px;
             position: ABSOLUTE;
             bottom: 0;
             color: #ece9e3;
@@ -717,8 +721,8 @@ function Home () {
             display: flex;
             position: absolute;
             background: #ECE6DE;
-            top: 30px;
-            right: 30px;
+            top: 16px;
+            right: 14px;
             width: 50px;
             height: 50px;
             cursor: pointer;
@@ -783,6 +787,11 @@ function Home () {
               height: 50px;
             }
           }
+          @media screen and (max-width: 600px) {
+            .water-mark .text {
+              font-size: 64px;
+            }
+          }
           @media screen and (max-width: 768px) {
             .Hero {
               display: flex;
@@ -802,7 +811,89 @@ function Home () {
               height: calc(100vw - 60px);
               width: calc(100vw - 60px);
             }
+
           }
+
+
+            .lds-spinner {
+              color: official;
+              display: inline-block;
+              position: relative;
+              width: 80px;
+              height: 80px;
+            }
+            .lds-spinner div {
+              transform-origin: 40px 40px;
+              animation: lds-spinner 1.2s linear infinite;
+            }
+            .lds-spinner div:after {
+              content: " ";
+              display: block;
+              position: absolute;
+              top: 3px;
+              left: 37px;
+              width: 6px;
+              height: 18px;
+              border-radius: 20%;
+              background: black;
+            }
+            .lds-spinner div:nth-child(1) {
+              transform: rotate(0deg);
+              animation-delay: -1.1s;
+            }
+            .lds-spinner div:nth-child(2) {
+              transform: rotate(30deg);
+              animation-delay: -1s;
+            }
+            .lds-spinner div:nth-child(3) {
+              transform: rotate(60deg);
+              animation-delay: -0.9s;
+            }
+            .lds-spinner div:nth-child(4) {
+              transform: rotate(90deg);
+              animation-delay: -0.8s;
+            }
+            .lds-spinner div:nth-child(5) {
+              transform: rotate(120deg);
+              animation-delay: -0.7s;
+            }
+            .lds-spinner div:nth-child(6) {
+              transform: rotate(150deg);
+              animation-delay: -0.6s;
+            }
+            .lds-spinner div:nth-child(7) {
+              transform: rotate(180deg);
+              animation-delay: -0.5s;
+            }
+            .lds-spinner div:nth-child(8) {
+              transform: rotate(210deg);
+              animation-delay: -0.4s;
+            }
+            .lds-spinner div:nth-child(9) {
+              transform: rotate(240deg);
+              animation-delay: -0.3s;
+            }
+            .lds-spinner div:nth-child(10) {
+              transform: rotate(270deg);
+              animation-delay: -0.2s;
+            }
+            .lds-spinner div:nth-child(11) {
+              transform: rotate(300deg);
+              animation-delay: -0.1s;
+            }
+            .lds-spinner div:nth-child(12) {
+              transform: rotate(330deg);
+              animation-delay: 0s;
+            }
+            @keyframes lds-spinner {
+              0% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 0;
+              }
+            }
+          
         `}
       </style>
     </div>
@@ -813,8 +904,8 @@ export default Home;
 
 {/* <div className="Detalle"></div>
 <div className="Listado">
-  <div className="item">Item</div>
-  <div className="pie">Pie</div>
+<div className="item">Item</div>
+<div className="pie">Pie</div>
 </div> */}
 
 
