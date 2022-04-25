@@ -150,6 +150,13 @@ function Detalle ({
                         padding-left: 5vw;
                         padding-top: 48px;
                         padding-bottom: 48px;
+                        height: 10vh;
+                    }
+                    .information h2 {
+                        display: none;
+                    }
+                    .information .list {
+                        display: none;
                     }
                     @media screen and (max-width: 1024px) {
                         .information {
