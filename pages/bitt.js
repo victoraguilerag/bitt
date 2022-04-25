@@ -684,7 +684,7 @@ function Home () {
           }
           @media screen and (max-width: 600px) {
             .water-mark .text {
-              font-size: 64px;
+              font-size: 48px;
             }
           }
           @media screen and (max-width: 768px) {
